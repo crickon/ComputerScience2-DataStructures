@@ -12,6 +12,7 @@ public class Lab1 {
 		
 		System.out.printf("The sum of %d and %d is %d!", x, y, sum(x,y));
 		
+		scanner.close();
 	}
 
 	/**
