@@ -6,4 +6,4 @@ public class Lab1 {
 		
 	}
 }
-
+// Hello there this is for the first lab
