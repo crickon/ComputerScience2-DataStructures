@@ -25,3 +25,5 @@ public class Lab1 {
 		return x + y;
 	}
 }
+
+//Thank you for helping me with GitHub - AnneMarie
