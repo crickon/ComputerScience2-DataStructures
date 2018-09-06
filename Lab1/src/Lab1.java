@@ -1,5 +1,3 @@
-
-
 public class Lab1 {
 	/**
 	 * @author Matthew "crickon" Grillo
