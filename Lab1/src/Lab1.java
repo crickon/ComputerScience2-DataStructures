@@ -28,12 +28,9 @@ public class Lab1 {
 	public static int sum(int x, int y) {
 		return x + y;
 	}
-<<<<<<< HEAD
-}
 
 //Thank you for helping me with GitHub - AnneMarie
-=======
-	
+
 	/**
 	 * Method to find the difference of two numbers
 	 * @param x number 1
@@ -74,4 +71,4 @@ public class Lab1 {
 		return x%y;
 	}
 }
->>>>>>> refs/heads/anotherbranch
+
