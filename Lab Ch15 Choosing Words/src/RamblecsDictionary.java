@@ -20,7 +20,7 @@ public class RamblecsDictionary {
 		String outputpath = "output.txt";
 		Writer writer = null;
 		try {
-			writer = new FileWriter(outputpath, true);
+			writer = new FileWriter(outputpath, false);
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.exit(1);
