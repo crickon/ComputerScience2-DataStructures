@@ -13,8 +13,8 @@ public class RamblecsDictionary {
 		Scanner textReader = null;
 		try {
 			textReader = new Scanner(file);
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		}
 
 		String outputpath = "output.txt";
