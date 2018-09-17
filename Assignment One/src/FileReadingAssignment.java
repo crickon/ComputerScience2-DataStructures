@@ -65,7 +65,8 @@ public class FileReadingAssignment {
 														// PrintWriter(writer);
 
 		// Print a line into the output file with result of braces check
-		output.println(balanced ? "Braces Balanced" : "Braces Not Balanced" + "\n");
+		output.println(balanced ? "Braces Balanced" : "Braces Not Balanced");
+		output.println();
 
 		/*
 		 * Part2
@@ -114,7 +115,8 @@ public class FileReadingAssignment {
 			System.exit(1);
 		}
 		
-		output.println(identical ? "Files Identical" : "Files not Identical" + "\n");
+		output.println(identical ? "Files Identical" : "Files not Identical");
+		output.println();
 		System.out.printf("Part2 Identical = %b \n", identical);
 		// Close Reader and Writer (last)
 		output.close();
