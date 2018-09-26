@@ -5,29 +5,46 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileReadingAssignment {
+	//for printing Exception Traces if need be.
 	private static boolean printTrace = false;
+	
+	private static Scanner scanner;
+	private static PrintWriter output;
+	private static String pathOne;
+	
+	private static String outputPath = "output.txt";
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		/*
-		 * Part 1
-		 */
-		// Take in a file name and create File
+		// Scanner for reading user input.
+		scanner = new Scanner(System.in);
+		
+		// Writer to print to output file.
+		output = createWriter(outputPath);
+		
+		partOne();
+		partTwo();
+		partThree();
+
+		// Close Writer after use
+		output.close();
+	}
+
+	private static void partOne() {
+		// Get java or text file path from user
 		System.out.println("Insert a file name with extension: ");
-		String path1 = scanner.nextLine();
+		pathOne = scanner.nextLine();
 
 		// Create BufferedReader for file reading
 		BufferedReader reader1 = null;
 		try {
-			reader1 = createReader(path1);
+			reader1 = createReader(pathOne);
 		} catch (FileNotFoundException e) {
 			if (printTrace)
 				e.printStackTrace();
-			System.out.println("Part1: File not Found: " + path1);
+			System.out.println("Part1: File not Found: " + pathOne);
 			System.exit(1);
 		}
 
@@ -57,40 +74,26 @@ public class FileReadingAssignment {
 		boolean balanced = openP == closeP;
 		System.out.printf("Part1 Parenthesis Balanced: %b (%d open, %d close)\n\n", balanced, openP, closeP);
 
-		// Load or Create output file and create PrintWriter
-		String outputpath = "output.txt";
-
-		PrintWriter output = createWriter(outputpath);
-
 		// Print a line into the output file with result of braces check
 		output.println(balanced ? "Braces Balanced" : "Braces Not Balanced");
 		output.println();
-
-		/*
-		 * Part2
-		 */
-		// Take in a second filename
+	}
+	
+	private static void partTwo() {
+		// Get java or text file path from user
 		System.out.println("Insert another file name with extension: ");
-		String path2 = scanner.nextLine();
+		String pathTwo = scanner.nextLine();
 
 		// Create Scanner for file reading
+		BufferedReader reader1 = null;
 		BufferedReader reader2 = null;
 		try {
-			reader2 = createReader(path2);
+			reader1 = createReader(pathOne);
+			reader2 = createReader(pathTwo);
 		} catch (FileNotFoundException e) {
 			if (printTrace)
 				e.printStackTrace();
-			System.out.println("Part2: Unable to Open File - " + path2);
-			System.exit(1);
-		}
-
-		// Reset reader1
-		try {
-			reader1 = createReader(path1);
-		} catch (FileNotFoundException e) {
-			if (printTrace)
-				e.printStackTrace();
-			System.out.println("Part2: Unable to Open File - " + path1);
+			System.out.println("Part2: Unable to Open File");
 			System.exit(1);
 		}
 
@@ -117,11 +120,9 @@ public class FileReadingAssignment {
 		output.println(identical ? "Files Identical" : "Files not Identical");
 		output.println();
 		System.out.printf("Part2 Identical: %b \n\n", identical);
-		
-		/*
-		 * Part 3: story insertion (madlib)
-		 */
-		// filename for story
+	}
+	
+	private static void partThree() {
 		System.out.println("Insert the filename and extension for the storyboard: ");
 		String path3 = scanner.nextLine();
 		
@@ -150,12 +151,9 @@ public class FileReadingAssignment {
 				e.printStackTrace();
 			System.exit(1);
 		}
-		
-		
-		// Close Reader and Writer (last)
-		output.close();
 	}
 
+	// Helper Methods
 	private static PrintWriter createWriter(String outputpath) {
 		Writer writer = null;
 		try {
@@ -163,7 +161,7 @@ public class FileReadingAssignment {
 		} catch (IOException e) {
 			if (printTrace)
 				e.printStackTrace();
-			System.out.println("Part1.5: Unable to create output writer");
+			System.out.println("Part0.5: Unable to create output writer");
 			System.exit(1);
 		}
 		return new PrintWriter(writer);
