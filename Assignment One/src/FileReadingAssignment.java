@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileReadingAssignment {
@@ -24,8 +25,8 @@ public class FileReadingAssignment {
 		// Writer to print to output file.
 		output = createWriter(outputPath);
 		
-		partOne();
-		partTwo();
+		//partOne();
+		//partTwo();
 		partThree();
 
 		// Close Writer after use
@@ -46,6 +47,7 @@ public class FileReadingAssignment {
 				e.printStackTrace();
 			System.out.println("Part1: File not Found: " + pathOne);
 			System.exit(1);
+			output.close();
 		}
 
 		// Check if the braces are balanced (if '{' == '}')
@@ -69,6 +71,7 @@ public class FileReadingAssignment {
 			if (printTrace)
 				e.printStackTrace();
 			System.out.println("Part1: IOException");
+			output.close();
 		}
 
 		boolean balanced = openP == closeP;
@@ -95,6 +98,7 @@ public class FileReadingAssignment {
 				e.printStackTrace();
 			System.out.println("Part2: Unable to Open File");
 			System.exit(1);
+			output.close();
 		}
 
 		// compare the files.
@@ -115,6 +119,7 @@ public class FileReadingAssignment {
 				e.printStackTrace();
 			System.out.println("Part2: Comparing Exception");
 			System.exit(1);
+			output.close();
 		}
 
 		output.println(identical ? "Files Identical" : "Files not Identical");
@@ -138,19 +143,55 @@ public class FileReadingAssignment {
 		}
 		
 		//loop through reader for brackets
+		ArrayList<String> insertions = new ArrayList<String>();
+		String singleStringStory = "";
 		try {
-			String temp = reader3.readLine();
-			while (temp != null) {
-				if (temp.contains("<") && temp.contains(">")){
+			boolean record = false;
+			String line = reader3.readLine();
+			
+			String temp = "";
+			while (line != null) {
+				char[] chars = line.toCharArray();
+				for (char c : chars) {
+					if (record) {
+						temp += c;
+					}else {
+						singleStringStory += c;
+					}
+					if (c == '<') 
+						record = true;
+					else if (c == '>') {
+						record = false;
+						insertions.add(temp.substring(0, temp.length()-1));
+						temp = "";
+					}
 				}
-				temp = reader3.readLine();
+				singleStringStory += "\n";
+				line = reader3.readLine();
 			}
+			System.out.println(insertions.toString());
 			
 		} catch (IOException e) {
 			if (printTrace)
 				e.printStackTrace();
 			System.exit(1);
+			output.close();
 		}
+		
+		ArrayList<String> newWords = new ArrayList<String>();
+		for (String insert : insertions) {
+			System.out.println(String.format("insert a(n) %s:", insert));
+			newWords.add(scanner.nextLine());
+		}
+		
+		String[] partsOfSingleString = singleStringStory.split("<");
+		
+		
+		String newStory = "";
+		for (int i = 0; i < newWords.size(); i++){
+			newStory += partsOfSingleString[i] + newWords.get(i);
+		}
+		System.out.println(newStory);
 	}
 
 	// Helper Methods
@@ -163,6 +204,7 @@ public class FileReadingAssignment {
 				e.printStackTrace();
 			System.out.println("Part0.5: Unable to create output writer");
 			System.exit(1);
+			output.close();
 		}
 		return new PrintWriter(writer);
 	}
