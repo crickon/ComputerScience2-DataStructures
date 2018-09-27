@@ -8,7 +8,12 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileReadingAssignment {
+/*
+ * IGNORE THIS FILE, THIS WAS JUST THE FIRST ATTEMPT, NOT THE COMPLETED
+ */
+
+
+public class FileReadingOld {
 	//for printing Exception Traces if need be.
 	private static boolean printTrace = false;
 	

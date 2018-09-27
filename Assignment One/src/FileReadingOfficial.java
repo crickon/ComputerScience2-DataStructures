@@ -8,7 +8,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileReadingTwo {
+public class FileReadingOfficial {
 	private final static String outputPath = "output.txt";
 
 	private static PrintWriter output;
