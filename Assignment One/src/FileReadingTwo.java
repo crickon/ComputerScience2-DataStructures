@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileReadingTwo {
-	private static String outputPath = "output.txt";
+	private final static String outputPath = "output.txt";
 
 	private static PrintWriter output;
 	private static Scanner scanner;
@@ -217,8 +217,13 @@ public class FileReadingTwo {
 		String[] partsOfStory = story.split("<");
 
 		String newStory = "";
-		for (int i = 0; i < words.size(); i++) {
-			newStory += partsOfStory[i] + words.get(i);
+		for (int i = 0; i < insertions.size(); i++) {
+			if (words.size() <= i) {
+				newStory += partsOfStory[i] + "<" + insertions.get(i) + ">";
+			} else {
+				newStory += partsOfStory[i] + words.get(i);
+			}
+			
 		}
 		// System.out.println(newStory);
 		output.println(newStory);
