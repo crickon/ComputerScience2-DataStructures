@@ -33,22 +33,24 @@ public class TradeOrder {
 	}
 
 	public boolean isBuy() {
-		return false;
+		return buyOrder;
 	}
 
 	public boolean isLimit() {
-		return false;
+		return !marketOrder;
 	}
 
 	public boolean isMarket() {
-		return false;
+		return marketOrder;
 	}
 
 	public boolean isSell() {
-		return false;
+		return !buyOrder;
 	}
 
 	public void subtractShares(int shares) {
-
+		if (shares > this.numShares)
+			throw new IllegalArgumentException("Shares are greater than available");
+		this.numShares -= shares;
 	}
 }

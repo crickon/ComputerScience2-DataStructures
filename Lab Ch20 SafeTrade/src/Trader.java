@@ -17,6 +17,7 @@ public class Trader implements Comparable<Trader> {
 	}
 
 	public boolean equals(Object other) {
+		//TODO
 		return false;
 
 	}
@@ -31,27 +32,28 @@ public class Trader implements Comparable<Trader> {
 	}
 
 	public void getQuote(String symbol) {
-
+		//TODO
 	}
 
 	public boolean hasMessages() {
+		//TODO
 		return false;
 	}
 
 	public void openWindow() {
-
+		//TODO
 	}
 
 	public void placeOrder(TradeOrder order) {
-
+		//TODO
 	}
 
 	public void quit() {
-
+		//TODO
 	}
 
 	public void receiveMessage(String msg) {
-
+		//TODO
 	}
 
 }
