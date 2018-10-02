@@ -30,21 +30,24 @@ public class PriceComparator implements Comparator<TradeOrder> {
 	 * comparator (ascending is true or false).
 	 */
 	public int compare(TradeOrder o1, TradeOrder o2) {
-		// TODO
 		if (o1.isMarket() && o2.isMarket())
 			return 0;
 		if (o1.isLimit() && o2.isMarket())
 			return 1;
 		if (o1.isMarket() && o2.isLimit())
 			return -1;
-		
-		// Compare in ascending order
-		if (ascendingFlag) {
-
+		if (o1.isLimit() && o2.isLimit()) {
+			int onePrice = (int) Math.round(o1.getPrice());
+			int twoPrice = (int) Math.round(o2.getPrice());
+			// Compare in ascending order
+			if (ascendingFlag) {
+				return onePrice-twoPrice;
+			}
+			// Compare in descending order
+			else {
+				return twoPrice-onePrice;
+			}
 		}
-		// Compare in descending order
-		else {
-
-		}
+		return 0;
 	}
 }
