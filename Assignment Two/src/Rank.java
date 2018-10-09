@@ -1,77 +1,86 @@
 
 public enum Rank {
 
-	Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King;
+	ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king;
 
-	public static final Rank[] RANKS = { Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King };
+	/**
+	 * A static array of Rank values useful in loops
+	 */
+	public static final Rank[] RANKS = { ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king };
 
+	/**
+	 * Rank method to determine the integer value of a given Rank
+	 * @param suit A Rank value
+	 * @return An integer value of that rank
+	 */
 	public static int getInt(Rank rank) {
 		switch (rank) {
-		case Ace:
+		case ace:
 			return 1;
-		case Two:
+		case two:
 			return 2;
-		case Three:
+		case three:
 			return 3;
-		case Four:
+		case four:
 			return 4;
-		case Five:
+		case five:
 			return 5;
-		case Six:
+		case six:
 			return 6;
-		case Seven:
+		case seven:
 			return 7;
-		case Eight:
+		case eight:
 			return 8;
-		case Nine:
+		case nine:
 			return 9;
-		case Ten:
+		case ten:
 			return 10;
-		case Jack:
+		case jack:
 			return 11;
-		case Queen:
+		case queen:
 			return 12;
-		case King:
+		case king:
 			return 13;
 		default:
 			return -1;
 		}
 	}
 
+	/**
+	 * Rank method to determine the Rank value of a given integer
+	 * @param suit A Rank integer
+	 * @return A Rank value of that integer
+	 */
 	public static Rank rankFromInt(int rank) {
 		switch (rank) {
 		case 1:
-			return Ace;
+			return ace;
 		case 2:
-			return Two;
+			return two;
 		case 3:
-			return Three;
+			return three;
 		case 4:
-			return Four;
+			return four;
 		case 5:
-			return Five;
+			return five;
 		case 6:
-			return Six;
+			return six;
 		case 7:
-			return Seven;
+			return seven;
 		case 8:
-			return Eight;
+			return eight;
 		case 9:
-			return Nine;
+			return nine;
 		case 10:
-			return Ten;
+			return ten;
 		case 11:
-			return Jack;
+			return jack;
 		case 12:
-			return Queen;
+			return queen;
 		case 13:
-			return King;
+			return king;
 		default:
 			return null;
 		}
-	}
-
-	public static Rank getRank(int rank) {
-		return null;
 	}
 }

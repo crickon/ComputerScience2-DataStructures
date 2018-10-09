@@ -84,13 +84,14 @@ public class Brokerage implements Login {
 	 * along to the trader by calling trader's receiveMessage method.
 	 */
 	public void getQuote(String symbol, Trader trader) {
-		//TODO
+		String quote = exchange.getQuote(symbol);
+		trader.receiveMessage(quote);
 	}
 
 	/**
 	 * Places an order at the stock exchange.
 	 */
 	public void placeOrder(TradeOrder order) {
-		//TODO
+		exchange.placeOrder(order);
 	}
 }

@@ -23,8 +23,8 @@ public class StockExchange {
 	 * Returns a quote for a given stock.
 	 */
 	public String getQuote(String symbol) {
-		//TODO
-		return symbol;
+		Stock stock = stocks.get(symbol);
+		return stock.getQuote();
 	}
 
 	/**
@@ -39,6 +39,8 @@ public class StockExchange {
 	 * Places a trade order by calling stock.placeOrder for the stock specified by the stock symbol in the trade order.
 	 */
 	public void placeOrder(TradeOrder order) {
-		//TODO
+		String symbol = order.getSymbol();
+		Stock stock = stocks.get(symbol);
+		stock.placeOrder(order);
 	}
 }

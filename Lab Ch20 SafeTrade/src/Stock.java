@@ -1,3 +1,5 @@
+import java.util.PriorityQueue;
+
 /**
  * Represents a stock in the SafeTrade project
  * 
@@ -11,6 +13,9 @@ public class Stock {
 	private double lowPrice;
 	private double highPrice;
 	private double lastPrice;
+	
+	private PriorityQueue<TradeOrder> buyOrders;
+	private PriorityQueue<TradeOrder> sellOrders;
 
 	private int day;
 
@@ -27,6 +32,9 @@ public class Stock {
 		this.symbol = symbol;
 		this.name = name;
 		this.price = price;
+		
+		buyOrders = new PriorityQueue<TradeOrder>(new PriceComparator(true));
+		sellOrders = new PriorityQueue<TradeOrder>(new PriceComparator(false));
 	}
 
 	/**
@@ -36,10 +44,18 @@ public class Stock {
 	 * the number of shares in it (or "none" if there are no sell orders); the
 	 * highest price in a buy order (or "market") and the number of shares in it
 	 * (or "none" if there are no buy orders).
+	 * 
+	 * Giggle.com (GGGL) Price: 10.00 hi: 10.00 lo: 10.00 vol: 0 Ask: 12.75
+	 * size: 300 Bid: 12.00 size: 500
 	 */
 	public String getQuote() {
-		return null;
-		// TODO
+		double asking = sellOrders.peek().getPrice();
+		double bidding = buyOrders.peek().getPrice();
+		int sizeSell = sellOrders.peek().getShares();
+		int sizeBid = buyOrders.peek().getShares();
+		String quote = String.format("%s (%s) Price: %d hi: %d lo: %d Ask: %d size: %d Bid: %d size: %d", name,
+				symbol, price, highPrice, lowPrice, asking, sizeSell, bidding, sizeBid);
+		return quote;
 	}
 
 	/**
@@ -49,7 +65,13 @@ public class Stock {
 	 * sending a message to that trader.
 	 */
 	public void placeOrder(TradeOrder order) {
-		//TODO
+		if (order.isBuy()) {
+			buyOrders.add(order);
+		}else {
+			sellOrders.add(order);
+		}
+		//order.getTrader().sendmessage?
+		// TODO
 	}
 
 }

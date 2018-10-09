@@ -16,10 +16,21 @@ public class Card implements Comparable<Card> {
 	private Rank rank = null;
 
 	// Constructors
+	/**
+	 * Default Constructor that creates a card with the value of Ace of Clubs
+	 */
 	public Card() {
 		this(0, 0);
 	}
 
+	/** 
+	 * Constructor that creates a Card based on integer inputs
+	 * 
+	 * @param suit The number (0-3) of the Card's suit
+	 * @param rank The number (1-13) of the Card's rank
+	 * 
+	 * @throws IllegalArgumentException if the integer is not within the allowed range
+	 */
 	public Card(int suit, int rank) {
 		this.suit = Suit.suitFromInt(suit);
 		this.rank = Rank.rankFromInt(rank);
@@ -31,22 +42,37 @@ public class Card implements Comparable<Card> {
 		}
 	}
 
+	/**
+	 * Constructor that creates a Card based on String inputs
+	 * @param suit The name of the Card's suit
+	 * @param rank The name of the Card's rank
+	 * 
+	 * @throws IllegalArgumentException if the String given does not match a Suit or Rank
+	 */
 	public Card(String suit, String rank) {
 		try {
-			this.suit = Suit.valueOf(suit);
+			this.suit = Suit.valueOf(suit.toLowerCase());
 		} catch (Throwable t) {
 			throw new IllegalArgumentException(String.format(SUIT_STR_ERROR, suit));
 		}
 		try {
-			this.rank = Rank.valueOf(rank);
+			this.rank = Rank.valueOf(rank.toLowerCase());
 		} catch (Throwable t) {
 			throw new IllegalArgumentException(String.format(RANK_STR_ERROR, rank));
 		}
 	}
 
+	/**
+	 * Constructor that creates a Card based on A String suit and an Integer rank
+	 * 
+	 * @param suit The name of the Card's suit
+	 * @param rank The number (1-13) of the Card's rank
+	 * 
+	 * @throws IllegalArgumentException if the String given does not match a Suit or if the rank is not within the range
+	 */
 	public Card(String suit, int rank) {
 		try {
-			this.suit = Suit.valueOf(suit);
+			this.suit = Suit.valueOf(suit.toLowerCase());
 		} catch (Throwable t) {
 			throw new IllegalArgumentException(String.format(SUIT_STR_ERROR, suit));
 		}
@@ -58,10 +84,18 @@ public class Card implements Comparable<Card> {
 		}
 	}
 
+	/**
+	 * Constructor that creates a Card based on an Integer suit and a String rank
+	 * 
+	 * @param suit The number (0-3) of the Card's suit
+	 * @param rank The name of the Card's rank
+	 * 
+	 * @throws IllegalArgumentException if the suit is not within the range or if the String given does not match a rank
+	 */
 	public Card(int suit, String rank) {
 		this.suit = Suit.suitFromInt(suit);
 		try {
-			this.rank = Rank.valueOf(rank);
+			this.rank = Rank.valueOf(rank.toLowerCase());
 		} catch (Throwable t) {
 			throw new IllegalArgumentException(String.format(RANK_STR_ERROR, rank));
 		}
@@ -72,27 +106,57 @@ public class Card implements Comparable<Card> {
 	}
 
 	// Getters
+	/**
+	 * Method to get the Card's suit value
+	 * @return The Card's suit as a String
+	 */
 	public String getSuit() {
 		return suit.toString();
 	}
 
+	/**
+	 * Method to get the Card's rank value
+	 * @return The Card's rank as an integer
+	 */
 	public int getRank() {
 		return Rank.getInt(rank);
 	}
 
 	// Methods
+	/**
+	 * Method to print the Card's values in a String
+	 * 
+	 * @return A String consisting of the Card's rank and suit in this format: "[Rank] of [Suit]"
+	 */
 	public String toString() {
-		return rank.toString() + " of " + suit.toString();
+		String suit = this.suit.toString();
+		suit = Character.toUpperCase(suit.charAt(0)) + suit.substring(1, suit.length());
+		String rank = this.rank.toString();
+		rank = Character.toUpperCase(rank.charAt(0)) + rank.substring(1, rank.length());
+		return rank + " of " + suit;
 	}
 
+	/**
+	 * Method to get the Card's rank value in a String
+	 * @return The Card's rank as a String
+	 */
 	public String getRankStr() {
 		return rank.toString();
 	}
 
+	/**
+	 * Method to get the Card's suit value as an integer
+	 * @return The Card's suit as an integer
+	 */
 	public int getSuitInt() {
 		return Suit.getInt(suit);
 	}
 
+	/**
+	 * Method to compare this Card to another based on their Suits and Ranks.
+	 * 
+	 * @return 0 if the Cards are equal, -1 if this card is less than, 1 is this card is greater than
+	 */
 	public int compareTo(Card other) {
 		// check for equality first
 		if (this.toString().equals(other.toString()))
@@ -112,8 +176,14 @@ public class Card implements Comparable<Card> {
 		return 0; // the method would never reach this point. :( look at how lonely this return is
 	}
 
+	/**
+	 * Method to determine if this card equals another
+	 * 
+	 * @param Another Card object
+	 * @return boolean value of the Cards' equality
+	 */
 	public boolean equals(Card other) {
-		return this.toString().equals(other.toString());
+		return (this.rank.equals(other.rank) && this.suit.equals(other.suit));
 	}
 
 }
