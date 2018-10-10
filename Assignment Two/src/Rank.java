@@ -10,7 +10,7 @@ public enum Rank {
 
 	/**
 	 * Rank method to determine the integer value of a given Rank
-	 * @param suit A Rank value
+	 * @param rank A Rank value
 	 * @return An integer value of that rank
 	 */
 	public static int getInt(Rank rank) {
@@ -48,7 +48,7 @@ public enum Rank {
 
 	/**
 	 * Rank method to determine the Rank value of a given integer
-	 * @param suit A Rank integer
+	 * @param rank A Rank integer
 	 * @return A Rank value of that integer
 	 */
 	public static Rank rankFromInt(int rank) {

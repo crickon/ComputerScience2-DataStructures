@@ -19,9 +19,8 @@ public class Deck {
 	/**
 	 * Constructor that creates a full deck of cards, either sorted or shuffled
 	 * 
-	 * @param sorted
-	 *            True if the deck is to be sorted, false if the deck is to be
-	 *            shuffled
+	 * @param sorted True if the deck is to be sorted, false if the deck is to be
+	 *               shuffled
 	 */
 	public Deck(boolean sorted) {
 		setDeck();
@@ -30,11 +29,9 @@ public class Deck {
 	}
 
 	/**
-	 * Constructor that creates a deck of cards based on the array of cards
-	 * given
+	 * Constructor that creates a deck of cards based on the array of cards given
 	 * 
-	 * @param cards
-	 *            An array of cards to be in the deck.
+	 * @param cards An array of cards to be in the deck.
 	 */
 	public Deck(Card[] cards) {
 		this.deck = cards;
@@ -42,9 +39,9 @@ public class Deck {
 
 	// Methods
 	/**
-	 * Methods that mixes up the deck so that it is not sorted. O(n). Goes
-	 * through every position of the Array of Cards and sets the card somewhere
-	 * else randomly in the deck.
+	 * Methods that mixes up the deck so that it is not sorted. O(n). Goes through
+	 * every position of the Array of Cards and sets the card somewhere else
+	 * randomly in the deck.
 	 */
 	public void shuffle() {
 		// Go through every position in the Array and set the value to a
@@ -59,10 +56,10 @@ public class Deck {
 	}
 
 	/**
-	 * Create a String that separates the toString of every card by a new line
-	 * if the Array is smaller than the max deck size (52). If the deck is the
-	 * maximum size, then separate the toStrings into 4 columns using tab, with
-	 * a new line between every 4 columns.
+	 * Create a String that separates the toString of every card by a new line if
+	 * the Array is smaller than the max deck size (52). If the deck is the maximum
+	 * size, then separate the toStrings into 4 columns using tab, with a new line
+	 * between every 4 columns.
 	 * 
 	 * @return String
 	 */
@@ -78,16 +75,15 @@ public class Deck {
 			return str;
 		}
 		for (Card c : deck)
-			str += c.toString() + "\n";
+			if (c != null && c.toString() != null)
+				str += c.toString() + "\n";
 		return str;
 	}
 
 	/**
-	 * Compares the toStrings of deck (which will be equal if the decks are
-	 * equal).
+	 * Compares the toStrings of deck (which will be equal if the decks are equal).
 	 * 
-	 * @param other
-	 *            Another Deck Object
+	 * @param other Another Deck Object
 	 * @return boolean value of the Decks' equality
 	 */
 	public boolean equals(Deck other) {
@@ -95,8 +91,8 @@ public class Deck {
 	}
 
 	/**
-	 * Creates a deck for each hand with the number of cards per hand and
-	 * removes the cards from the original deck.
+	 * Creates a deck for each hand with the number of cards per hand and removes
+	 * the cards from the original deck.
 	 * 
 	 * @param hands number of hands (as decks) to be dealt to
 	 * @param cards number of cards per hand
@@ -107,28 +103,27 @@ public class Deck {
 		if (deck.length < numCards)
 			return null;
 
-		Card[] newDeck = new Card[deck.length - numCards];
 		Deck[] retDeck = new Deck[hands];
-		int count = 0;
-		int hand = 0;
-		int index = 0;
+		Card[] newDeck = new Card[deck.length-numCards];
 
 		Card[] temp = new Card[cards];
+		int index = 0;
+		int hand = 0;
+		int card = 0;
 		for (int i = 0; i < deck.length; i++) {
-			if (i < numCards) {
-				temp[index] = deck[i];
-				index++;
-
-				if (i + 1 % cards == 0) {
+			if (i <= numCards) {
+				if (card == cards || i == numCards) {
 					retDeck[hand] = new Deck(temp);
-					hand++;
-
 					temp = new Card[cards];
-					index = 0;
+					hand++;
+					card = 0;
 				}
-			} else {
-				newDeck[count] = deck[i];
-				count++;
+				temp[card] = deck[i];
+				card++;
+			}
+			if (i >= numCards){
+				newDeck[index] = deck[i];
+				index++;
 			}
 		}
 		this.deck = newDeck;
@@ -136,7 +131,9 @@ public class Deck {
 	}
 
 	/**
-	 * Function that picks a random card, removes it from the deck, then returns the Card
+	 * Function that picks a random card, removes it from the deck, then returns the
+	 * Card
+	 * 
 	 * @return The Card picked at random
 	 */
 	public Card pick() {

@@ -175,11 +175,10 @@ public class Card implements Comparable<Card> {
 		
 		return 0; // the method would never reach this point. :( look at how lonely this return is
 	}
-
+	
 	/**
 	 * Method to determine if this card equals another
-	 * 
-	 * @param Another Card object
+	 * @param other Another Card object
 	 * @return boolean value of the Cards' equality
 	 */
 	public boolean equals(Card other) {
