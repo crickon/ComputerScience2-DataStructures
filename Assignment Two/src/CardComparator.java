@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class CardComparator implements Comparator {
+public class CardComparator implements Comparator<Card> {
 	private boolean ascending;
 
 	public CardComparator() {
@@ -11,24 +11,18 @@ public class CardComparator implements Comparator {
 		this.ascending = ascending;
 	}
 
-	public int compare(Object one, Object two) {
-		if (one instanceof Card && two instanceof Card) {
-			Card first = (Card) one;
-			Card second = (Card) two;
-
-			if (ascending) {
-				if (first.getRank() > second.getRank())
-					return 1;
-				else if (first.getRank() < second.getRank())
-					return -1;
-			} else {
-				if (first.getRank() < second.getRank())
-					return 1;
-				else if (first.getRank() > second.getRank())
-					return -1;
-			}
-			return 0;
-		} else
-			return 0;
+	public int compare(Card one, Card two) {
+		if (ascending) {
+			if (one.getRank() > two.getRank())
+				return 1;
+			else if (one.getRank() < two.getRank())
+				return -1;
+		} else {
+			if (one.getRank() < two.getRank())
+				return 1;
+			else if (one.getRank() > two.getRank())
+				return -1;
+		}
+		return 0;
 	}
 }
