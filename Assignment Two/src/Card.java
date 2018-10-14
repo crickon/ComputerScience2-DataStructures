@@ -6,7 +6,7 @@
  */
 public class Card implements Comparable<Card> {
 	// Private Constants
-	private static final String SUIT_NUM_ERROR = "Suit must be between 0 and 4";
+	private static final String SUIT_NUM_ERROR = "Suit must be between 0 and 3";
 	private static final String RANK_NUM_ERROR = "Rank must be between 1 and 13";
 	private static final String SUIT_STR_ERROR = "The Suit \"%s\" does not exist";
 	private static final String RANK_STR_ERROR = "The Rank \"%s\" does not exist";
@@ -20,7 +20,7 @@ public class Card implements Comparable<Card> {
 	 * Default Constructor that creates a card with the value of Ace of Clubs
 	 */
 	public Card() {
-		this(0, 0);
+		this(0, 1);
 	}
 
 	/** 
@@ -111,7 +111,9 @@ public class Card implements Comparable<Card> {
 	 * @return The Card's suit as a String
 	 */
 	public String getSuit() {
-		return suit.toString();
+		String str =  suit.toString();
+		str = Character.toUpperCase(str.charAt(0)) + str.substring(1, str.length());
+		return str;
 	}
 
 	/**
@@ -141,7 +143,9 @@ public class Card implements Comparable<Card> {
 	 * @return The Card's rank as a String
 	 */
 	public String getRankStr() {
-		return rank.toString();
+		String str =  rank.toString();
+		str = Character.toUpperCase(str.charAt(0)) + str.substring(1, str.length());
+		return str;
 	}
 
 	/**

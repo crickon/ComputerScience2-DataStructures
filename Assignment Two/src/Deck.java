@@ -6,7 +6,7 @@ public class Deck {
 
 	// Fields
 	private Card[] deck;
-	private int topCard; // Literally never used and I don't see a point in it
+	private int topCard;
 
 	// Constructors
 	/**
@@ -26,6 +26,7 @@ public class Deck {
 		setDeck();
 		if (sorted == false)
 			this.shuffle();
+		topCard = DECKSIZE-1; // the last card in deck
 	}
 
 	/**
@@ -34,7 +35,11 @@ public class Deck {
 	 * @param cards An array of cards to be in the deck.
 	 */
 	public Deck(Card[] cards) {
-		this.deck = cards;
+		this.deck = new Card[DECKSIZE];
+		for (int i = 0; i < cards.length; i++) {
+			this.deck[i] = cards[i];
+		}
+		topCard = cards.length-1;
 	}
 
 	// Methods
@@ -47,8 +52,8 @@ public class Deck {
 		// Go through every position in the Array and set the value to a
 		// different position
 		Random rand = new Random();
-		for (int i = 0; i < deck.length; i++) {
-			int r = rand.nextInt(DECKSIZE);
+		for (int i = 0; i <= topCard; i++) {
+			int r = rand.nextInt(topCard);
 			Card temp = deck[r];
 			deck[r] = deck[i];
 			deck[i] = temp;
@@ -65,13 +70,27 @@ public class Deck {
 	 */
 	public String toString() {
 		String str = "";
-		if (deck.length == DECKSIZE) {
-			for (Rank rank : Rank.RANKS) {
-				for (Suit suit : Suit.SUITS) {
-					str += new Card(suit.toString(), rank.toString()).toString() + "\t";
-				}
-				str += "\n";
+		if (topCard == DECKSIZE-1) {
+			Card[][] bySuit = new Card[Suit.SUITS.length][Rank.RANKS.length];
+			int[] suitCounts = new int[Suit.SUITS.length];
+			for (int i = 0; i <= topCard; i++){
+				int suit = deck[i].getSuitInt();
+				bySuit[suit][suitCounts[suit]] = deck[i];
+				suitCounts[suit]++;
 			}
+			for (int j = 0; j < bySuit[0].length; j++) {
+				for (int i = 0; i < bySuit.length; i++) {
+					String ext = "";
+					if (i == 0 || i == 2)
+						ext = "\t\t";
+					if (i == 1)
+						ext = "\t";
+					if (i == 4)
+						ext = "\n";
+					str += bySuit[j][i].toString() + ext;
+				}
+			}
+			
 			return str;
 		}
 		for (Card c : deck)
@@ -99,6 +118,7 @@ public class Deck {
 	 * @return Array of Decks containing the hands that were drawn
 	 */
 	public Deck[] deal(int hands, int cards) {
+		//TODO
 		int numCards = hands * cards;
 		if (deck.length < numCards)
 			return null;
@@ -137,6 +157,7 @@ public class Deck {
 	 * @return The Card picked at random
 	 */
 	public Card pick() {
+		//TODO
 		Card[] newDeck = new Card[deck.length - 1];
 		Random rand = new Random();
 		int r = rand.nextInt(deck.length);
