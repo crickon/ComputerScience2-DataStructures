@@ -19,41 +19,42 @@ public class Deck {
 	/**
 	 * Constructor that creates a full deck of cards, either sorted or shuffled
 	 * 
-	 * @param sorted True if the deck is to be sorted, false if the deck is to be
-	 *               shuffled
+	 * @param sorted
+	 *            True if the deck is to be sorted, false if the deck is to be
+	 *            shuffled
 	 */
 	public Deck(boolean sorted) {
 		setDeck();
 		if (sorted == false)
 			this.shuffle();
-		topCard = DECKSIZE-1; // the last card in deck
+		topCard = DECKSIZE - 1; // the last card in deck
 	}
 
 	/**
-	 * Constructor that creates a deck of cards based on the array of cards given
+	 * Constructor that creates a deck of cards based on the array of cards
+	 * given
 	 * 
-	 * @param cards An array of cards to be in the deck.
+	 * @param cards
+	 *            An array of cards to be in the deck.
 	 */
 	public Deck(Card[] cards) {
 		this.deck = new Card[DECKSIZE];
 		for (int i = 0; i < cards.length; i++) {
 			this.deck[i] = cards[i];
 		}
-		topCard = cards.length-1;
+		topCard = cards.length - 1;
 	}
 
 	// Methods
 	/**
-	 * Methods that mixes up the deck so that it is not sorted. O(n). Goes through
-	 * every position of the Array of Cards and sets the card somewhere else
-	 * randomly in the deck.
+	 * Methods that mixes up the deck so that it is not sorted. O(n). Goes
+	 * through every position of the Array of Cards and sets the card somewhere
+	 * else randomly in the deck.
 	 */
 	public void shuffle() {
-		// Go through every position in the Array and set the value to a
-		// different position
 		Random rand = new Random();
 		for (int i = 0; i <= topCard; i++) {
-			int r = rand.nextInt(topCard);
+			int r = rand.nextInt(topCard + 1);
 			Card temp = deck[r];
 			deck[r] = deck[i];
 			deck[i] = temp;
@@ -61,19 +62,18 @@ public class Deck {
 	}
 
 	/**
-	 * Create a String that separates the toString of every card by a new line if
-	 * the Array is smaller than the max deck size (52). If the deck is the maximum
-	 * size, then separate the toStrings into 4 columns using tab, with a new line
-	 * between every 4 columns.
+	 * Create a String of every card separated by a new line, unless the deck is
+	 * full. If the deck is full then each suit will have a column filled with
+	 * the order of the ranks as they appear in the deck.
 	 * 
 	 * @return String
 	 */
 	public String toString() {
 		String str = "";
-		if (topCard == DECKSIZE-1) {
+		if (topCard == DECKSIZE - 1) {
 			Card[][] bySuit = new Card[Suit.SUITS.length][Rank.RANKS.length];
 			int[] suitCounts = new int[Suit.SUITS.length];
-			for (int i = 0; i <= topCard; i++){
+			for (int i = 0; i <= topCard; i++) {
 				int suit = deck[i].getSuitInt();
 				bySuit[suit][suitCounts[suit]] = deck[i];
 				suitCounts[suit]++;
@@ -83,14 +83,14 @@ public class Deck {
 					String ext = "";
 					if (i == 0 || i == 2)
 						ext = "\t\t";
-					if (i == 1)
-						ext = "\t";
-					if (i == 4)
+					else if (i == 1)
+						ext = " \t";
+					else if (i == 3)
 						ext = "\n";
-					str += bySuit[j][i].toString() + ext;
+					str += bySuit[i][j].toString() + ext;
 				}
 			}
-			
+
 			return str;
 		}
 		for (Card c : deck)
@@ -100,76 +100,69 @@ public class Deck {
 	}
 
 	/**
-	 * Compares the toStrings of deck (which will be equal if the decks are equal).
+	 * Method to determine if two Decks are equal to each other
 	 * 
-	 * @param other Another Deck Object
+	 * @param other
+	 *            Another Deck Object
 	 * @return boolean value of the Decks' equality
 	 */
 	public boolean equals(Deck other) {
-		return this.toString().equals(other.toString());
+		if (this.topCard != other.topCard)
+			return false;
+		for (int i = 0; i <= topCard; i++)
+			if (this.deck[i].compareTo(other.deck[i]) != 0)
+				return false;
+
+		return true;
 	}
 
 	/**
-	 * Creates a deck for each hand with the number of cards per hand and removes
-	 * the cards from the original deck.
+	 * Creates a deck for each hand with the number of cards per hand and
+	 * removes the cards from the original deck.
 	 * 
-	 * @param hands number of hands (as decks) to be dealt to
-	 * @param cards number of cards per hand
+	 * @param hands
+	 *            number of hands (as decks) to be dealt to
+	 * @param cards
+	 *            number of cards per hand
 	 * @return Array of Decks containing the hands that were drawn
 	 */
 	public Deck[] deal(int hands, int cards) {
-		//TODO
-		int numCards = hands * cards;
-		if (deck.length < numCards)
+		if (hands * cards > topCard + 1)
 			return null;
 
-		Deck[] retDeck = new Deck[hands];
-		Card[] newDeck = new Card[deck.length-numCards];
-
+		Deck[] handDeck = new Deck[hands];
 		Card[] temp = new Card[cards];
-		int index = 0;
-		int hand = 0;
-		int card = 0;
-		for (int i = 0; i < deck.length; i++) {
-			if (i <= numCards) {
-				if (card == cards || i == numCards) {
-					retDeck[hand] = new Deck(temp);
-					temp = new Card[cards];
-					hand++;
-					card = 0;
-				}
-				temp[card] = deck[i];
-				card++;
+		for (int i = 0; i < hands; i++) {
+			for (int j = 0; j < cards; j++) {
+				temp[j] = this.deck[topCard];
+				this.deck[topCard] = null;
+				topCard--;
 			}
-			if (i >= numCards){
-				newDeck[index] = deck[i];
-				index++;
-			}
+			handDeck[i] = new Deck(temp);
+			temp = new Card[cards];
 		}
-		this.deck = newDeck;
-		return retDeck;
+		return handDeck;
 	}
 
 	/**
-	 * Function that picks a random card, removes it from the deck, then returns the
-	 * Card
+	 * Function that picks a random card, removes it from the deck, then returns
+	 * the Card
 	 * 
 	 * @return The Card picked at random
 	 */
 	public Card pick() {
-		//TODO
-		Card[] newDeck = new Card[deck.length - 1];
-		Random rand = new Random();
-		int r = rand.nextInt(deck.length);
-		for (int i = 0, j = 0; i < deck.length; i++) {
-			if (i != r) {
-				newDeck[j] = deck[i];
-				j++;
-			}
+		Random random = new Random();
+		int rand = random.nextInt(topCard + 1);
+
+		Card pick = deck[rand];
+
+		for (int i = rand; i < topCard; i++) {
+			deck[i] = deck[i++];
 		}
-		Card retCard = deck[r];
-		this.deck = newDeck;
-		return retCard;
+		deck[topCard] = null;
+		topCard--;
+
+		return pick;
 	}
 
 	/**
@@ -258,5 +251,9 @@ public class Deck {
 				count++;
 			}
 		}
+	}
+
+	public int getTopCard() {
+		return this.topCard;
 	}
 }
