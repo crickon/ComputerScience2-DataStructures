@@ -169,7 +169,7 @@ public class Deck {
 	 * Method to perform a SelectionSort on the Deck of cards
 	 */
 	public void selectionSort() {
-		for (int n = deck.length; n > 1; n--) {
+		for (int n = topCard + 1; n > 1; n--) {
 			Card greatest = deck[0];
 			int greatIndex = 0;
 
@@ -192,7 +192,7 @@ public class Deck {
 	 * Method to perform a MergeSort on the Deck of cards
 	 */
 	public void mergeSort() {
-		int n = deck.length;
+		int n = topCard + 1;
 		temp = new Card[n];
 		recursiveSort(this.deck, 0, n - 1);
 	}
