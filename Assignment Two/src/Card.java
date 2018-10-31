@@ -1,10 +1,10 @@
 /**
  * NVCC Assignment Two: Sorting
  * 
- * @author matthew grillo (Github: "crickon")
- * @version 1.0
+ * @author Matthew Grillo (Github: "crickon")
  */
-public class Card implements Comparable<Card> {
+public class Card implements Comparable<Card>
+{
 	// Private Constants
 	private static final String SUIT_NUM_ERROR = "Suit must be between 0 and 3";
 	private static final String RANK_NUM_ERROR = "Rank must be between 1 and 13";
@@ -19,7 +19,8 @@ public class Card implements Comparable<Card> {
 	/**
 	 * Default Constructor that creates a card with the value of Ace of Clubs
 	 */
-	public Card() {
+	public Card()
+	{
 		this(0, 1);
 	}
 
@@ -34,13 +35,17 @@ public class Card implements Comparable<Card> {
 	 * @throws IllegalArgumentException
 	 *             if the integer is not within the allowed range
 	 */
-	public Card(int suit, int rank) {
+	public Card(int suit, int rank)
+	{
 		this.suit = Suit.suitFromInt(suit);
 		this.rank = Rank.rankFromInt(rank);
 
-		if (this.suit == null) {
+		if (this.suit == null)
+		{
 			throw new IllegalArgumentException(SUIT_NUM_ERROR);
-		} else if (this.rank == null) {
+		}
+		else if (this.rank == null)
+		{
 			throw new IllegalArgumentException(RANK_NUM_ERROR);
 		}
 	}
@@ -56,15 +61,22 @@ public class Card implements Comparable<Card> {
 	 * @throws IllegalArgumentException
 	 *             if the String given does not match a Suit or Rank
 	 */
-	public Card(String suit, String rank) {
-		try {
-			this.suit = Suit.valueOf(suit.toLowerCase());
-		} catch (Throwable t) {
+	public Card(String suit, String rank)
+	{
+		try
+		{
+			this.suit = Suit.valueOf(suit.toUpperCase());
+		}
+		catch (Throwable t)
+		{
 			throw new IllegalArgumentException(String.format(SUIT_STR_ERROR, suit));
 		}
-		try {
-			this.rank = Rank.valueOf(rank.toLowerCase());
-		} catch (Throwable t) {
+		try
+		{
+			this.rank = Rank.valueOf(rank.toUpperCase());
+		}
+		catch (Throwable t)
+		{
 			throw new IllegalArgumentException(String.format(RANK_STR_ERROR, rank));
 		}
 	}
@@ -82,16 +94,21 @@ public class Card implements Comparable<Card> {
 	 *             if the String given does not match a Suit or if the rank is
 	 *             not within the range
 	 */
-	public Card(String suit, int rank) {
-		try {
-			this.suit = Suit.valueOf(suit.toLowerCase());
-		} catch (Throwable t) {
+	public Card(String suit, int rank)
+	{
+		try
+		{
+			this.suit = Suit.valueOf(suit.toUpperCase());
+		}
+		catch (Throwable t)
+		{
 			throw new IllegalArgumentException(String.format(SUIT_STR_ERROR, suit));
 		}
 
 		this.rank = Rank.rankFromInt(rank);
 
-		if (this.rank == null) {
+		if (this.rank == null)
+		{
 			throw new IllegalArgumentException(RANK_NUM_ERROR);
 		}
 	}
@@ -109,15 +126,20 @@ public class Card implements Comparable<Card> {
 	 *             if the suit is not within the range or if the String given
 	 *             does not match a rank
 	 */
-	public Card(int suit, String rank) {
+	public Card(int suit, String rank)
+	{
 		this.suit = Suit.suitFromInt(suit);
-		try {
-			this.rank = Rank.valueOf(rank.toLowerCase());
-		} catch (Throwable t) {
+		try
+		{
+			this.rank = Rank.valueOf(rank.toUpperCase());
+		}
+		catch (Throwable t)
+		{
 			throw new IllegalArgumentException(String.format(RANK_STR_ERROR, rank));
 		}
 
-		if (this.suit == null) {
+		if (this.suit == null)
+		{
 			throw new IllegalArgumentException(SUIT_NUM_ERROR);
 		}
 	}
@@ -128,7 +150,8 @@ public class Card implements Comparable<Card> {
 	 * 
 	 * @return The Card's suit as a String
 	 */
-	public String getSuit() {
+	public String getSuit()
+	{
 		String str = suit.toString();
 		str = Character.toUpperCase(str.charAt(0)) + str.substring(1, str.length());
 		return str;
@@ -139,7 +162,8 @@ public class Card implements Comparable<Card> {
 	 * 
 	 * @return The Card's rank as an integer
 	 */
-	public int getRank() {
+	public int getRank()
+	{
 		return Rank.getInt(rank);
 	}
 
@@ -150,11 +174,12 @@ public class Card implements Comparable<Card> {
 	 * @return A String consisting of the Card's rank and suit in this format:
 	 *         "[Rank] of [Suit]"
 	 */
-	public String toString() {
+	public String toString()
+	{
 		String suit = this.suit.toString();
-		suit = Character.toUpperCase(suit.charAt(0)) + suit.substring(1, suit.length());
+		suit = Character.toUpperCase(suit.charAt(0)) + suit.substring(1, suit.length()).toLowerCase();
 		String rank = this.rank.toString();
-		rank = Character.toUpperCase(rank.charAt(0)) + rank.substring(1, rank.length());
+		rank = Character.toUpperCase(rank.charAt(0)) + rank.substring(1, rank.length()).toLowerCase();
 		return rank + " of " + suit;
 	}
 
@@ -163,7 +188,8 @@ public class Card implements Comparable<Card> {
 	 * 
 	 * @return The Card's rank as a String
 	 */
-	public String getRankStr() {
+	public String getRankStr()
+	{
 		String str = rank.toString();
 		str = Character.toUpperCase(str.charAt(0)) + str.substring(1, str.length());
 		return str;
@@ -174,7 +200,8 @@ public class Card implements Comparable<Card> {
 	 * 
 	 * @return The Card's suit as an integer
 	 */
-	public int getSuitInt() {
+	public int getSuitInt()
+	{
 		return Suit.getInt(suit);
 	}
 
@@ -184,12 +211,14 @@ public class Card implements Comparable<Card> {
 	 * @return 0 if the Cards are equal, -1 if this card is less than, 1 is this
 	 *         card is greater than
 	 */
-	public int compareTo(Card other) {
+	public int compareTo(Card other)
+	{
 		if (this.getSuitInt() > other.getSuitInt())
 			return 1;
 		else if (this.getSuitInt() < other.getSuitInt())
 			return -1;
-		else {
+		else
+		{
 			if (this.getRank() > other.getRank())
 				return 1;
 			else if (this.getRank() < other.getRank())
@@ -206,8 +235,13 @@ public class Card implements Comparable<Card> {
 	 *            Another Card object
 	 * @return boolean value of the Cards' equality
 	 */
-	public boolean equals(Card other) {
-		return (this.rank.equals(other.rank) && this.suit.equals(other.suit));
+	public boolean equals(Object other)
+	{
+		if (other instanceof Card){
+			Card card = (Card) other;
+			return (this.rank.equals(card.rank) && this.suit.equals(card.suit));
+		}
+		return false;
 	}
 
 }

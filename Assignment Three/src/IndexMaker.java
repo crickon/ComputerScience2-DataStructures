@@ -7,6 +7,12 @@ import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.Scanner;
 
+/**
+ * NVCC Assignment Three
+ * 
+ * @author Matthew Grillo (@Crickon)
+ *
+ */
 public class IndexMaker
 {
 	private static String input;
@@ -16,6 +22,16 @@ public class IndexMaker
 
 	private static DocumentIndex doc;
 
+	/**
+	 * Accept the input file and output files as arguments (in that order). If
+	 * they are not supplied, ask the user for the names of the input/output
+	 * files. If the output filename is not specified, the file name should be
+	 * the input file name concatenated to the word "index", with the same
+	 * extension.
+	 * 
+	 * @param args
+	 *            Input and Output file paths
+	 */
 	public static void main(String[] args)
 	{
 		Scanner kb = new Scanner(System.in);
@@ -27,11 +43,16 @@ public class IndexMaker
 				break;
 			case 1:
 				input = args[0];
-				output = input + "output";
+				int sub = input.lastIndexOf(".");
+				if (sub == -1)
+					sub = input.length();
+				output = input.substring(0, sub) + "index" + input.substring(sub);
+				break;
 			default:
 				System.out.println("Enter input and output path files");
 				input = kb.next();
 				output = kb.next();
+				break;
 		}
 		try
 		{
@@ -40,6 +61,8 @@ public class IndexMaker
 		}
 		catch (FileNotFoundException e)
 		{
+			e.printStackTrace();
+			System.exit(1);
 		}
 		doc = new DocumentIndex();
 
@@ -57,6 +80,7 @@ public class IndexMaker
 		}
 		catch (IOException e)
 		{
+			e.printStackTrace();
 		}
 
 		outputWriter.print(doc.toString());
