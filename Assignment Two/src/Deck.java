@@ -126,7 +126,8 @@ public class Deck
 	}
 
 	/**
-	 * Method to determine if two Decks are equal to each other
+	 * Method to determine if two Decks are equal to each other. TopCard must be
+	 * equal and all Cards must have the same position in the deck.
 	 * 
 	 * @param other
 	 *            Another Deck Object
@@ -229,7 +230,7 @@ public class Deck
 	 */
 	public void mergeSort()
 	{
-		split(0, deck.length - 1);
+		split(0, topCard);
 	}
 
 	private void split(int low, int high)
@@ -251,22 +252,29 @@ public class Deck
 		int i = low;
 		int j = mid + 1;
 		int k = low;
-		
-		while (i < mid && j < high){
-			if (deck[i].compareTo(deck[j]) <= 0) {
-                deck[k] = temp[i];
-                i++;
-            } else {
-                deck[k] = temp[j];
-                j++;
-            }
-            k++;
+
+		while (i < mid && j < high)
+		{
+			if (deck[i].compareTo(deck[j]) <= 0)
+			{
+				deck[k] = temp[i];
+				i++;
+			}
+			else
+			{
+				deck[k] = temp[j];
+				j++;
+			}
+			k++;
+
 		}
-		while (i <= mid) {
-            deck[k] = temp[i];
-            k++;
-            i++;
-        }
+		while (i <= mid)
+		{
+			deck[k] = temp[i];
+			k++;
+			i++;
+		}
+
 	}
 
 	public int getTopCard()
