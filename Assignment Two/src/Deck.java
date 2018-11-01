@@ -28,9 +28,9 @@ public class Deck
 	public Deck(boolean sorted)
 	{
 		fillDeck();
+		topCard = DECKSIZE - 1; 	// the last card in deck
 		if (sorted == false)
 			this.shuffle();
-		topCard = DECKSIZE - 1; // the last card in deck
 	}
 
 	/**
@@ -253,9 +253,9 @@ public class Deck
 		int j = mid + 1;
 		int k = low;
 
-		while (i < mid && j < high)
+		while (i <= mid && j <= high)
 		{
-			if (deck[i].compareTo(deck[j]) <= 0)
+			if (temp[i].compareTo(temp[j]) <= 0)
 			{
 				deck[k] = temp[i];
 				i++;
