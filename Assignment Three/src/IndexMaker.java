@@ -13,8 +13,7 @@ import java.util.Scanner;
  * @author Matthew Grillo (@Crickon)
  *
  */
-public class IndexMaker
-{
+public class IndexMaker {
 	private static String input;
 	private static String output;
 	private static BufferedReader inputReader;
@@ -23,63 +22,52 @@ public class IndexMaker
 	private static DocumentIndex doc;
 
 	/**
-	 * Accept the input file and output files as arguments (in that order). If
-	 * they are not supplied, ask the user for the names of the input/output
-	 * files. If the output filename is not specified, the file name should be
-	 * the input file name concatenated to the word "index", with the same
-	 * extension.
+	 * Accept the input file and output files as arguments (in that order). If they
+	 * are not supplied, ask the user for the names of the input/output files. If
+	 * the output filename is not specified, the file name should be the input file
+	 * name concatenated to the word "index", with the same extension.
 	 * 
-	 * @param args
-	 *            Input and Output file paths
+	 * @param args Input and Output file paths
 	 */
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
-		switch (args.length)
-		{
-			case 2:
-				input = args[0];
-				output = args[1];
-				break;
-			case 1:
-				input = args[0];
-				int sub = input.lastIndexOf(".");
-				if (sub == -1)
-					sub = input.length();
-				output = input.substring(0, sub) + "index" + input.substring(sub);
-				break;
-			default:
-				System.out.println("Enter input and output path files");
-				input = kb.next();
-				output = kb.next();
-				break;
+		switch (args.length) {
+		case 2:
+			input = args[0];
+			output = args[1];
+			break;
+		case 1:
+			input = args[0];
+			int sub = input.lastIndexOf(".");
+			if (sub == -1)
+				sub = input.length();
+			output = input.substring(0, sub) + "index" + input.substring(sub);
+			break;
+		default:
+			System.out.println("Enter input and output path files");
+			input = kb.next();
+			output = kb.next();
+			break;
 		}
-		try
-		{
+		try {
 			inputReader = createReader(input);
 			outputWriter = createWriter(output);
-		}
-		catch (FileNotFoundException e)
-		{
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.exit(1);
 		}
 		doc = new DocumentIndex();
 
 		String temp;
-		try
-		{
+		try {
 			int line = 1;
 			temp = inputReader.readLine();
-			while (temp != null)
-			{
+			while (temp != null) {
 				doc.addAllWords(temp, line);
 				line++;
 				temp = inputReader.readLine();
 			}
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
@@ -87,20 +75,28 @@ public class IndexMaker
 		outputWriter.close();
 	}
 
-	private static BufferedReader createReader(String path) throws FileNotFoundException
-	{
+	/**
+	 * Helper method to create a BufferedReader for reading files
+	 * 
+	 * @param path file's location
+	 * @return BufferedReader object
+	 * @throws FileNotFoundException if the path does not lead to a file
+	 */
+	private static BufferedReader createReader(String path) throws FileNotFoundException {
 		return new BufferedReader(new FileReader(path));
 	}
 
-	private static PrintWriter createWriter(String path)
-	{
+	/**
+	 * Helper method to create a PrintWriter for writing to files
+	 * 
+	 * @param path file's location
+	 * @return PrintWriter object
+	 */
+	private static PrintWriter createWriter(String path) {
 		Writer writer = null;
-		try
-		{
+		try {
 			writer = new FileWriter(path, false);
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println("Unable to create output file writer");
 			outputWriter.close();
 			System.exit(1);
