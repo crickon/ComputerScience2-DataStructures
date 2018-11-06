@@ -53,7 +53,9 @@ public class IndexMaker {
 			inputReader = createReader(input);
 			outputWriter = createWriter(output);
 		} catch (FileNotFoundException e) {
+			System.out.printf("The file: %s could not be found", input);
 			e.printStackTrace();
+			outputWriter.close();
 			System.exit(1);
 		}
 		doc = new DocumentIndex();
