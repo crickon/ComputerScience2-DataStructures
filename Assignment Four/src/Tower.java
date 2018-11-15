@@ -25,11 +25,12 @@ public class Tower extends Stack<Disk>
 		Iterator<Disk> iterator = super.iterator();
 		while (iterator.hasNext())
 		{
+			str += "<";
 			Disk disk = iterator.next();
 			for (int i = 0; i < disk.getRadius(); i++)
-				str += "<>";
+				str += "-";
 			
-			str += disk.toString();
+			str += ">" + disk.toString();
 			str += "\n";
 		}
 		return str;

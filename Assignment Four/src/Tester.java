@@ -8,7 +8,6 @@ public class Tester
 		// testCompareable();
 
 		production();
-		
 	}
 
 	private static void testDisk()
