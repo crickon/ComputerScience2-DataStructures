@@ -73,7 +73,7 @@ public abstract class Actor implements Comparable<Actor>
   public void send(Actor recipient, String text)
   {
 	  Message msg = new Message(this, recipient, text);
-	  mailServer.dispatch(msg);
+	  mailServer.add(msg);
   }
 
 	/**
@@ -83,7 +83,7 @@ public abstract class Actor implements Comparable<Actor>
   public void announce(String text)
   {
 	  Message msg = new Message(this, null, text);
-	  mailServer.dispatch(msg);
+	  mailServer.add(msg);
   }
 
 	/**

@@ -9,7 +9,7 @@ import java.util.TreeSet;
  * @author matthewgrillo
  *
  */
-public class MailServer extends LinkedList<Message>implements Queue<Message>
+public class MailServer extends LinkedList<Message>
 {
 	private TreeSet<Actor> subscribers;
 

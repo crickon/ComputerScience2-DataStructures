@@ -1,3 +1,8 @@
+/**
+ * NVCC Assignment Four
+ * 
+ * @author Matthew Grillo
+ */
 import java.util.Arrays;
 
 public class Tester

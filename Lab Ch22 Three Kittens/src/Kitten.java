@@ -104,15 +104,9 @@ public class Kitten extends Actor
 				}
 			}
 		}
-		boolean allSet = true;
-		for (String item : items)
-		{
-			if (!myPossessions.contains(item))
-			{
-				allSet = false;
-			}
+		if (!allSetFlag && allSet()) {
+			super.send(null, "thnx all set");
 		}
-		this.allSetFlag = allSet;
 		
 	}
 
