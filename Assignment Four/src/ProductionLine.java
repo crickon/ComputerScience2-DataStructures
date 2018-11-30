@@ -40,10 +40,14 @@ public class ProductionLine
 	 * 
 	 * @param disk
 	 *            Disk object to be added
+	 * @throws IllegalArgumentException if the Disk object is null
 	 */
 	public void addDisk(Disk disk)
 	{
-		input.add(disk);
+		if (disk != null)
+			input.add(disk);
+		else
+			throw new IllegalArgumentException("Attempted to add a null Disk");
 	}
 
 	/**
@@ -79,6 +83,9 @@ public class ProductionLine
 				robotArm.add(disk);
 			}
 		}
+		//final unload of what is left on the arm
+		if (!robotArm.isEmpty())
+			unloadRobot();
 	}
 
 	/**

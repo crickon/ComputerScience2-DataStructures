@@ -3,16 +3,19 @@
  * 
  * @author Matthew Grillo
  */
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Tester
 {
 	public static void main(String[] args)
 	{
-		// testDisk();
-		// testCompareable();
+		testDisk();
+		testCompareable();
 
 		production();
+		
+		testForExceptions();
 	}
 
 	private static void testDisk()
@@ -53,13 +56,43 @@ public class Tester
 	private static void production()
 	{
 		ProductionLine line = new ProductionLine();
-		for (int i = 0; i < 100; i++)
-			line.addDisk(new Disk(((int) (Math.random() * 10)) + 1));
+		ArrayList<Integer> numberLine = new ArrayList<Integer>();
+		for (int i = 0; i < 15; i++)
+		{
+			int random = ((int) (Math.random() * 10)) + 1;
+			numberLine.add(random);
+			line.addDisk(new Disk(random));
+		}
+		log("Numbers in the order that they are generated and added to the queue: \n" + numberLine + "\n");
 		line.process();
 
 		while (line.hasOutput())
 		{
 			System.out.println(line.removeTower().toString());
+		}
+	}
+	
+	private static void testForExceptions()
+	{
+		try {
+			Disk test = new Disk(0);
+		}catch (IllegalArgumentException e) {
+			log("Throws Exception on Disk(0)");
+		}
+		try {
+			Disk test = new Disk(-1);
+		}catch (IllegalArgumentException e) {
+			log("Throws Exception on Disk(-1)");
+		}
+		
+		ProductionLine line = new ProductionLine();
+		line.addDisk(new Disk(1));
+		line.process();
+		Tower tower = line.removeTower();
+		try {
+			Tower test = line.removeTower();
+		}catch (IllegalStateException e) {
+			log("Throws Exception if the output queue is empty");
 		}
 	}
 
