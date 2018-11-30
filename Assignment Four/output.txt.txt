@@ -1,0 +1,33 @@
+Equals : true
+getRadius : true
+Comparable : true
+Numbers in the order that they are generated and added to the queue: 
+[8, 2, 1, 7, 9, 8, 3, 5, 6, 8, 7, 6, 1, 9, 4]
+
+******** 8
+
+** 2
+
+* 1
+******* 7
+********* 9
+
+******** 8
+
+*** 3
+***** 5
+****** 6
+******** 8
+
+******* 7
+
+****** 6
+
+* 1
+********* 9
+
+**** 4
+
+Throws Exception on Disk(0)
+Throws Exception on Disk(-1)
+Throws Exception if the output queue is empty
