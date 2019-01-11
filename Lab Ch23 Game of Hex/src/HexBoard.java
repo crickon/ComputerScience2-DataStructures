@@ -62,6 +62,7 @@ public class HexBoard extends CharMatrix
 			if (this.isGray(r, cols - 1))
 				won = true;
 		}
+		System.out.println(this.toString());
 		for (int c = 0; c < cols; c++)
 			for (int r = 0; r < rows; r++)
 				if (this.isGray(r, c))
