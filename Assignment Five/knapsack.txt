@@ -1,0 +1,27 @@
+one.txt  	80  	10, 20, 30, 40, 50
+
+30 pound watermelon
+50 pound watermelon
+
+
+watermelonTest01.txt  	132  	2, 17, 5, 3
+
+2 pound watermelon
+17 pound watermelon
+5 pound watermelon
+3 pound watermelon
+
+
+watermelonTest02.txt  	25  	30, 40, 50
+
+No possible watermelons
+
+
+watermelonTest03.txt  	85  	5, 10, 15, 20, 25, 30
+
+10 pound watermelon
+20 pound watermelon
+25 pound watermelon
+30 pound watermelon
+
+
