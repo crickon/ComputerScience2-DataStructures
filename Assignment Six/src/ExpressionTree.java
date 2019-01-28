@@ -9,6 +9,8 @@ import java.util.Stack;
 
 public class ExpressionTree extends TreeNode implements Expressions
 {
+	public static final String INVALID_OP = "Operator %s does not exist";
+
 	public ExpressionTree(Object value)
 	{
 		super(value);
@@ -17,6 +19,12 @@ public class ExpressionTree extends TreeNode implements Expressions
 	public ExpressionTree(Object value, TreeNode left, TreeNode right)
 	{
 		super(value, left, right);
+	}
+	
+	public ExpressionTree(String[] arr)
+	{
+		super(null);
+		buildTree(arr);
 	}
 
 	/**
@@ -74,11 +82,6 @@ public class ExpressionTree extends TreeNode implements Expressions
 		return this;
 	}
 
-	private boolean isOperator(String str)
-	{
-		return str.equals("+") || str.equals("-") || str.equals("/") || str.equals("*");
-	}
-
 	/**
 	 * function that will evaluate the expression tree and return the answer.
 	 * 
@@ -87,18 +90,17 @@ public class ExpressionTree extends TreeNode implements Expressions
 	public int evalTree()
 	{
 		// if its an operator, evaluate with left and right
-		// im thinking that using recursion is the best way to figure this out
 		if (this.getValue() != null)
-			return recursiveEval(this, 1);
+			return recursiveEval(this);
 		return 0;
 	}
 
-	private int recursiveEval(TreeNode node, int layer)
+	private int recursiveEval(TreeNode node)
 	{
 		if (isOperator(node.getValue().toString()))
 		{
-			int leftVal = recursiveEval(node.getLeft(), layer + 1);
-			int rightVal = recursiveEval(node.getRight(), layer + 1);
+			int leftVal = recursiveEval(node.getLeft());
+			int rightVal = recursiveEval(node.getRight());
 
 			return operate(node.getValue().toString(), leftVal, rightVal);
 		}
@@ -148,17 +150,17 @@ public class ExpressionTree extends TreeNode implements Expressions
 			if (node.getLeft().getLeft() != null)
 				str += "(" + infixRecursive(node.getLeft()) + ")";
 			else
-				str += infixRecursive(node.getLeft()) + " ";
+				str += infixRecursive(node.getLeft());
 
 		}
-		str += node.getValue().toString();
+		str += " " + node.getValue().toString() + " ";
 
 		if (node.getRight() != null)
 		{
 			if (node.getRight().getRight() != null)
 				str += "(" + infixRecursive(node.getRight()) + ")";
 			else
-				str += " " + infixRecursive(node.getRight());
+				str += infixRecursive(node.getRight());
 		}
 
 		return str;
@@ -215,7 +217,14 @@ public class ExpressionTree extends TreeNode implements Expressions
 				{
 				}
 
-		return stack.pop().intValue();
+		if (!stack.isEmpty())
+			return stack.pop().intValue();
+		return 0;
+	}
+
+	private boolean isOperator(String str)
+	{
+		return str.equals("+") || str.equals("-") || str.equals("/") || str.equals("*");
 	}
 
 	private int operate(String operator, int one, int two)
@@ -228,7 +237,7 @@ public class ExpressionTree extends TreeNode implements Expressions
 			return one / two;
 		if (operator.equals("*"))
 			return one * two;
-		return 0;
+		throw new IllegalArgumentException(String.format(INVALID_OP, operator));
 	}
 
 }
