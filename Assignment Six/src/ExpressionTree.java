@@ -2,25 +2,52 @@
 /**
  * Assignment Six: PostFix Notation
  * Author: Matthew "crickon" Grillo
- * Date: January 27, 2019
+ * Date: January 31, 2019
  */
 
 import java.util.Stack;
 
 public class ExpressionTree extends TreeNode implements Expressions
 {
+	/**
+	 * Exception message when an operator does not exist
+	 */
 	public static final String INVALID_OP = "Operator %s does not exist";
 
+	/**
+	 * Super Constructor to initialize root TreeNode with a value
+	 * 
+	 * @param value
+	 *            Root Object
+	 */
 	public ExpressionTree(Object value)
 	{
 		super(value);
 	}
 
+	/**
+	 * Super Constructor to initialize root TreeNode with a value, and child
+	 * nodes
+	 * 
+	 * @param value
+	 *            Root Object
+	 * @param left
+	 *            Left child TreeNode
+	 * @param right
+	 *            Right child TreeNode
+	 */
 	public ExpressionTree(Object value, TreeNode left, TreeNode right)
 	{
 		super(value, left, right);
 	}
-	
+
+	/**
+	 * Constructor to create an ExpressionTree and build the tree from String
+	 * array
+	 * 
+	 * @param arr
+	 *            String array in postfix Notation
+	 */
 	public ExpressionTree(String[] arr)
 	{
 		super(null);
@@ -28,7 +55,7 @@ public class ExpressionTree extends TreeNode implements Expressions
 	}
 
 	/**
-	 * function that takes in an array of strings in postfix notation order,
+	 * Function that takes in an array of strings in postfix notation order,
 	 * then builds and returns an expression tree of type TreeNode.
 	 * 
 	 * @param exp
@@ -83,7 +110,7 @@ public class ExpressionTree extends TreeNode implements Expressions
 	}
 
 	/**
-	 * function that will evaluate the expression tree and return the answer.
+	 * Function that will evaluate the expression tree and return the answer.
 	 * 
 	 * @return evaluation of the tree
 	 */
@@ -150,17 +177,17 @@ public class ExpressionTree extends TreeNode implements Expressions
 			if (node.getLeft().getLeft() != null)
 				str += "(" + infixRecursive(node.getLeft()) + ")";
 			else
-				str += infixRecursive(node.getLeft());
+				str += infixRecursive(node.getLeft()) + " ";
 
 		}
-		str += " " + node.getValue().toString() + " ";
+		str += node.getValue().toString();
 
 		if (node.getRight() != null)
 		{
 			if (node.getRight().getRight() != null)
 				str += "(" + infixRecursive(node.getRight()) + ")";
 			else
-				str += infixRecursive(node.getRight());
+				str += " " + infixRecursive(node.getRight());
 		}
 
 		return str;
@@ -222,11 +249,29 @@ public class ExpressionTree extends TreeNode implements Expressions
 		return 0;
 	}
 
+	/**
+	 * function to determine is a string is an operator
+	 * 
+	 * @param str
+	 *            arithmetic operator as a string
+	 * @return true/false
+	 */
 	private boolean isOperator(String str)
 	{
 		return str.equals("+") || str.equals("-") || str.equals("/") || str.equals("*");
 	}
 
+	/**
+	 * Function to perform arithmetic on two integers
+	 * 
+	 * @param operator
+	 *            valid operator string
+	 * @param one
+	 *            integer before operator
+	 * @param two
+	 *            integer after operator
+	 * @return int value post-operation
+	 */
 	private int operate(String operator, int one, int two)
 	{
 		if (operator.equals("+"))
@@ -237,6 +282,7 @@ public class ExpressionTree extends TreeNode implements Expressions
 			return one / two;
 		if (operator.equals("*"))
 			return one * two;
+		// should never reach this point, but returning 0 doesn't feel right
 		throw new IllegalArgumentException(String.format(INVALID_OP, operator));
 	}
 

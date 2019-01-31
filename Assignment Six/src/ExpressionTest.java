@@ -1,3 +1,9 @@
+
+/**
+ * Assignment Six: PostFix Notation
+ * Author: Matthew "crickon" Grillo
+ * Date: January 31, 2019
+ */
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -20,8 +26,11 @@ public class ExpressionTest
 	private static boolean loop = true;
 
 	/**
+	 * Main method that initializes input and output, then performs Postfix
+	 * Notation on every line of the input file
 	 * 
 	 * @param args
+	 *            input file path
 	 */
 	public static void main(String[] args)
 	{
@@ -51,6 +60,9 @@ public class ExpressionTest
 		output.close();
 	}
 
+	/**
+	 * Infinite procedure until an input file is given by the user
+	 */
 	private static void findInput()
 	{
 		while (loop)
