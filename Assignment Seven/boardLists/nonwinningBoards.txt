@@ -1,0 +1,3892 @@
+    xxxoo
+    xxoxo
+    xxoox
+    xoxxo
+    xoxox
+    xoxoo
+    xooxx
+    xooxo
+    xooox
+    oxxxo
+    oxxox
+    oxxoo
+    oxoxx
+    oxoxo
+    oxoox
+    ooxxo
+    ooxox
+    oooxx
+   x xxoo
+   x xoxo
+   x xoox
+   x oxxo
+   x oxox
+   x oxoo
+   x ooxx
+   x ooxo
+   x ooox
+   xx xoo
+   xx oxo
+   xx oox
+   xxo xo
+   xxo ox
+   xxo oo
+   xxox o
+   xxoxo 
+   xxoo x
+   xxoo o
+   xxoox 
+   xxooo 
+   xo xxo
+   xo xox
+   xo xoo
+   xo oxx
+   xo oxo
+   xo oox
+   xox xo
+   xox ox
+   xox oo
+   xoxx o
+   xoxxo 
+   xoxo x
+   xoxo o
+   xoxox 
+   xoxoo 
+   xoo xx
+   xoo xo
+   xoo ox
+   xoox x
+   xoox o
+   xooxx 
+   xooxo 
+   xooo x
+   xooox 
+   o xxxo
+   o xxox
+   o xxoo
+   o xoxx
+   o xoxo
+   o xoox
+   o oxxo
+   o oxox
+   o ooxx
+   ox xxo
+   ox xox
+   ox xoo
+   ox oxx
+   ox oxo
+   ox oox
+   oxx xo
+   oxx ox
+   oxx oo
+   oxxx o
+   oxxxo 
+   oxxo x
+   oxxo o
+   oxxox 
+   oxxoo 
+   oxo xx
+   oxo xo
+   oxo ox
+   oxox x
+   oxox o
+   oxoxx 
+   oxoxo 
+   oxoo x
+   oxoox 
+   oo xxo
+   oo xox
+   oo oxx
+   oox xx
+   oox xo
+   oox ox
+   ooxx x
+   ooxx o
+   ooxxx 
+   ooxxo 
+   ooxo x
+   ooxox 
+  x  xxoo
+  x  xoxo
+  x  oxxo
+  x  oxox
+  x  oxoo
+  x  ooxx
+  x  ooxo
+  x  ooox
+  x x oxo
+  x x oox
+  x xx oo
+  x xxo o
+  x xxoo 
+  x xo xo
+  x xo ox
+  x xo oo
+  x xoo x
+  x xoo o
+  x xoox 
+  x xooo 
+  x o xxo
+  x o xox
+  x o xoo
+  x o oxx
+  x o oxo
+  x o oox
+  x ox xo
+  x ox oo
+  x oxx o
+  x oxxo 
+  x oxo o
+  x oxox 
+  x oxoo 
+  x oo xx
+  x oo xo
+  x oo ox
+  x oox x
+  x oox o
+  x ooxx 
+  x ooxo 
+  x ooo x
+  x ooox 
+  xx  xoo
+  xx  oxo
+  xx  oox
+  xx x oo
+  xx xo o
+  xx xoo 
+  xx o xo
+  xx o ox
+  xx o oo
+  xx ox o
+  xx oxo 
+  xx oo x
+  xx oo o
+  xx oox 
+  xx ooo 
+  xxx  oo
+  xxx o o
+  xxx oo 
+  xxxxooo
+  xxxo  o
+  xxxo o 
+  xxxoo  
+  xxxooxo
+  xxxooox
+  xxo  xo
+  xxo  ox
+  xxo  oo
+  xxo x o
+  xxo xo 
+  xxo o x
+  xxo o o
+  xxo ox 
+  xxo oo 
+  xxox  o
+  xxox o 
+  xxoxxoo
+  xxoxo  
+  xxoxoxo
+  xxoo  x
+  xxoo  o
+  xxoo x 
+  xxoo o 
+  xxoox  
+  xxooxxo
+  xxooxox
+  xxooxoo
+  xxooo  
+  xxoooxx
+  xxoooxo
+  xxoooox
+  xo  xxo
+  xo  xox
+  xo  xoo
+  xo  oxx
+  xo  oxo
+  xo  oox
+  xo x xo
+  xo x oo
+  xo xx o
+  xo xxo 
+  xo xo o
+  xo xox 
+  xo xoo 
+  xo o xx
+  xo o xo
+  xo o ox
+  xo ox x
+  xo ox o
+  xo oxx 
+  xo oxo 
+  xo oo x
+  xo oox 
+  xox  xo
+  xox  ox
+  xox  oo
+  xox o x
+  xox o o
+  xox ox 
+  xox oo 
+  xoxx  o
+  xoxx o 
+  xoxxo  
+  xoxxoxo
+  xoxo  x
+  xoxo  o
+  xoxo x 
+  xoxo o 
+  xoxoo  
+  xoxooxx
+  xoxooxo
+  xoxooox
+  xoo  xx
+  xoo  xo
+  xoo  ox
+  xoo x x
+  xoo x o
+  xoo xx 
+  xoo xo 
+  xoo o x
+  xoo ox 
+  xoox  o
+  xoox x 
+  xoox o 
+  xooxx  
+  xooxxxo
+  xooxxoo
+  xooxo  
+  xooxoxo
+  xoooxxx
+  o  xxxo
+  o  xxox
+  o  xxoo
+  o  xoxx
+  o  xoxo
+  o  xoox
+  o  oxox
+  o  ooxx
+  o x xxo
+  o x xox
+  o x xoo
+  o x oxx
+  o x oxo
+  o x oox
+  o xx xo
+  o xx ox
+  o xx oo
+  o xxx o
+  o xxxo 
+  o xxo x
+  o xxo o
+  o xxox 
+  o xxoo 
+  o xo xx
+  o xo ox
+  o xox x
+  o xoxx 
+  o xoxo 
+  o xoo x
+  o xoox 
+  o o xxo
+  o o xox
+  o ox xx
+  o ox xo
+  o ox ox
+  o oxx x
+  o oxx o
+  o oxxx 
+  o oxxo 
+  o oo xx
+  o oox x
+  o ooxx 
+  ox  xxo
+  ox  xox
+  ox  xoo
+  ox  oxx
+  ox  oxo
+  ox  oox
+  ox x xo
+  ox x ox
+  ox x oo
+  ox xx o
+  ox xxo 
+  ox xo x
+  ox xo o
+  ox xox 
+  ox xoo 
+  ox o xx
+  ox o ox
+  ox ox x
+  ox oxx 
+  ox oxo 
+  ox oo x
+  ox oox 
+  oxx  xo
+  oxx  ox
+  oxx  oo
+  oxx x o
+  oxx xo 
+  oxx o x
+  oxx o o
+  oxx ox 
+  oxx oo 
+  oxxxooo
+  oxxo  x
+  oxxo x 
+  oxxo o 
+  oxxox  
+  oxxoxox
+  oxxoo  
+  oxxooxx
+  oxxooox
+  oxo  xx
+  oxo  xo
+  oxo  ox
+  oxo x x
+  oxo x o
+  oxo xx 
+  oxo xo 
+  oxox  x
+  oxox  o
+  oxox x 
+  oxox o 
+  oxoxx  
+  oxoxxxo
+  oxoxxox
+  oxoxxoo
+  oxoo  x
+  oxoo x 
+  oxoox  
+  oxooxox
+  oo  xxo
+  oo  xox
+  oo  oxx
+  oo x xx
+  oo x xo
+  oo x ox
+  oo xx x
+  oo xx o
+  oo xxx 
+  oo xxo 
+  oo xo x
+  oo xox 
+  oo o xx
+  oo ox x
+  oo oxx 
+  oox  xx
+  oox  xo
+  oox  ox
+  oox x x
+  oox x o
+  oox xx 
+  oox xo 
+  oox o x
+  oox ox 
+  ooxx  x
+  ooxx  o
+  ooxx x 
+  ooxx o 
+  ooxxx  
+  ooxxxxo
+  ooxxxox
+  ooxxxoo
+  ooxxo  
+  ooxxoxx
+  ooxxoxo
+  ooxxoox
+  ooxo  x
+  ooxo x 
+  ooxox  
+  ooxoxox
+  ooxooxx
+  ooo  xx
+  ooo x x
+  ooo xx 
+  ooox  x
+  ooox x 
+  oooxx  
+  oooxxxo
+  oooxxox
+  ooooxxx
+ x   xxoo
+ x   xoxo
+ x   xoox
+ x   oxxo
+ x   oxox
+ x   oxoo
+ x   ooxx
+ x   ooxo
+ x   ooox
+ x  x xoo
+ x  x oox
+ x  xx oo
+ x  xxo o
+ x  xxoo 
+ x  xo ox
+ x  xo oo
+ x  xox o
+ x  xoxo 
+ x  xoo x
+ x  xoo o
+ x  xooo 
+ x  o xxo
+ x  o xox
+ x  o xoo
+ x  o oxx
+ x  o oxo
+ x  o oox
+ x  ox xo
+ x  ox ox
+ x  ox oo
+ x  oxx o
+ x  oxxo 
+ x  oxo x
+ x  oxo o
+ x  oxox 
+ x  oxoo 
+ x  oo xx
+ x  oo xo
+ x  oo ox
+ x  oox x
+ x  oox o
+ x  ooxx 
+ x  ooxo 
+ x  ooo x
+ x  ooox 
+ x x  xoo
+ x x  oxo
+ x x  oox
+ x x x oo
+ x x xo o
+ x x xoo 
+ x x o xo
+ x x o ox
+ x x o oo
+ x x ox o
+ x x oxo 
+ x x oo x
+ x x oo o
+ x x oox 
+ x x ooo 
+ x xx  oo
+ x xx o o
+ x xx oo 
+ x xxxooo
+ x xxo  o
+ x xxo o 
+ x xxoxoo
+ x xxoo  
+ x xxooox
+ x xo  xo
+ x xo  ox
+ x xo  oo
+ x xo x o
+ x xo xo 
+ x xo o x
+ x xo o o
+ x xo ox 
+ x xo oo 
+ x xox  o
+ x xox o 
+ x xoxxoo
+ x xoxo  
+ x xoxoxo
+ x xoxoox
+ x xoo  x
+ x xoo  o
+ x xoo x 
+ x xoo o 
+ x xoox  
+ x xooxxo
+ x xooxox
+ x xooxoo
+ x xooo  
+ x xoooxx
+ x xoooxo
+ x xoooox
+ x o  xxo
+ x o  xox
+ x o  xoo
+ x o  oxx
+ x o  oxo
+ x o  oox
+ x o x xo
+ x o x ox
+ x o x oo
+ x o xx o
+ x o xxo 
+ x o xo x
+ x o xo o
+ x o xox 
+ x o xoo 
+ x o o xx
+ x o o xo
+ x o o ox
+ x o ox x
+ x o ox o
+ x o oxx 
+ x o oxo 
+ x o oo x
+ x o oox 
+ x ox  ox
+ x ox  oo
+ x ox x o
+ x ox xo 
+ x ox o x
+ x ox o o
+ x ox oo 
+ x oxx  o
+ x oxx o 
+ x oxxxoo
+ x oxxo  
+ x oxxoox
+ x oxo  x
+ x oxo  o
+ x oxo o 
+ x oxox  
+ x oxoxox
+ x oxoxoo
+ x oxoo  
+ x oxooox
+ x oo  xx
+ x oo  xo
+ x oo  ox
+ x oo x x
+ x oo x o
+ x oo xx 
+ x oo xo 
+ x oo o x
+ x oo ox 
+ x oox  x
+ x oox  o
+ x oox x 
+ x oox o 
+ x ooxx  
+ x ooxxxo
+ x ooxxox
+ x ooxxoo
+ x ooxo  
+ x ooxoxx
+ x ooxoxo
+ x ooxoox
+ x oooxxx
+ xx   xoo
+ xx   oxo
+ xx   oox
+ xx  x oo
+ xx  xo o
+ xx  xoo 
+ xx  o xo
+ xx  o ox
+ xx  o oo
+ xx  ox o
+ xx  oxo 
+ xx  oo x
+ xx  oo o
+ xx  oox 
+ xx  ooo 
+ xx x  oo
+ xx x o o
+ xx x oo 
+ xx xo  o
+ xx xo o 
+ xx xoo  
+ xx xooox
+ xx o  xo
+ xx o  ox
+ xx o  oo
+ xx o x o
+ xx o xo 
+ xx o o x
+ xx o o o
+ xx o ox 
+ xx o oo 
+ xx ox  o
+ xx ox o 
+ xx oxxoo
+ xx oxo  
+ xx oxoxo
+ xx oo  x
+ xx oo  o
+ xx oo x 
+ xx oo o 
+ xx oox  
+ xx ooxxo
+ xx ooxox
+ xx ooxoo
+ xx ooo  
+ xx oooxx
+ xx oooxo
+ xx oooox
+ xxx   oo
+ xxx  o o
+ xxx  oo 
+ xxx o  o
+ xxx o o 
+ xxx oxoo
+ xxx oo  
+ xxx ooxo
+ xxx ooox
+ xxxxo oo
+ xxxxoo o
+ xxxxooo 
+ xxxo   o
+ xxxo  o 
+ xxxo xoo
+ xxxo o  
+ xxxo oxo
+ xxxo oox
+ xxxox oo
+ xxxoxo o
+ xxxoxoo 
+ xxxoo   
+ xxxoo xo
+ xxxoo ox
+ xxxoo oo
+ xxxoox o
+ xxxooxo 
+ xxxooo x
+ xxxooo o
+ xxxooox 
+ xxxoooo 
+ xxo   xo
+ xxo   ox
+ xxo   oo
+ xxo  x o
+ xxo  xo 
+ xxo  o x
+ xxo  o o
+ xxo  ox 
+ xxo  oo 
+ xxo x  o
+ xxo x o 
+ xxo xxoo
+ xxo xo  
+ xxo xoxo
+ xxo o  x
+ xxo o  o
+ xxo o x 
+ xxo o o 
+ xxo ox  
+ xxo oxxo
+ xxo oxox
+ xxo oxoo
+ xxo oo  
+ xxo ooxx
+ xxo ooxo
+ xxo ooox
+ xxox   o
+ xxox  o 
+ xxox o  
+ xxox oox
+ xxoxx oo
+ xxoxxo o
+ xxoxxoo 
+ xxoxo   
+ xxoxo ox
+ xxoxo oo
+ xxoxoo x
+ xxoxoo o
+ xxoxooo 
+ xxoo   x
+ xxoo   o
+ xxoo  x 
+ xxoo  o 
+ xxoo x  
+ xxoo xxo
+ xxoo xox
+ xxoo xoo
+ xxoo o  
+ xxoo oxx
+ xxoo oxo
+ xxoo oox
+ xxoox   
+ xxoox xo
+ xxoox oo
+ xxooxx o
+ xxooxxo 
+ xxooxo o
+ xxooxox 
+ xxooxoo 
+ xo   xxo
+ xo   xox
+ xo   xoo
+ xo   oxx
+ xo   oxo
+ xo   oox
+ xo  x xo
+ xo  x ox
+ xo  x oo
+ xo  xx o
+ xo  xxo 
+ xo  xo x
+ xo  xo o
+ xo  xox 
+ xo  xoo 
+ xo  o xx
+ xo  o ox
+ xo  ox x
+ xo  oxx 
+ xo  oxo 
+ xo  oo x
+ xo  oox 
+ xo x  ox
+ xo x  oo
+ xo x x o
+ xo x xo 
+ xo x o x
+ xo x o o
+ xo x oo 
+ xo xx  o
+ xo xx o 
+ xo xxxoo
+ xo xxo  
+ xo xxoox
+ xo xo  x
+ xo xo o 
+ xo xox  
+ xo xoxxo
+ xo xoxox
+ xo xoo  
+ xo xooxo
+ xo xooox
+ xo o  xx
+ xo o  xo
+ xo o  ox
+ xo o x x
+ xo o x o
+ xo o xx 
+ xo o xo 
+ xo ox  x
+ xo ox  o
+ xo ox x 
+ xo ox o 
+ xo oxx  
+ xo oxxxo
+ xo oxxox
+ xo oxxoo
+ xo oo  x
+ xo oo x 
+ xo oox  
+ xo ooxox
+ xox   xo
+ xox   ox
+ xox   oo
+ xox  x o
+ xox  xo 
+ xox  o x
+ xox  o o
+ xox  ox 
+ xox  oo 
+ xox x  o
+ xox x o 
+ xox xxoo
+ xox xo  
+ xox xoxo
+ xox xoox
+ xox o  x
+ xox o x 
+ xox o o 
+ xox ox  
+ xox oxox
+ xox oo  
+ xox ooxx
+ xox ooox
+ xoxx   o
+ xoxx  o 
+ xoxx xoo
+ xoxx o  
+ xoxx oox
+ xoxxo   
+ xoxxo xo
+ xoxxo ox
+ xoxxoxo 
+ xoxxoo x
+ xoxxooo 
+ xoxo   x
+ xoxo   o
+ xoxo  x 
+ xoxo  o 
+ xoxo x  
+ xoxo xxo
+ xoxo xox
+ xoxo xoo
+ xoxox   
+ xoxox xo
+ xoxox ox
+ xoxox oo
+ xoxoxx o
+ xoxoxxo 
+ xoxoo   
+ xoxoo xx
+ xoxoo ox
+ xoxoox x
+ xoxooxx 
+ xoxooxo 
+ xoo   xx
+ xoo   xo
+ xoo   ox
+ xoo  x x
+ xoo  x o
+ xoo  xx 
+ xoo  xo 
+ xoo  o x
+ xoo  ox 
+ xoo x  x
+ xoo x  o
+ xoo x x 
+ xoo x o 
+ xoo xx  
+ xoo xxxo
+ xoo xxox
+ xoo xxoo
+ xoo xo  
+ xoo xoxx
+ xoo xoxo
+ xoo xoox
+ xoo o  x
+ xoo o x 
+ xoo ox  
+ xoo oxox
+ xoo ooxx
+ xoox   x
+ xoox   o
+ xoox  o 
+ xoox x  
+ xoox xox
+ xoox xoo
+ xoox o  
+ xoox oox
+ xooxx   
+ xooxx ox
+ xooxx oo
+ xooxxx o
+ xooxxxo 
+ xooxxo x
+ xooxxo o
+ xooxxoo 
+ xooxo   
+ xooxo xo
+ xooxo ox
+ xooxox x
+ xooxoxo 
+ xooxoo x
+ xooo   x
+ xooo  x 
+ xooo x  
+ xooo xxo
+ xooo xox
+ xooox   
+ xooox xx
+ xooox xo
+ xooox ox
+ xoooxx x
+ xoooxx o
+ xoooxxx 
+ xoooxxo 
+ o   xxxo
+ o   xxox
+ o   xxoo
+ o   xoxx
+ o   xoxo
+ o   xoox
+ o   oxxo
+ o   oxox
+ o   ooxx
+ o  x xxo
+ o  x xox
+ o  x xoo
+ o  x oxx
+ o  x oxo
+ o  x oox
+ o  xx xo
+ o  xx ox
+ o  xx oo
+ o  xxx o
+ o  xxxo 
+ o  xxo x
+ o  xxo o
+ o  xxox 
+ o  xxoo 
+ o  xo xx
+ o  xo xo
+ o  xo ox
+ o  xox x
+ o  xox o
+ o  xoxx 
+ o  xoxo 
+ o  xoo x
+ o  xoox 
+ o  o xxo
+ o  o oxx
+ o  ox xx
+ o  ox xo
+ o  oxx x
+ o  oxx o
+ o  oxxx 
+ o  oxo x
+ o  oxox 
+ o  oo xx
+ o  oox x
+ o  ooxx 
+ o x  xxo
+ o x  xox
+ o x  xoo
+ o x  oxx
+ o x  oxo
+ o x  oox
+ o x x xo
+ o x x ox
+ o x x oo
+ o x xx o
+ o x xxo 
+ o x xo x
+ o x xo o
+ o x xox 
+ o x xoo 
+ o x o xx
+ o x o xo
+ o x o ox
+ o x ox x
+ o x ox o
+ o x oxx 
+ o x oxo 
+ o x oo x
+ o x oox 
+ o xx  xo
+ o xx  ox
+ o xx  oo
+ o xx x o
+ o xx xo 
+ o xx o x
+ o xx o o
+ o xx ox 
+ o xx oo 
+ o xxxooo
+ o xxo  x
+ o xxo  o
+ o xxo x 
+ o xxo o 
+ o xxox  
+ o xxoxxo
+ o xxoxox
+ o xxoxoo
+ o xxoo  
+ o xxooxx
+ o xxooxo
+ o xxooox
+ o xo  xx
+ o xo  xo
+ o xo x x
+ o xo x o
+ o xo xx 
+ o xo o x
+ o xo ox 
+ o xox  x
+ o xox  o
+ o xox x 
+ o xoxx  
+ o xoxxxo
+ o xoxo  
+ o xoxoxx
+ o xoxoxo
+ o xoo  x
+ o xoo x 
+ o xoox  
+ o xooxxo
+ o xoooxx
+ o o  xxo
+ o o  xox
+ o o  oxx
+ o o x xx
+ o o x xo
+ o o x ox
+ o o xx x
+ o o xx o
+ o o xxx 
+ o o xxo 
+ o o xo x
+ o o xox 
+ o o o xx
+ o o ox x
+ o o oxx 
+ o ox  xx
+ o ox  xo
+ o ox  ox
+ o ox x x
+ o ox x o
+ o ox xx 
+ o ox xo 
+ o ox o x
+ o ox ox 
+ o oxx  x
+ o oxx  o
+ o oxx x 
+ o oxx o 
+ o oxxx  
+ o oxxxxo
+ o oxxxox
+ o oxxxoo
+ o oxxo  
+ o oxxoxx
+ o oxxoxo
+ o oxxoox
+ o oxo  x
+ o oxo x 
+ o oxox  
+ o oxoxxo
+ o oxoxox
+ o oxooxx
+ o oo  xx
+ o oo x x
+ o oo xx 
+ o oox  x
+ o oox x 
+ o ooxx  
+ o ooxxxo
+ o ooxoxx
+ o oooxxx
+ ox   xxo
+ ox   xox
+ ox   xoo
+ ox   oxx
+ ox   oxo
+ ox   oox
+ ox  x xo
+ ox  x oo
+ ox  xx o
+ ox  xxo 
+ ox  xo o
+ ox  xox 
+ ox  xoo 
+ ox  o xx
+ ox  o xo
+ ox  o ox
+ ox  ox x
+ ox  ox o
+ ox  oxx 
+ ox  oxo 
+ ox  oo x
+ ox  oox 
+ ox x  xo
+ ox x  ox
+ ox x  oo
+ ox x o x
+ ox x o o
+ ox x ox 
+ ox x oo 
+ ox xx  o
+ ox xx o 
+ ox xxo  
+ ox xxoxo
+ ox xo  x
+ ox xo  o
+ ox xo x 
+ ox xo o 
+ ox xoo  
+ ox xooxx
+ ox xooxo
+ ox xooox
+ ox o  xx
+ ox o  xo
+ ox o x x
+ ox o x o
+ ox o xx 
+ ox o o x
+ ox o ox 
+ ox ox  o
+ ox ox x 
+ ox oxx  
+ ox oxxxo
+ ox oxxox
+ ox oxo  
+ ox oxoxo
+ ox oxoox
+ ox oo  x
+ ox oo x 
+ ox oox  
+ ox ooxxo
+ ox oooxx
+ oxx   xo
+ oxx   ox
+ oxx   oo
+ oxx  x o
+ oxx  xo 
+ oxx  o x
+ oxx  o o
+ oxx  ox 
+ oxx  oo 
+ oxx x  o
+ oxx x o 
+ oxx xxoo
+ oxx xo  
+ oxx xoxo
+ oxx o  x
+ oxx o  o
+ oxx o x 
+ oxx o o 
+ oxx ox  
+ oxx oxxo
+ oxx oxox
+ oxx oxoo
+ oxx oo  
+ oxx ooxx
+ oxx ooxo
+ oxx ooox
+ oxxx   o
+ oxxx  o 
+ oxxx o  
+ oxxx oxo
+ oxxx oox
+ oxxxo   
+ oxxxo xo
+ oxxxo ox
+ oxxxo oo
+ oxxxoo x
+ oxxxoo o
+ oxxxoox 
+ oxxxooo 
+ oxxo   x
+ oxxo   o
+ oxxo  x 
+ oxxo x  
+ oxxo xxo
+ oxxo o  
+ oxxo oxx
+ oxxo oxo
+ oxxox   
+ oxxox xo
+ oxxox ox
+ oxxoxx o
+ oxxoxo o
+ oxxoxox 
+ oxxoo   
+ oxxoo xx
+ oxxoo xo
+ oxxoox x
+ oxxoox o
+ oxxooxx 
+ oxxooo x
+ oxxooox 
+ oxo   xx
+ oxo   xo
+ oxo   ox
+ oxo  x x
+ oxo  x o
+ oxo  xx 
+ oxo  xo 
+ oxo  o x
+ oxo  ox 
+ oxo x  o
+ oxo x x 
+ oxo x o 
+ oxo xx  
+ oxo xxxo
+ oxo xxoo
+ oxo xo  
+ oxo xoxo
+ oxo o  x
+ oxo o x 
+ oxo ox  
+ oxo oxxo
+ oxo oxox
+ oxo ooxx
+ oxox   x
+ oxox   o
+ oxox  x 
+ oxox  o 
+ oxox o  
+ oxox oxx
+ oxox oxo
+ oxox oox
+ oxoxx   
+ oxoxx xo
+ oxoxx oo
+ oxoxxo o
+ oxoxxox 
+ oxoxxoo 
+ oxoxo   
+ oxoxo xx
+ oxoxo xo
+ oxoxo ox
+ oxoxoo x
+ oxoxoox 
+ oxoo   x
+ oxoo  x 
+ oxoo x  
+ oxoo xxo
+ oxoo oxx
+ oxoox   
+ oxoox xo
+ oxoox ox
+ oxooxx o
+ oxooxxx 
+ oxooxox 
+ oo   xxo
+ oo   xox
+ oo   oxx
+ oo  x xx
+ oo  x xo
+ oo  x ox
+ oo  xx x
+ oo  xx o
+ oo  xxx 
+ oo  xxo 
+ oo  xo x
+ oo  xox 
+ oo  o xx
+ oo  ox x
+ oo  oxx 
+ oo x  xx
+ oo x  xo
+ oo x  ox
+ oo x x x
+ oo x x o
+ oo x xx 
+ oo x xo 
+ oo x o x
+ oo x ox 
+ oo xx  x
+ oo xx  o
+ oo xx x 
+ oo xx o 
+ oo xxx  
+ oo xxxxo
+ oo xxxox
+ oo xxxoo
+ oo xxo  
+ oo xxoxx
+ oo xxoxo
+ oo xxoox
+ oo xo  x
+ oo xo x 
+ oo xox  
+ oo xoxox
+ oo xooxx
+ oo o  xx
+ oo o x x
+ oo o xx 
+ oo ox  x
+ oo ox x 
+ oo oxx  
+ oo oxxxo
+ oox   xx
+ oox   xo
+ oox   ox
+ oox  x x
+ oox  x o
+ oox  xx 
+ oox  xo 
+ oox  o x
+ oox  ox 
+ oox x  x
+ oox x  o
+ oox x x 
+ oox x o 
+ oox xx  
+ oox xxxo
+ oox xxox
+ oox xxoo
+ oox xo  
+ oox xoxx
+ oox xoxo
+ oox xoox
+ oox o  x
+ oox o x 
+ oox ox  
+ oox oxox
+ oox ooxx
+ ooxx   x
+ ooxx   o
+ ooxx  x 
+ ooxx  o 
+ ooxx x  
+ ooxx xxo
+ ooxx xox
+ ooxx xoo
+ ooxx o  
+ ooxx oxx
+ ooxx oxo
+ ooxx oox
+ ooxxo   
+ ooxxo xx
+ ooxxo ox
+ ooxxox x
+ ooxxoxx 
+ ooxxoxo 
+ ooxxoo x
+ ooxxoox 
+ ooxo   x
+ ooxo  x 
+ ooxo x  
+ ooxo xxo
+ ooxox   
+ ooxox xx
+ ooxox xo
+ ooxoxx x
+ ooxoxx o
+ ooxoxxx 
+ ooxoo xx
+ ooxoox x
+ ooxooxx 
+ ooo   xx
+ ooo  x x
+ ooo  xx 
+ ooo x  x
+ ooo x x 
+ ooo xx  
+ ooo xxxo
+ ooo xxox
+ ooo xoxx
+ ooox   x
+ ooox  x 
+ ooox x  
+ ooox xxo
+ ooox xox
+ ooox oxx
+ oooxx   
+ oooxx xx
+ oooxx xo
+ oooxx ox
+ oooxxx x
+ oooxxx o
+ oooxxxx 
+ oooxxxo 
+ oooxxo x
+ oooxxox 
+ oooxo xx
+ oooxox x
+ oooxoxx 
+ oooox xx
+ ooooxx x
+ ooooxxx 
+x    xxoo
+x    xoxo
+x    xoox
+x    oxxo
+x    oxox
+x    oxoo
+x    ooxx
+x    ooxo
+x    ooox
+x   x xoo
+x   x oxo
+x   xx oo
+x   xxo o
+x   xxoo 
+x   xo xo
+x   xo oo
+x   xox o
+x   xoxo 
+x   xoo o
+x   xoox 
+x   xooo 
+x   o xxo
+x   o xox
+x   o xoo
+x   o oxx
+x   o oxo
+x   o oox
+x   ox xo
+x   ox ox
+x   ox oo
+x   oxx o
+x   oxxo 
+x   oxo x
+x   oxo o
+x   oxox 
+x   oxoo 
+x   oo xx
+x   oo xo
+x   oo ox
+x   oox x
+x   oox o
+x   ooxx 
+x   ooxo 
+x   ooo x
+x   ooox 
+x  x  oxo
+x  x  oox
+x  x x oo
+x  x xo o
+x  x xoo 
+x  x o xo
+x  x o ox
+x  x o oo
+x  x oo x
+x  x oo o
+x  x oox 
+x  x ooo 
+x  xx  oo
+x  xx o o
+x  xx oo 
+x  xxxooo
+x  xxo  o
+x  xxo o 
+x  xxoo  
+x  xxooxo
+x  xo  xo
+x  xo  ox
+x  xo  oo
+x  xo o x
+x  xo o o
+x  xo ox 
+x  xo oo 
+x  xox  o
+x  xox o 
+x  xoxo  
+x  xoxoxo
+x  xoxoox
+x  xoo  x
+x  xoo  o
+x  xoo x 
+x  xoo o 
+x  xooo  
+x  xoooxx
+x  xoooxo
+x  xoooox
+x  o  xxo
+x  o  xox
+x  o  xoo
+x  o  oxx
+x  o  oxo
+x  o  oox
+x  o x xo
+x  o x ox
+x  o x oo
+x  o xx o
+x  o xxo 
+x  o xo x
+x  o xo o
+x  o xox 
+x  o xoo 
+x  o o xx
+x  o o xo
+x  o o ox
+x  o ox x
+x  o ox o
+x  o oxx 
+x  o oxo 
+x  o oo x
+x  o oox 
+x  ox  xo
+x  ox  oo
+x  ox x o
+x  ox xo 
+x  ox o o
+x  ox ox 
+x  ox oo 
+x  oxx  o
+x  oxx o 
+x  oxxxoo
+x  oxxo  
+x  oxxoxo
+x  oxo  o
+x  oxo x 
+x  oxo o 
+x  oxox  
+x  oxoxxo
+x  oxoxoo
+x  oxoo  
+x  oxooxo
+x  oo  xx
+x  oo  xo
+x  oo  ox
+x  oo x x
+x  oo x o
+x  oo xx 
+x  oo xo 
+x  oo o x
+x  oo ox 
+x  oox  x
+x  oox  o
+x  oox x 
+x  oox o 
+x  ooxx  
+x  ooxxxo
+x  ooxxox
+x  ooxxoo
+x  ooxo  
+x  ooxoxx
+x  ooxoxo
+x  ooxoox
+x  oooxxx
+x x   xoo
+x x   oxo
+x x   oox
+x x  x oo
+x x  xo o
+x x  xoo 
+x x  o xo
+x x  o ox
+x x  o oo
+x x  ox o
+x x  oxo 
+x x  oo x
+x x  oo o
+x x  oox 
+x x  ooo 
+x x x  oo
+x x x o o
+x x x oo 
+x x xo  o
+x x xo o 
+x x xoo  
+x x xooxo
+x x o  xo
+x x o  ox
+x x o  oo
+x x o x o
+x x o xo 
+x x o o x
+x x o o o
+x x o ox 
+x x o oo 
+x x ox  o
+x x ox o 
+x x oxxoo
+x x oxo  
+x x oxoxo
+x x oo  x
+x x oo  o
+x x oo x 
+x x oo o 
+x x oox  
+x x ooxxo
+x x ooxox
+x x ooxoo
+x x ooo  
+x x oooxx
+x x oooxo
+x x oooox
+x xx   oo
+x xx  o o
+x xx  oo 
+x xx o  o
+x xx o o 
+x xx oo  
+x xx ooxo
+x xx ooox
+x xxxo oo
+x xxxoo o
+x xxxooo 
+x xxo   o
+x xxo  o 
+x xxo o  
+x xxo oxo
+x xxo oox
+x xxox oo
+x xxoxo o
+x xxoxoo 
+x xxoo   
+x xxoo xo
+x xxoo ox
+x xxoo oo
+x xxooo x
+x xxooo o
+x xxooox 
+x xxoooo 
+x xo   xo
+x xo   ox
+x xo   oo
+x xo  x o
+x xo  xo 
+x xo  o x
+x xo  o o
+x xo  ox 
+x xo  oo 
+x xo x  o
+x xo x o 
+x xo xxoo
+x xo xo  
+x xo xoxo
+x xo o  x
+x xo o  o
+x xo o x 
+x xo o o 
+x xo ox  
+x xo oxxo
+x xo oxox
+x xo oxoo
+x xo oo  
+x xo ooxx
+x xo ooxo
+x xo ooox
+x xox   o
+x xox  o 
+x xox o  
+x xox oxo
+x xoxx oo
+x xoxxo o
+x xoxxoo 
+x xoxo   
+x xoxo xo
+x xoxo oo
+x xoxoo o
+x xoxoox 
+x xoxooo 
+x xoo   x
+x xoo   o
+x xoo  x 
+x xoo  o 
+x xoo x  
+x xoo xxo
+x xoo xox
+x xoo xoo
+x xoo o  
+x xoo oxx
+x xoo oxo
+x xoo oox
+x xoox   
+x xoox xo
+x xoox oo
+x xooxx o
+x xooxxo 
+x xooxo o
+x xooxox 
+x xooxoo 
+x o   xxo
+x o   xox
+x o   xoo
+x o   oxx
+x o   oxo
+x o   oox
+x o  x xo
+x o  x ox
+x o  x oo
+x o  xx o
+x o  xxo 
+x o  xo x
+x o  xo o
+x o  xox 
+x o  xoo 
+x o  o xx
+x o  o ox
+x o  ox x
+x o  oxx 
+x o  oxo 
+x o  oo x
+x o  oox 
+x o x  xo
+x o x  oo
+x o x x o
+x o x xo 
+x o x o o
+x o x ox 
+x o x oo 
+x o xx  o
+x o xx o 
+x o xxxoo
+x o xxo  
+x o xxoxo
+x o xo x 
+x o xo o 
+x o xox  
+x o xoo  
+x o o  xx
+x o o  xo
+x o o  ox
+x o o x x
+x o o x o
+x o o xx 
+x o o xo 
+x o ox  x
+x o ox  o
+x o ox x 
+x o ox o 
+x o oxx  
+x o oxxxo
+x o oxxox
+x o oxxoo
+x o oo  x
+x o oo x 
+x o oox  
+x o ooxox
+x ox   xo
+x ox   ox
+x ox   oo
+x ox  o x
+x ox  o o
+x ox  ox 
+x ox  oo 
+x ox x  o
+x ox x o 
+x ox xo  
+x ox xoxo
+x ox xoox
+x ox o  x
+x ox o x 
+x ox o o 
+x ox oxxo
+x ox oxoo
+x ox oo  
+x ox ooxx
+x ox ooox
+x oxx   o
+x oxx  o 
+x oxx o  
+x oxx oxo
+x oxxo   
+x oxxox o
+x oxxoox 
+x oxxooo 
+x oxo   x
+x oxo   o
+x oxo  x 
+x oxo  o 
+x oxox   
+x oxox xo
+x oxox ox
+x oxox oo
+x oxoo   
+x oxoo xx
+x oxoo ox
+x oxoox o
+x oo   xx
+x oo   xo
+x oo   ox
+x oo  x x
+x oo  x o
+x oo  xx 
+x oo  xo 
+x oo  o x
+x oo  ox 
+x oo x  x
+x oo x  o
+x oo x x 
+x oo x o 
+x oo xx  
+x oo xxxo
+x oo xxox
+x oo xxoo
+x oo xo  
+x oo xoxx
+x oo xoxo
+x oo xoox
+x oo o  x
+x oo o x 
+x oo ox  
+x oo oxox
+x oo ooxx
+x oox   o
+x oox  x 
+x oox  o 
+x oox x  
+x oox xxo
+x oox xoo
+x oox o  
+x oox oxo
+x ooxx   
+x ooxx xo
+x ooxx oo
+x ooxxx o
+x ooxxxo 
+x ooxxo o
+x ooxxox 
+x ooxxoo 
+x ooxo   
+x ooxoxx 
+x ooxoxo 
+x ooxoox 
+x ooo   x
+x ooo  x 
+x ooo x  
+x ooo xxo
+x ooo xox
+x ooox   
+x ooox xx
+x ooox xo
+x ooox ox
+x oooxx x
+x oooxx o
+x oooxxx 
+x oooxxo 
+xx    xoo
+xx    oxo
+xx    oox
+xx   x oo
+xx   xo o
+xx   xoo 
+xx   o xo
+xx   o ox
+xx   o oo
+xx   ox o
+xx   oxo 
+xx   oo x
+xx   oo o
+xx   oox 
+xx   ooo 
+xx  x  oo
+xx  x o o
+xx  x oo 
+xx  xo  o
+xx  xo o 
+xx  xoxoo
+xx  xoo  
+xx  o  xo
+xx  o  ox
+xx  o  oo
+xx  o x o
+xx  o xo 
+xx  o o x
+xx  o o o
+xx  o ox 
+xx  o oo 
+xx  ox  o
+xx  ox o 
+xx  oxxoo
+xx  oxo  
+xx  oxoxo
+xx  oxoox
+xx  oo  x
+xx  oo  o
+xx  oo x 
+xx  oo o 
+xx  oox  
+xx  ooxxo
+xx  ooxox
+xx  ooxoo
+xx  ooo  
+xx  oooxx
+xx  oooxo
+xx  oooox
+xx x   oo
+xx x  o o
+xx x  oo 
+xx x o  o
+xx x o o 
+xx x oo  
+xx x ooxo
+xx x ooox
+xx xxo oo
+xx xxoo o
+xx xxooo 
+xx xo   o
+xx xo  o 
+xx xo o  
+xx xo oxo
+xx xo oox
+xx xox oo
+xx xoxo o
+xx xoxoo 
+xx xoo   
+xx xoo xo
+xx xoo ox
+xx xoo oo
+xx xooo x
+xx xooo o
+xx xooox 
+xx xoooo 
+xx o   xo
+xx o   ox
+xx o   oo
+xx o  x o
+xx o  xo 
+xx o  o x
+xx o  o o
+xx o  ox 
+xx o  oo 
+xx o x  o
+xx o x o 
+xx o xxoo
+xx o xo  
+xx o xoxo
+xx o xoox
+xx o o  x
+xx o o  o
+xx o o x 
+xx o o o 
+xx o ox  
+xx o oxxo
+xx o oxox
+xx o oxoo
+xx o oo  
+xx o ooxx
+xx o ooxo
+xx o ooox
+xx ox   o
+xx ox  o 
+xx ox xoo
+xx ox o  
+xx oxx oo
+xx oxxo o
+xx oxxoo 
+xx oxo   
+xx oxo oo
+xx oxox o
+xx oxoxo 
+xx oxoo o
+xx oxooo 
+xx oo   x
+xx oo   o
+xx oo  x 
+xx oo  o 
+xx oo x  
+xx oo xxo
+xx oo xox
+xx oo xoo
+xx oo o  
+xx oo oxx
+xx oo oxo
+xx oo oox
+xx oox   
+xx oox xo
+xx oox ox
+xx oox oo
+xx ooxx o
+xx ooxxo 
+xx ooxo x
+xx ooxo o
+xx ooxox 
+xx ooxoo 
+xxx  xooo
+xxx  oooo
+xxx x ooo
+xxx o ooo
+xxxx  ooo
+xxxxxoooo
+xxxxoxooo
+xxxxooxoo
+xxxxooooo
+xxxo  ooo
+xxxoxxooo
+xxxoxoxoo
+xxxoxooxo
+xxxoxooox
+xxxoxoooo
+xxxooxoox
+xxxooxooo
+xxxooo  x
+xxxooo  o
+xxxooo x 
+xxxooo o 
+xxxooox  
+xxxoooxxo
+xxxoooxox
+xxxoooxoo
+xxxoooo  
+xxxooooxx
+xxxooooxo
+xxxooooox
+xxo    xo
+xxo    ox
+xxo    oo
+xxo   x o
+xxo   xo 
+xxo   o x
+xxo   o o
+xxo   ox 
+xxo   oo 
+xxo  x  o
+xxo  x o 
+xxo  xxoo
+xxo  xo  
+xxo  xoxo
+xxo  xoox
+xxo  o  x
+xxo  o x 
+xxo  o o 
+xxo  ox  
+xxo  oxox
+xxo  oo  
+xxo  ooxx
+xxo  ooox
+xxo x   o
+xxo x  o 
+xxo x xoo
+xxo x o  
+xxo xx oo
+xxo xxo o
+xxo xxoo 
+xxo xo   
+xxo xo xo
+xxo xoxo 
+xxo xooo 
+xxo o   x
+xxo o   o
+xxo o  x 
+xxo o  o 
+xxo o x  
+xxo o xxo
+xxo o xox
+xxo o xoo
+xxo ox   
+xxo ox xo
+xxo ox ox
+xxo ox oo
+xxo oxx o
+xxo oxxo 
+xxo oo   
+xxo oo xx
+xxo oo ox
+xxo oox x
+xxo ooxx 
+xxo ooxo 
+xxox    o
+xxox   o 
+xxox  o  
+xxox  oxo
+xxox  oox
+xxox x oo
+xxox xo o
+xxox xoo 
+xxox o   
+xxox o ox
+xxox ox o
+xxox oo x
+xxox oox 
+xxox ooo 
+xxoxx  oo
+xxoxx o o
+xxoxx oo 
+xxoxxxooo
+xxoxxo o 
+xxoxxoxoo
+xxoxxoo  
+xxoxxooxo
+xxoxxoooo
+xxoxo    
+xxoxo  xo
+xxoxo  ox
+xxoxo  oo
+xxoxox  o
+xxoxox o 
+xxoxoxooo
+xxoxoo  x
+xxoxoo x 
+xxoxoo o 
+xxoxooxxo
+xxoxooxoo
+xxoxoooxo
+xxoo    x
+xxoo    o
+xxoo   x 
+xxoo   o 
+xxoo  x  
+xxoo  xxo
+xxoo  xox
+xxoo  xoo
+xxoo  o  
+xxoo  oxx
+xxoo  oxo
+xxoo  oox
+xxoo x   
+xxoo x xo
+xxoo x ox
+xxoo x oo
+xxoo xx o
+xxoo xxo 
+xxoo xo x
+xxoo xo o
+xxoo xox 
+xxoo xoo 
+xxoo o   
+xxoo o xx
+xxoo o ox
+xxoo ox x
+xxoo oxx 
+xxoo oxo 
+xxoo oo x
+xxoo oox 
+xxoox    
+xxoox  oo
+xxoox x o
+xxoox xo 
+xxoox o o
+xxoox oo 
+xxooxx  o
+xxooxx o 
+xxooxxxoo
+xxooxxo  
+xxooxo o 
+xxooxox  
+xxooxoxxo
+xxooxoo  
+xxooxooxx
+xxooxooxo
+xxooo    
+xxooo  xx
+xxooo  xo
+xxooo  ox
+xxooo x x
+xxooo x o
+xxooo xx 
+xxooo xo 
+xxooox  x
+xxooox  o
+xxooox x 
+xxooox o 
+xxoooxx  
+xxoooxxxo
+xxoooxxox
+xxoooxxoo
+xxooooxxx
+xxooooxxo
+xxoooooxx
+xo    xxo
+xo    xox
+xo    xoo
+xo    oxx
+xo    oxo
+xo    oox
+xo   x xo
+xo   x ox
+xo   x oo
+xo   xx o
+xo   xxo 
+xo   xo x
+xo   xo o
+xo   xox 
+xo   xoo 
+xo   o xx
+xo   o xo
+xo   o ox
+xo   ox x
+xo   ox o
+xo   oxx 
+xo   oxo 
+xo   oo x
+xo   oox 
+xo  x  xo
+xo  x  oo
+xo  x x o
+xo  x xo 
+xo  x o o
+xo  x ox 
+xo  x oo 
+xo  xx  o
+xo  xx o 
+xo  xxxoo
+xo  xxo  
+xo  xxoxo
+xo  xo  o
+xo  xo x 
+xo  xo o 
+xo  xox  
+xo  xoxxo
+xo  xoxoo
+xo  xoo  
+xo  xooxo
+xo  o  xx
+xo  o  xo
+xo  o x x
+xo  o x o
+xo  o xx 
+xo  o o x
+xo  o ox 
+xo  ox  x
+xo  ox  o
+xo  ox x 
+xo  oxx  
+xo  oxxxo
+xo  oxo  
+xo  oxoxx
+xo  oxoxo
+xo  oo  x
+xo  oo x 
+xo  oox  
+xo  ooxxo
+xo  oooxx
+xo x   xo
+xo x   ox
+xo x   oo
+xo x  o x
+xo x  o o
+xo x  ox 
+xo x  oo 
+xo x x  o
+xo x x o 
+xo x xo  
+xo x xoxo
+xo x xoox
+xo x o  x
+xo x o  o
+xo x o x 
+xo x o o 
+xo x oo  
+xo x ooxx
+xo x ooxo
+xo x ooox
+xo xx   o
+xo xx  o 
+xo xx o  
+xo xx oxo
+xo xxo   
+xo xxo xo
+xo xxo oo
+xo xxoo o
+xo xxoox 
+xo xxooo 
+xo xo   x
+xo xo   o
+xo xo  x 
+xo xo xox
+xo xo xoo
+xo xo o  
+xo xo oxx
+xo xo oxo
+xo xox   
+xo xox xo
+xo xoxxo 
+xo xoxo x
+xo xoxo o
+xo xoxox 
+xo xoo   
+xo xoo xx
+xo xoo xo
+xo xooxo 
+xo xooo x
+xo xooox 
+xo o   xx
+xo o   xo
+xo o   ox
+xo o  x x
+xo o  x o
+xo o  xx 
+xo o  xo 
+xo o  o x
+xo o  ox 
+xo o x  x
+xo o x  o
+xo o x x 
+xo o x o 
+xo o xx  
+xo o xxxo
+xo o xxox
+xo o xxoo
+xo o xo  
+xo o xoxx
+xo o xoxo
+xo o xoox
+xo o o  x
+xo o o x 
+xo o ox  
+xo o oxxo
+xo o oxox
+xo o ooxx
+xo ox   o
+xo ox  x 
+xo ox  o 
+xo ox x  
+xo ox xxo
+xo ox xoo
+xo ox o  
+xo ox oxo
+xo oxx   
+xo oxx xo
+xo oxx oo
+xo oxxx o
+xo oxxxo 
+xo oxxo o
+xo oxxox 
+xo oxxoo 
+xo oxo   
+xo oxo xo
+xo oxox o
+xo oxoxx 
+xo oxoxo 
+xo oxoox 
+xo oo   x
+xo oo  x 
+xo oo x  
+xo oo xxo
+xo oo oxx
+xo oox   
+xo oox xx
+xo oox xo
+xo ooxx x
+xo ooxx o
+xo ooxxx 
+xo ooxo x
+xo ooxox 
+xox    xo
+xox    ox
+xox    oo
+xox   x o
+xox   xo 
+xox   o x
+xox   o o
+xox   ox 
+xox   oo 
+xox  x  o
+xox  x o 
+xox  xxoo
+xox  xo  
+xox  xoxo
+xox  o  x
+xox  o  o
+xox  o x 
+xox  o o 
+xox  ox  
+xox  oxxo
+xox  oxox
+xox  oxoo
+xox  oo  
+xox  ooxx
+xox  ooxo
+xox  ooox
+xox x   o
+xox x  o 
+xox x o  
+xox x oxo
+xox xx oo
+xox xxo o
+xox xxoo 
+xox xo   
+xox xo xo
+xox xo oo
+xox xoo o
+xox xoox 
+xox xooo 
+xox o   x
+xox o   o
+xox o  x 
+xox o x  
+xox o xxo
+xox o o  
+xox o oxx
+xox o oxo
+xox ox   
+xox ox xo
+xox ox ox
+xox oxx o
+xox oxo o
+xox oxox 
+xox oo   
+xox oo xx
+xox oo xo
+xox oox x
+xox oox o
+xox ooxx 
+xox ooo x
+xox ooox 
+xoxx    o
+xoxx   o 
+xoxx  o  
+xoxx  oxo
+xoxx  oox
+xoxx x oo
+xoxx xo o
+xoxx xoo 
+xoxx o   
+xoxx o xo
+xoxx o ox
+xoxx o oo
+xoxx oo x
+xoxx oo o
+xoxx oox 
+xoxx ooo 
+xoxxx  oo
+xoxxx o o
+xoxxx oo 
+xoxxxxooo
+xoxxxo  o
+xoxxxo o 
+xoxxxoxoo
+xoxxxoo  
+xoxxxooxo
+xoxxo    
+xoxxo  xo
+xoxxo xo 
+xoxxo o x
+xoxxo o o
+xoxxo ox 
+xoxxox  o
+xoxxoxxoo
+xoxxoxo  
+xoxxoxoxo
+xoxxoxoox
+xoxxoxooo
+xoxxoo  x
+xoxxoo  o
+xoxxoo x 
+xoxxooxox
+xoxxooxoo
+xoxxooo  
+xoxxoooxx
+xoxxoooxo
+xoxo    x
+xoxo    o
+xoxo   x 
+xoxo   o 
+xoxo  x  
+xoxo  xxo
+xoxo  xox
+xoxo  xoo
+xoxo  o  
+xoxo  oxx
+xoxo  oxo
+xoxo  oox
+xoxo x   
+xoxo x xo
+xoxo x oo
+xoxo xx o
+xoxo xxo 
+xoxo xo o
+xoxo xox 
+xoxo xoo 
+xoxo o   
+xoxo o xx
+xoxo o xo
+xoxo o ox
+xoxo ox x
+xoxo ox o
+xoxo oxx 
+xoxo oxo 
+xoxo oo x
+xoxo oox 
+xoxox    
+xoxox  xo
+xoxox  oo
+xoxox o o
+xoxox ox 
+xoxox oo 
+xoxoxx  o
+xoxoxx o 
+xoxoxxo  
+xoxoxxoxo
+xoxoxxoox
+xoxoxo  o
+xoxoxo x 
+xoxoxo o 
+xoxoxoxox
+xoxoxoo  
+xoxoxooxo
+xoxoo    
+xoxoo  xx
+xoxoo  xo
+xoxoo x x
+xoxoo x o
+xoxoo xx 
+xoxoo o x
+xoxoo ox 
+xoxoox  o
+xoxoox x 
+xoxooxx  
+xoxooxxxo
+xoxooxxox
+xoxooxo  
+xoxooxoxo
+xoxooxoox
+xoxoooxxx
+xoxoooxox
+xoo    xx
+xoo    xo
+xoo    ox
+xoo   x x
+xoo   x o
+xoo   xx 
+xoo   xo 
+xoo   o x
+xoo   ox 
+xoo  x  x
+xoo  x  o
+xoo  x x 
+xoo  x o 
+xoo  xx  
+xoo  xxxo
+xoo  xxox
+xoo  xxoo
+xoo  xo  
+xoo  xoxx
+xoo  xoxo
+xoo  xoox
+xoo  o  x
+xoo  o x 
+xoo  ox  
+xoo  oxox
+xoo  ooxx
+xoo x   o
+xoo x  x 
+xoo x  o 
+xoo x x  
+xoo x xxo
+xoo x xoo
+xoo x o  
+xoo x oxo
+xoo xx   
+xoo xx xo
+xoo xx oo
+xoo xxx o
+xoo xxxo 
+xoo xxo o
+xoo xxox 
+xoo xxoo 
+xoo xo   
+xoo xoxx 
+xoo xoxo 
+xoo xoox 
+xoo o   x
+xoo o  x 
+xoo o x  
+xoo o xxo
+xoo ox   
+xoo ox xx
+xoo ox xo
+xoo oxx x
+xoo oxx o
+xoo oxxx 
+xoo oo xx
+xoo oox x
+xoo ooxx 
+xoox    x
+xoox    o
+xoox   x 
+xoox   o 
+xoox  o  
+xoox  oxx
+xoox  oxo
+xoox  oox
+xoox x   
+xoox x xo
+xoox x ox
+xoox x oo
+xoox xo x
+xoox xo o
+xoox xox 
+xoox xoo 
+xoox o   
+xoox o xx
+xoox o ox
+xoox ox o
+xoox oo x
+xoox oox 
+xooxx    
+xooxx  xo
+xooxx  oo
+xooxx o o
+xooxx ox 
+xooxx oo 
+xooxxxxoo
+xooxxxoox
+xooxxxooo
+xooxxo x 
+xooxxo o 
+xooxxoxxo
+xooxxoxox
+xooxxoxoo
+xooxxoo  
+xooxo    
+xooxo  xx
+xooxo  xo
+xooxo xo 
+xooxox  x
+xooxox  o
+xooxox x 
+xooxoxxox
+xooxoxxoo
+xooxoxoox
+xooxoo  x
+xooxoo x 
+xooxooxxx
+xooxooxxo
+xooxooxox
+xooo    x
+xooo   x 
+xooo  x  
+xooo  xxo
+xooo  xox
+xooo  oxx
+xooo x   
+xooo x xx
+xooo x xo
+xooo x ox
+xooo xx x
+xooo xx o
+xooo xxx 
+xooo xxo 
+xooo xo x
+xooo xox 
+xooo o xx
+xooo ox x
+xooo oxx 
+xooox    
+xooox  xo
+xooox x o
+xooox xx 
+xooox xo 
+xooox ox 
+xoooxx  o
+xoooxx x 
+xoooxx o 
+xoooxxx  
+xoooxxxxo
+xoooxxxoo
+xoooxxo  
+xoooxxoxo
+xoooxo x 
+xoooxox  
+xoooxoxxx
+xoooo  xx
+xoooo x x
+xoooo xx 
+xoooox  x
+xoooox x 
+xooooxx  
+xooooxxxo
+xoooooxxx
+o    xxxo
+o    xxox
+o    xxoo
+o    xoxx
+o    xoxo
+o    xoox
+o    oxxo
+o    oxox
+o    ooxx
+o   x xxo
+o   x xox
+o   x xoo
+o   x oxx
+o   x oxo
+o   x oox
+o   xx xo
+o   xx ox
+o   xx oo
+o   xxx o
+o   xxxo 
+o   xxo x
+o   xxo o
+o   xxox 
+o   xxoo 
+o   xo xx
+o   xo xo
+o   xo ox
+o   xox x
+o   xox o
+o   xoxx 
+o   xoxo 
+o   xoo x
+o   xoox 
+o   o xox
+o   o oxx
+o   ox xx
+o   ox ox
+o   oxx x
+o   oxxx 
+o   oxxo 
+o   oxo x
+o   oxox 
+o   oo xx
+o   oox x
+o   ooxx 
+o  x  xxo
+o  x  xox
+o  x  xoo
+o  x  oxx
+o  x  oxo
+o  x  oox
+o  x x xo
+o  x x ox
+o  x x oo
+o  x xx o
+o  x xxo 
+o  x xo x
+o  x xo o
+o  x xox 
+o  x xoo 
+o  x o xx
+o  x o xo
+o  x o ox
+o  x ox x
+o  x ox o
+o  x oxx 
+o  x oxo 
+o  x oo x
+o  x oox 
+o  xx  xo
+o  xx  ox
+o  xx  oo
+o  xx x o
+o  xx xo 
+o  xx o x
+o  xx o o
+o  xx ox 
+o  xx oo 
+o  xxxooo
+o  xxo  x
+o  xxo  o
+o  xxo x 
+o  xxo o 
+o  xxox  
+o  xxoxxo
+o  xxoxox
+o  xxoxoo
+o  xxoo  
+o  xxooxx
+o  xxooxo
+o  xxooox
+o  xo  xx
+o  xo  ox
+o  xo x x
+o  xo xx 
+o  xo xo 
+o  xo o x
+o  xo ox 
+o  xox  x
+o  xox x 
+o  xox o 
+o  xoxx  
+o  xoxxox
+o  xoxo  
+o  xoxoxx
+o  xoxoox
+o  xoo  x
+o  xoo x 
+o  xoox  
+o  xooxox
+o  xoooxx
+o  o  xxo
+o  o  xox
+o  o x xx
+o  o x xo
+o  o x ox
+o  o xx x
+o  o xx o
+o  o xxx 
+o  o xxo 
+o  o o xx
+o  o ox x
+o  o oxx 
+o  ox  xx
+o  ox  xo
+o  ox  ox
+o  ox x x
+o  ox x o
+o  ox xx 
+o  ox xo 
+o  oxx  x
+o  oxx  o
+o  oxx x 
+o  oxx o 
+o  oxxx  
+o  oxxxxo
+o  oxxxox
+o  oxxxoo
+o  oxo  x
+o  oxo x 
+o  oxox  
+o  oxoxxo
+o  oxoxox
+o  oo  xx
+o  oo x x
+o  oo xx 
+o  oox  x
+o  oox x 
+o  ooxx  
+o  ooxxox
+o  oooxxx
+o x   xxo
+o x   xox
+o x   xoo
+o x   oxx
+o x   oxo
+o x   oox
+o x  x xo
+o x  x oo
+o x  xx o
+o x  xxo 
+o x  xo o
+o x  xox 
+o x  xoo 
+o x  o xx
+o x  o xo
+o x  o ox
+o x  ox x
+o x  ox o
+o x  oxx 
+o x  oxo 
+o x  oo x
+o x  oox 
+o x x  xo
+o x x  ox
+o x x  oo
+o x x o x
+o x x o o
+o x x ox 
+o x x oo 
+o x xx  o
+o x xx o 
+o x xxo  
+o x xxoxo
+o x xo  x
+o x xo  o
+o x xo x 
+o x xo o 
+o x xoo  
+o x xooxx
+o x xooxo
+o x xooox
+o x o  xx
+o x o  ox
+o x o x x
+o x o xx 
+o x o xo 
+o x o o x
+o x o ox 
+o x ox x 
+o x ox o 
+o x oxx  
+o x oxo  
+o x oo  x
+o x oo x 
+o x oox  
+o x ooxox
+o x oooxx
+o xx   xo
+o xx   ox
+o xx   oo
+o xx  x o
+o xx  xo 
+o xx  o x
+o xx  o o
+o xx  ox 
+o xx  oo 
+o xx x  o
+o xx x o 
+o xx xxoo
+o xx xo  
+o xx xoxo
+o xx o  x
+o xx o  o
+o xx o x 
+o xx o o 
+o xx ox  
+o xx oxxo
+o xx oxox
+o xx oxoo
+o xx oo  
+o xx ooxx
+o xx ooxo
+o xx ooox
+o xxx   o
+o xxx  o 
+o xxx o  
+o xxx oxo
+o xxx oox
+o xxxo   
+o xxxo xo
+o xxxo ox
+o xxxo oo
+o xxxoo x
+o xxxoo o
+o xxxoox 
+o xxxooo 
+o xxo   x
+o xxo  x 
+o xxo  o 
+o xxo x  
+o xxo xox
+o xxo o  
+o xxo oxx
+o xxo oox
+o xxox   
+o xxoxxo 
+o xxoxox 
+o xxoxoo 
+o xxoo   
+o xxoo xx
+o xxoo ox
+o xxoox x
+o xxooxx 
+o xxooxo 
+o xxooo x
+o xxooox 
+o xo   xx
+o xo   xo
+o xo   ox
+o xo  x x
+o xo  x o
+o xo  xx 
+o xo  xo 
+o xo x  o
+o xo x x 
+o xo x o 
+o xo xx  
+o xo xxxo
+o xo xxoo
+o xo xoxx
+o xo xoox
+o xo o  x
+o xo o x 
+o xo ox  
+o xo oxxo
+o xo oxox
+o xox   x
+o xox   o
+o xox  x 
+o xox  o 
+o xoxx   
+o xoxx xo
+o xoxx oo
+o xoxxo x
+o xoxo   
+o xoxo xx
+o xoxo xo
+o xoxo ox
+o xoo   x
+o xoo  x 
+o xoo x  
+o xoo xox
+o xoox   
+o xooxxx 
+o xooxxo 
+o xooxo x
+o o   xxo
+o o   xox
+o o   oxx
+o o  x xx
+o o  x xo
+o o  x ox
+o o  xx x
+o o  xx o
+o o  xxx 
+o o  xxo 
+o o  xo x
+o o  xox 
+o o  o xx
+o o  ox x
+o o  oxx 
+o o x  xx
+o o x  xo
+o o x  ox
+o o x x x
+o o x x o
+o o x xx 
+o o x xo 
+o o x o x
+o o x ox 
+o o xx  x
+o o xx  o
+o o xx x 
+o o xx o 
+o o xxx  
+o o xxxxo
+o o xxxox
+o o xxxoo
+o o xxo  
+o o xxoxx
+o o xxoxo
+o o xxoox
+o o xo  x
+o o xo x 
+o o xox  
+o o xoxox
+o o xooxx
+o o o  xx
+o o o x x
+o o o xx 
+o o ox  x
+o o ox x 
+o o oxx  
+o o oxxox
+o ox   xx
+o ox   xo
+o ox   ox
+o ox  x x
+o ox  x o
+o ox  xx 
+o ox  xo 
+o ox  o x
+o ox  ox 
+o ox x  x
+o ox x  o
+o ox x x 
+o ox x o 
+o ox xx  
+o ox xxxo
+o ox xxox
+o ox xxoo
+o ox xo  
+o ox xoxx
+o ox xoxo
+o ox xoox
+o ox o  x
+o ox o x 
+o ox ox  
+o ox oxox
+o ox ooxx
+o oxx   x
+o oxx   o
+o oxx  x 
+o oxx  o 
+o oxx x  
+o oxx xxo
+o oxx xox
+o oxx xoo
+o oxx o  
+o oxx oxx
+o oxx oxo
+o oxx oox
+o oxxo   
+o oxxo xx
+o oxxo ox
+o oxxox x
+o oxxoxx 
+o oxxoxo 
+o oxxoo x
+o oxxoox 
+o oxo   x
+o oxo  x 
+o oxo x  
+o oxo xox
+o oxox   
+o oxox xx
+o oxox ox
+o oxoxx x
+o oxoxxx 
+o oxoxxo 
+o oxoo xx
+o oxoox x
+o oxooxx 
+o oo   xx
+o oo  x x
+o oo  xx 
+o oo x  x
+o oo x x 
+o oo xx  
+o oo xxxo
+o oo xxox
+o oox   x
+o oox  x 
+o oox x  
+o oox xxo
+o oox xox
+o ooxx   
+o ooxx xx
+o ooxx xo
+o ooxx ox
+o ooxxx x
+o ooxxx o
+o ooxxxx 
+o ooxxxo 
+o ooxo xx
+o ooxox x
+o ooxoxx 
+o ooox xx
+o oooxx x
+o oooxxx 
+ox    xxo
+ox    xox
+ox    xoo
+ox    oxx
+ox    oxo
+ox    oox
+ox   x xo
+ox   x ox
+ox   x oo
+ox   xx o
+ox   xxo 
+ox   xo x
+ox   xo o
+ox   xox 
+ox   xoo 
+ox   o xx
+ox   o xo
+ox   o ox
+ox   ox x
+ox   ox o
+ox   oxx 
+ox   oxo 
+ox   oo x
+ox   oox 
+ox  x  ox
+ox  x  oo
+ox  x x o
+ox  x xo 
+ox  x o x
+ox  x o o
+ox  x oo 
+ox  xx  o
+ox  xx o 
+ox  xxxoo
+ox  xxo  
+ox  xxoox
+ox  xo  x
+ox  xo  o
+ox  xo o 
+ox  xox  
+ox  xoxox
+ox  xoxoo
+ox  xoo  
+ox  xooox
+ox  o  xx
+ox  o  ox
+ox  o x x
+ox  o xx 
+ox  o xo 
+ox  o o x
+ox  o ox 
+ox  ox  x
+ox  ox x 
+ox  ox o 
+ox  oxx  
+ox  oxxox
+ox  oxo  
+ox  oxoxx
+ox  oxoox
+ox  oo  x
+ox  oo x 
+ox  oox  
+ox  ooxox
+ox  oooxx
+ox x   xo
+ox x   ox
+ox x   oo
+ox x  x o
+ox x  xo 
+ox x  o x
+ox x  o o
+ox x  ox 
+ox x  oo 
+ox x x  o
+ox x x o 
+ox x xxoo
+ox x xo  
+ox x xoxo
+ox x xoox
+ox x o  x
+ox x o  o
+ox x o x 
+ox x o o 
+ox x ox  
+ox x oxxo
+ox x oxox
+ox x oxoo
+ox x oo  
+ox x ooxx
+ox x ooxo
+ox x ooox
+ox xx   o
+ox xx  o 
+ox xx xoo
+ox xx o  
+ox xx oox
+ox xxo   
+ox xxo ox
+ox xxo oo
+ox xxox o
+ox xxoxo 
+ox xxoo x
+ox xxoo o
+ox xxooo 
+ox xo   x
+ox xo  x 
+ox xo  o 
+ox xo x  
+ox xo xox
+ox xo o  
+ox xo oxx
+ox xo oox
+ox xox   
+ox xox ox
+ox xoxxo 
+ox xoxo x
+ox xoxox 
+ox xoxoo 
+ox xoo   
+ox xoo xx
+ox xoo ox
+ox xoox x
+ox xooxx 
+ox xooxo 
+ox xooo x
+ox xooox 
+ox o   xx
+ox o   xo
+ox o   ox
+ox o  x x
+ox o  x o
+ox o  xx 
+ox o  xo 
+ox o x  x
+ox o x  o
+ox o x x 
+ox o x o 
+ox o xx  
+ox o xxxo
+ox o xxox
+ox o xxoo
+ox o o  x
+ox o o x 
+ox o ox  
+ox o oxxo
+ox o oxox
+ox ox   x
+ox ox   o
+ox ox  o 
+ox ox x  
+ox ox xox
+ox ox xoo
+ox ox oxx
+ox ox oxo
+ox oxx   
+ox oxx ox
+ox oxx oo
+ox oxxx o
+ox oxxxo 
+ox oxxox 
+ox oxo   
+ox oxo ox
+ox oxox x
+ox oxox o
+ox oxoxo 
+ox oxoox 
+ox oo   x
+ox oo  x 
+ox oo x  
+ox oo xox
+ox oox   
+ox oox xx
+ox oox ox
+ox ooxx x
+ox ooxxx 
+ox ooxxo 
+oxx    xo
+oxx    ox
+oxx    oo
+oxx   x o
+oxx   xo 
+oxx   o x
+oxx   o o
+oxx   ox 
+oxx   oo 
+oxx  x  o
+oxx  x o 
+oxx  xxoo
+oxx  xo  
+oxx  xoxo
+oxx  o  x
+oxx  o  o
+oxx  o x 
+oxx  o o 
+oxx  ox  
+oxx  oxxo
+oxx  oxox
+oxx  oxoo
+oxx  oo  
+oxx  ooxx
+oxx  ooxo
+oxx  ooox
+oxx x   o
+oxx x  o 
+oxx x o  
+oxx x oox
+oxx xx oo
+oxx xxo o
+oxx xxoo 
+oxx xo   
+oxx xo ox
+oxx xo oo
+oxx xoo x
+oxx xoo o
+oxx xooo 
+oxx o   x
+oxx o  x 
+oxx o  o 
+oxx o x  
+oxx o xox
+oxx o o  
+oxx o oxx
+oxx o oox
+oxx ox   
+oxx oxxo 
+oxx oxox 
+oxx oxoo 
+oxx oo   
+oxx oo xx
+oxx oo ox
+oxx oox x
+oxx ooxx 
+oxx ooxo 
+oxx ooo x
+oxx ooox 
+oxxx    o
+oxxx   o 
+oxxx  xoo
+oxxx  o  
+oxxx  oxo
+oxxx  oox
+oxxx x oo
+oxxx xo o
+oxxx xoo 
+oxxx o   
+oxxx o xo
+oxxx o ox
+oxxx o oo
+oxxx ox o
+oxxx oxo 
+oxxx oo x
+oxxx oo o
+oxxx oox 
+oxxx ooo 
+oxxxx  oo
+oxxxx o o
+oxxxx oo 
+oxxxxxooo
+oxxxxo  o
+oxxxxo o 
+oxxxxoo  
+oxxxxooox
+oxxxo    
+oxxxo  ox
+oxxxo xo 
+oxxxo o x
+oxxxo ox 
+oxxxo oo 
+oxxxox o 
+oxxxoxo  
+oxxxoxooo
+oxxxoo  x
+oxxxoo x 
+oxxxoo o 
+oxxxoox  
+oxxxooxox
+oxxxooo  
+oxxxoooxx
+oxxxoooox
+oxxo    x
+oxxo    o
+oxxo   x 
+oxxo   o 
+oxxo  x  
+oxxo  xxo
+oxxo  xox
+oxxo  xoo
+oxxo x   
+oxxo x xo
+oxxo x oo
+oxxo xx o
+oxxo xxo 
+oxxo xo x
+oxxo o   
+oxxo o xx
+oxxo o xo
+oxxo o ox
+oxxo ox x
+oxxo ox o
+oxxo oxx 
+oxxo oxo 
+oxxox    
+oxxox  ox
+oxxox  oo
+oxxox ox 
+oxxoxx  o
+oxxoxx o 
+oxxoxxoxo
+oxxoxxoox
+oxxoxxooo
+oxxoxo  x
+oxxoxo  o
+oxxoxo o 
+oxxoxoxxo
+oxxoxooxx
+oxxoxooxo
+oxxoo    
+oxxoo  xx
+oxxoo  ox
+oxxoo x x
+oxxoo xx 
+oxxoo xo 
+oxxoox x 
+oxxoox o 
+oxxooxx  
+oxxooxoxx
+oxxooxoxo
+oxxooxoox
+oxxoooxxx
+oxxoooxxo
+oxxooooxx
+oxo    xx
+oxo    xo
+oxo    ox
+oxo   x x
+oxo   x o
+oxo   xx 
+oxo   xo 
+oxo   o x
+oxo   ox 
+oxo  x  x
+oxo  x  o
+oxo  x x 
+oxo  x o 
+oxo  xx  
+oxo  xxxo
+oxo  xxox
+oxo  xxoo
+oxo  xo  
+oxo  xoxx
+oxo  xoxo
+oxo  xoox
+oxo  o  x
+oxo  o x 
+oxo  ox  
+oxo  oxox
+oxo  ooxx
+oxo x   x
+oxo x   o
+oxo x  o 
+oxo x x  
+oxo x xox
+oxo x xoo
+oxo x o  
+oxo x oox
+oxo xx   
+oxo xx ox
+oxo xx oo
+oxo xxx o
+oxo xxxo 
+oxo xxo x
+oxo xxo o
+oxo xxoo 
+oxo xo   
+oxo xo xo
+oxo xo ox
+oxo xox x
+oxo xoxo 
+oxo xoo x
+oxo o   x
+oxo o  x 
+oxo o x  
+oxo o xox
+oxo ox   
+oxo ox xx
+oxo ox ox
+oxo oxx x
+oxo oxxx 
+oxo oxxo 
+oxo oo xx
+oxo oox x
+oxo ooxx 
+oxox    x
+oxox    o
+oxox   x 
+oxox   o 
+oxox  x  
+oxox  xxo
+oxox  xox
+oxox  xoo
+oxox  o  
+oxox  oxx
+oxox  oxo
+oxox  oox
+oxox x   
+oxox x xo
+oxox x ox
+oxox x oo
+oxox xx o
+oxox xxo 
+oxox xo x
+oxox xo o
+oxox xox 
+oxox xoo 
+oxox o   
+oxox o xx
+oxox o ox
+oxox ox x
+oxox oxx 
+oxox oxo 
+oxox oo x
+oxox oox 
+oxoxx    
+oxoxx  ox
+oxoxx  oo
+oxoxx x o
+oxoxx xo 
+oxoxx o x
+oxoxx o o
+oxoxx oo 
+oxoxxxoxo
+oxoxxxooo
+oxoxxo  x
+oxoxxo o 
+oxoxxox  
+oxoxxoxxo
+oxoxxoxox
+oxoxxoo  
+oxoxxooxo
+oxoxxooox
+oxoxo    
+oxoxo  xx
+oxoxo  ox
+oxoxo x x
+oxoxo xx 
+oxoxo xo 
+oxoxox  x
+oxoxox x 
+oxoxox o 
+oxoxoxx  
+oxoxoxxox
+oxoxoxoxo
+oxoxoo  x
+oxoxoo x 
+oxoxoox  
+oxoxooxxo
+oxoxooxox
+oxoo    x
+oxoo   x 
+oxoo  x  
+oxoo  xxo
+oxoo  xox
+oxoo x   
+oxoo x xx
+oxoo x xo
+oxoo x ox
+oxoo xx x
+oxoo xx o
+oxoo xxx 
+oxoo xxo 
+oxoo o xx
+oxoo ox x
+oxoo oxx 
+oxoox    
+oxoox  ox
+oxoox x x
+oxoox x o
+oxoox xo 
+oxoox ox 
+oxooxx  x
+oxooxx  o
+oxooxx o 
+oxooxxx  
+oxooxxxox
+oxooxxxoo
+oxooxxoxx
+oxooxxoxo
+oxooxo  x
+oxooxox  
+oxooxoxxx
+oxooxoxxo
+oxooxoxox
+oxooxooxx
+oxooo  xx
+oxooo x x
+oxooo xx 
+oxooox  x
+oxooox x 
+oxoooxx  
+oxoooxxox
+oxoooxoxx
+oxooooxxx
+oo    xxo
+oo    xox
+oo    oxx
+oo   x xx
+oo   x xo
+oo   x ox
+oo   xx x
+oo   xx o
+oo   xxx 
+oo   xxo 
+oo   xo x
+oo   xox 
+oo   o xx
+oo   ox x
+oo   oxx 
+oo  x  xx
+oo  x  xo
+oo  x  ox
+oo  x x x
+oo  x x o
+oo  x xx 
+oo  x xo 
+oo  x o x
+oo  x ox 
+oo  xx  x
+oo  xx  o
+oo  xx x 
+oo  xx o 
+oo  xxx  
+oo  xxxxo
+oo  xxxox
+oo  xxxoo
+oo  xxo  
+oo  xxoxx
+oo  xxoxo
+oo  xxoox
+oo  xo  x
+oo  xo x 
+oo  xox  
+oo  xoxxo
+oo  xoxox
+oo  xooxx
+oo  o  xx
+oo  o x x
+oo  o xx 
+oo  ox  x
+oo  ox x 
+oo  oxx  
+oo  oxoxx
+oo x   xx
+oo x   xo
+oo x   ox
+oo x  x x
+oo x  x o
+oo x  xx 
+oo x  xo 
+oo x  o x
+oo x  ox 
+oo x x  x
+oo x x  o
+oo x x x 
+oo x x o 
+oo x xx  
+oo x xxxo
+oo x xxox
+oo x xxoo
+oo x xo  
+oo x xoxx
+oo x xoxo
+oo x xoox
+oo x o  x
+oo x o x 
+oo x ox  
+oo x oxxo
+oo x oxox
+oo x ooxx
+oo xx   x
+oo xx   o
+oo xx  x 
+oo xx  o 
+oo xx x  
+oo xx xxo
+oo xx xox
+oo xx xoo
+oo xx o  
+oo xx oxx
+oo xx oxo
+oo xx oox
+oo xxo   
+oo xxo xx
+oo xxo xo
+oo xxo ox
+oo xxox x
+oo xxox o
+oo xxoxx 
+oo xxoxo 
+oo xxoo x
+oo xxoox 
+oo xo   x
+oo xo  x 
+oo xo x  
+oo xo oxx
+oo xox   
+oo xox xx
+oo xoxx x
+oo xoxxx 
+oo xoxo x
+oo xoxox 
+oo xoo xx
+oo xoox x
+oo xooxx 
+oo o   xx
+oo o  x x
+oo o  xx 
+oo o x  x
+oo o x x 
+oo o xx  
+oo o xxxo
+oo o xxox
+oo ox   x
+oo ox  x 
+oo ox x  
+oo ox xxo
+oo ox xox
+oo oxx   
+oo oxx xx
+oo oxx xo
+oo oxx ox
+oo oxxx x
+oo oxxx o
+oo oxxxx 
+oo oxxxo 
+oo oxo xx
+oo oxox x
+oo oxoxx 
+oo oox xx
+oo ooxx x
+oo ooxxx 
+oox    xx
+oox    xo
+oox    ox
+oox   x x
+oox   x o
+oox   xx 
+oox   xo 
+oox   o x
+oox   ox 
+oox  x  o
+oox  x x 
+oox  x o 
+oox  xx  
+oox  xxxo
+oox  xxoo
+oox  xo  
+oox  xoxo
+oox  o  x
+oox  o x 
+oox  ox  
+oox  oxxo
+oox  oxox
+oox  ooxx
+oox x   x
+oox x   o
+oox x  x 
+oox x  o 
+oox x o  
+oox x oxx
+oox x oxo
+oox x oox
+oox xx   
+oox xx xo
+oox xx oo
+oox xxo o
+oox xxox 
+oox xxoo 
+oox xo   
+oox xo xx
+oox xo xo
+oox xo ox
+oox xoo x
+oox xoox 
+oox o   x
+oox o  x 
+oox o x  
+oox o oxx
+oox ox   
+oox ox ox
+oox oxxx 
+oox oxox 
+oox oo xx
+oox oox x
+oox ooxx 
+ooxx    x
+ooxx    o
+ooxx   x 
+ooxx   o 
+ooxx  x  
+ooxx  xxo
+ooxx  xox
+ooxx  xoo
+ooxx  o  
+ooxx  oxx
+ooxx  oxo
+ooxx  oox
+ooxx x   
+ooxx x xo
+ooxx x oo
+ooxx xx o
+ooxx xxo 
+ooxx xo o
+ooxx xox 
+ooxx xoo 
+ooxx o   
+ooxx o xx
+ooxx o xo
+ooxx o ox
+ooxx ox x
+ooxx ox o
+ooxx oxx 
+ooxx oxo 
+ooxx oo x
+ooxx oox 
+ooxxx    
+ooxxx  xo
+ooxxx  ox
+ooxxx  oo
+ooxxx o x
+ooxxx o o
+ooxxx ox 
+ooxxx oo 
+ooxxxxxoo
+ooxxxxoox
+ooxxxxooo
+ooxxxo  x
+ooxxxo  o
+ooxxxo x 
+ooxxxo o 
+ooxxxoo  
+ooxxxooxx
+ooxxxooxo
+ooxxxooox
+ooxxo    
+ooxxo  xx
+ooxxo x x
+ooxxo xx 
+ooxxo o x
+ooxxo ox 
+ooxxox x 
+ooxxoxx  
+ooxxoxxox
+ooxxoxxoo
+ooxxoxo  
+ooxxoxoox
+ooxxoo  x
+ooxxoo x 
+ooxxoox  
+ooxxoooxx
+ooxo    x
+ooxo   x 
+ooxo  x  
+ooxo  xxo
+ooxo  xox
+ooxo x   
+ooxo x xo
+ooxo xx o
+ooxo xxx 
+ooxo xxo 
+ooxo xo x
+ooxo o xx
+ooxo ox x
+ooxo oxx 
+ooxox    
+ooxox  xx
+ooxox  xo
+ooxox  ox
+ooxoxx  o
+ooxoxx x 
+ooxoxx o 
+ooxoxxxox
+ooxoxxoxx
+ooxoxxoox
+ooxoxo  x
+ooxoxo x 
+ooxoxoxxx
+ooxoo  xx
+ooxoo x x
+ooxoo xx 
+ooxoox x 
+ooxooxx  
+ooxooxxxx
+ooxooxxox
+ooxooxoxx
+ooxoooxxx
+ooo  xxxx
+ooo  oxxx
+ooo x xxx
+ooo o xxx
+ooox  xxx
+oooxxx  x
+oooxxx  o
+oooxxx x 
+oooxxx o 
+oooxxxx  
+oooxxxxxo
+oooxxxxox
+oooxxxxoo
+oooxxxo  
+oooxxxoxx
+oooxxxoxo
+oooxxxoox
+oooxxoxxx
+oooxxoxxo
+oooxoxxxx
+oooxoxxxo
+oooxoxxox
+oooxoxoxx
+oooxooxxx
+oooo  xxx
+ooooxxxxx
+ooooxxoxx
+ooooxoxxx
+oooooxxxx
