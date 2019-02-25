@@ -16,14 +16,7 @@ public class TTT_HC
 	// 3^4 has no wasted space, but long chain lengths
 	// 3^5 has 15 wasted spaces, but shorter chain lengths
 	// 3^5-16 has 0 wasted spaces and shorter chain length than 3^5.. perfect
-	private int hashArraySize = powersOf3[5] - 16;
-	private int numCollisions = 0;
-
-	private int[] quadrant = new int[4];
-	private int oneFourth = hashArraySize / 4;
-
-	private int[] tenth = new int[10];
-	private int oneTenth = hashArraySize / 10;
+	private int hashArraySize = powersOf3[5] - 16;	
 
 	private HashNode[] winners;
 
@@ -31,7 +24,6 @@ public class TTT_HC
 	{
 		winners = new HashNode[hashArraySize];
 		setWinners();
-		analyzeHashArray();
 	}
 
 	public TTT_HC(int hashArraySize)
@@ -39,7 +31,6 @@ public class TTT_HC
 		this.hashArraySize = hashArraySize;
 		winners = new HashNode[hashArraySize];
 		setWinners();
-		analyzeHashArray();
 	}
 
 	private void setWinners()
@@ -52,17 +43,12 @@ public class TTT_HC
 				String ttt = trueTacs.nextLine();
 				int hash = tttHashCode(ttt);
 				HashNode hashObj = new HashNode(hash, ttt, null);
-				addFourth(hash);
 				if (winners[hash] == null)
 					winners[hash] = hashObj;
 				else
 				{
-					HashNode lastNode = winners[hash];
-					while (lastNode.hasNext())
-						lastNode = lastNode.getNext();
-					lastNode.setNext(hashObj);
-					numCollisions++;
-					addTenth(hash);
+					hashObj.setNext(winners[hash]);
+					winners[hash] = hashObj;
 				}
 			}
 			trueTacs.close();
@@ -107,27 +93,22 @@ public class TTT_HC
 		}
 	}
 
-	private void addFourth(int hash)
+	public boolean isWin(String board)
 	{
-		for (int i = 1; i <= this.quadrant.length; i++)
-			if (hash >= this.oneFourth * (i - 1) && hash < this.oneFourth * i)
-				this.quadrant[i - 1]++;
+		int hash = tttHashCode(board);
+		if (winners[hash].contains(board))
+			return true;
+		return false;
 	}
 
-	private void addTenth(int hash)
-	{
-		for (int i = 1; i <= this.tenth.length; i++)
-			if (hash >= this.oneTenth * (i - 1) && hash < this.oneTenth * i)
-				this.tenth[i - 1]++;
-	}
-
-	private void analyzeHashArray()
+	public void analyzeHashArray()
 	{
 		int numSpaces = 0;
 		int numChains = 0;
 		int largestChain = 0;
 		int chainSum = 0;
 		int cl = 0;
+		int numCollisions = 0;
 		for (int i = 0; i < this.winners.length; i++)
 		{
 			if (winners[i] != null)
@@ -138,6 +119,8 @@ public class TTT_HC
 				chainSum += chainLength;
 				if (chainLength > largestChain)
 					largestChain = chainLength;
+				if (chainLength > 1)
+					numCollisions += chainLength - 1;
 			}
 			else if (winners[i] == null)
 				numSpaces++;
@@ -148,54 +131,83 @@ public class TTT_HC
 		// size of the array
 		log("size of array = " + this.hashArraySize);
 		// loadfactor (collisions/size)
-		log("load factor = " + this.numCollisions * 1.0 / this.hashArraySize);
+		log("load factor = " + numCollisions * 1.0 / this.hashArraySize);
 		// number of collisions
-		log("number of collisions = " + this.numCollisions);
+		log("number of collisions = " + numCollisions);
 		// number of chains
 		log("number of chains = " + numChains);
 		// max chain length
 		log("largest chain length = " + largestChain);
 		// average chain length
-		log("average chain length = " + chainSum*1.0 / numChains);
+		log("average chain length = " + chainSum * 1.0 / numChains);
 
 		// number of entries in each quarter of the array
 		String quadStr = "";
-		for (int i : this.quadrant)
+		for (int i : this.determineQuadrants())
 			quadStr += i + ", ";
 		quadStr = quadStr.substring(0, quadStr.length() - 2);
 		log("number of entries per quadrant = " + quadStr);
 
 		// number of collisions in each tenth of the array
 		String tenStr = "";
-		for (int i : this.tenth)
+		int tencol = 0;
+		for (int i : this.determineTenths())
 			tenStr += i + ", ";
 		tenStr = tenStr.substring(0, tenStr.length() - 2);
 		log("number of collisions per tenth = " + tenStr);
 		log("");
 	}
-	
-	public boolean isWin(String board)
+
+	private int[] determineQuadrants()
 	{
-		int hash = tttHashCode(board);
-		if (winners[hash].contains(board))
-			return true;
-		return false;
+		int[] quadrants = new int[4];
+		int oneFourth = hashArraySize / 4;// fix integer division
+
+		for (int i = 0; i < 4; i++)
+		{
+			int numEntries = 0;
+			for (int j = oneFourth * i; j < oneFourth * (i + 1) && j < hashArraySize; j++)
+			{
+				numEntries += this.winners[j].length();
+			}
+			quadrants[i] = numEntries;
+		}
+		return quadrants;
+
+	}
+
+	private int[] determineTenths()
+	{
+		int[] tenths = new int[10];
+		int oneTenth = hashArraySize / 10;// i hate integer division.....
+
+		for (int i = 0; i < 10; i++)
+		{
+			int numCollisions = 0;
+			for (int j = oneTenth * i; j < oneTenth * (i + 1); j++)
+			{
+				int chainLen = this.winners[j].length();
+				if (chainLen > 1)
+					numCollisions += chainLen - 1;
+			}
+			tenths[i] = numCollisions;
+		}
+		return tenths;
+	}
+
+	public static void main(String... args)
+	{
+		// finding the sweet spot to not waste any space on the array:
+
+		// new TTT_HC((int) Math.pow(3, 4));
+		// new TTT_HC((int) Math.pow(3, 5));
+		// new TTT_HC((int) Math.pow(3, 5)-15);
+		// new TTT_HC((int) Math.pow(3, 5)-16);
+		new TTT_HC().analyzeHashArray();
 	}
 
 	private void log(Object o)
 	{
 		System.out.println(o.toString());
 	}
-
-	public static void main(String... args)
-	{
-		// finding the sweet spot to not waste any space on the array:
-		
-		// new TTT_HC((int) Math.pow(3, 4));
-		// new TTT_HC((int) Math.pow(3, 5));
-		// new TTT_HC((int) Math.pow(3, 5)-15);
-		// new TTT_HC((int) Math.pow(3, 5)-16);
-		new TTT_HC();
-	}
-
 }

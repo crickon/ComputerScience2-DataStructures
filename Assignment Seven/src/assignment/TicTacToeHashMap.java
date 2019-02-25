@@ -3,6 +3,7 @@ package assignment;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class TicTacToeHashMap
@@ -21,7 +22,6 @@ public class TicTacToeHashMap
 	{
 		// had to break out the good-ole java docs to figure this one out.
 		// Basically accessing a private field that I shouldn't have access to
-		// :P
 		Field tableField = HashMap.class.getDeclaredField("table");
 		tableField.setAccessible(true);
 		Object[] table = (Object[]) tableField.get(map);
@@ -41,7 +41,7 @@ public class TicTacToeHashMap
 		return table;
 	}
 
-	public HashMap.Entry getNext(HashMap.Entry entry)
+	public static HashMap.Entry getNext(HashMap.Entry entry)
 	{
 		/*
 		 * HashMap entries are structured like LinkedLists with the "next" field
@@ -73,7 +73,7 @@ public class TicTacToeHashMap
 	 * @throws NoSuchFieldException
 	 * @throws IllegalAccessException
 	 */
-	public int chainLength(HashMap.Entry node)
+	public static int chainLength(HashMap.Entry node)
 	{
 		if (node == null)
 			return 0;
@@ -117,7 +117,7 @@ public class TicTacToeHashMap
 		HashMap.Entry[] table = m.getTable();
 		for (int i = 0; i < table.length; i++)
 		{
-			int chainLength = m.chainLength(table[i]);
+			int chainLength = chainLength(table[i]);
 			numEntries += chainLength;
 			if (chainLength > 1)
 			{
@@ -130,6 +130,7 @@ public class TicTacToeHashMap
 			if (chainLength > maxChain)
 				maxChain = chainLength;
 		}
+
 		log("wasted spaces = " + wastedSpaces);
 		log("size of array = " + table.length);
 		// number of entries stored in the table
@@ -137,12 +138,58 @@ public class TicTacToeHashMap
 		// load factor
 		log("load factor = " + numCollisions * 1.0 / table.length);
 		// number of entries in each quadrant
+		int[] quadrants = determineQuadrants(table);
+		String quadStr = "";
+		for (int i : quadrants)
+			quadStr += i + ", ";
+		log("number of entries per quadrant = " + quadStr.substring(0, quadStr.lastIndexOf(',')));
 		// number of collisions in each tenth
+		int[] tenths = determineTenths(table);
+		String tenStr = "";
+		for (int i : tenths)
+			tenStr += i + ", ";
+		log("number of collisions per tenth = " + tenStr.substring(0, tenStr.lastIndexOf(',')));
 		// avg chain length (not including 1)
 		log("avg chain length = " + chainSum * 1.0 / numChains + ", " + chainSum + "/" + numChains);
 		// maximum chain length
 		log("longest chain length = " + maxChain);
 
+	}
+
+	private static int[] determineQuadrants(Entry[] table)
+	{
+		int[] quadrants = new int[4];
+		int len = table.length;
+		int fourth = len / 4;
+		for (int i = 0; i < 4; i++)
+		{
+			int numEntries = 0;
+			for (int j = fourth * i; j < fourth * (i + 1) && j < len; j++)
+			{
+				numEntries += chainLength(table[j]);
+			}
+			quadrants[i] = numEntries;
+		}
+		return quadrants;
+	}
+
+	private static int[] determineTenths(Entry[] table)
+	{
+		int[] tenths = new int[10];
+		int len = table.length;
+		int tenth = len / 10;
+		for (int i = 0; i < 10; i++)
+		{
+			int numCollisions = 0;
+			for (int j = tenth * i; j < tenth * (i + 1) && j < len; j++)
+			{
+				int chainLen = chainLength(table[j]);
+				if (chainLen > 1)
+					numCollisions += chainLen - 1;
+			}
+			tenths[i] = numCollisions;
+		}
+		return tenths;
 	}
 
 }
