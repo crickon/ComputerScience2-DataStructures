@@ -13,11 +13,25 @@ public class TicTacToeMyHashMap
 	private final int numWinners = 1400;
 	private final float resizeFactor = (float) numWinners / CAP;
 
+	/**
+	 * Default constructor to initialize the HashMap and "loadfactor"
+	 */
 	TicTacToeMyHashMap()
 	{
 		this.map = new HashMap<TTTHashString, Boolean>(CAP, resizeFactor);
 	}
 
+	/**
+	 * Provided HashMap capacity method to determine the size of the HashMap
+	 * using java reflection. Not to be confused with the number of entries in
+	 * the HashMap.
+	 * 
+	 * @return size of the HashMap table
+	 * @throws NoSuchFieldException
+	 *             thrown if the "table" field is not found
+	 * @throws IllegalAccessException
+	 *             thrown if the field is inaccessible
+	 */
 	private int capacity() throws NoSuchFieldException, IllegalAccessException
 	{
 		// had to break out the good-ole java docs to figure this one out.
@@ -28,6 +42,16 @@ public class TicTacToeMyHashMap
 		return table == null ? 0 : table.length;
 	}
 
+	/**
+	 * Method to get the HashMap's array of LinkedLists (stored as HashMap.Entry
+	 * objects) using the same reflection as the capacity method.
+	 * 
+	 * @return HashMap's stored data array
+	 * @throws NoSuchFieldException
+	 *             thrown if the "table" field is not found
+	 * @throws IllegalAccessException
+	 *             thrown if the field is inaccessible
+	 */
 	public HashMap.Entry[] getTable() throws NoSuchFieldException, IllegalAccessException
 	{
 		/*
@@ -41,6 +65,16 @@ public class TicTacToeMyHashMap
 		return table;
 	}
 
+	public static int countTreeNodes = 0;
+
+	/**
+	 * Method to get the next node in the LinkedList using reflection.
+	 * 
+	 * @param entry
+	 *            A node from HashMap's table
+	 * @return The next node in the LinkedList or null if there is no child
+	 *         node.
+	 */
 	public static HashMap.Entry getNext(HashMap.Entry entry)
 	{
 		/*
@@ -53,14 +87,17 @@ public class TicTacToeMyHashMap
 		try
 		{
 			Field entryField = entry.getClass().getDeclaredField("next");
+
 			entryField.setAccessible(true);
 			HashMap.Entry nextNode = (HashMap.Entry) entryField.get(entry);
 			return nextNode;
 		}
 		catch (NoSuchFieldException | IllegalAccessException e)
 		{
-			return null;
+			countTreeNodes++;
+			// System.out.println(entry.getClass().getName());
 		}
+		return null;
 	}
 
 	/**
@@ -80,6 +117,13 @@ public class TicTacToeMyHashMap
 		return chainLength(getNext(node)) + 1;
 	}
 
+	/**
+	 * Helper method for printing to the console easier
+	 * 
+	 * @param o
+	 *            Object to print its String value to the console (Typically a
+	 *            String).
+	 */
 	private static void log(Object o)
 	{
 		System.out.println(o.toString());
@@ -93,23 +137,34 @@ public class TicTacToeMyHashMap
 		log("Initial HashMap Capacity = " + m.CAP);
 
 		Scanner winnersInput = new Scanner(new File("TicTacToeWinners.txt"));
-		int count = 0;
+		int numWinners = 0;
 		while (winnersInput.hasNextLine())
 		{
 			TTTHashString line = new TTTHashString(winnersInput.nextLine());
 			m.map.put(line, true);
+			numWinners++;
 		}
 		winnersInput.close();
 
 		log("Capacity with winners = " + m.capacity());
+		log("number of winners added = " + numWinners);
 		analyze(m);
 	}
 
-	private static void analyze(TicTacToeMyHashMap m) throws NoSuchFieldException, IllegalAccessException
+	/**
+	 * Helper method to analyze the HashMap post-process.
+	 * 
+	 * @param m
+	 *            TicTacToeHashMap object
+	 * @throws NoSuchFieldException
+	 *             Thrown if the HashMap table is not found
+	 * @throws IllegalAccessException
+	 *             Thrown if the HashMap table is inaccessible
+	 */
+	private static void analyze(TicTacToeMyHashMap m) throws IllegalAccessException, NoSuchFieldException
 	{
 		int wastedSpaces = 0;
 		int numCollisions = 0;
-		int numEntries = 0;
 		int numChains = 0;
 		int maxChain = 0;
 		int chainSum = 0;
@@ -118,7 +173,6 @@ public class TicTacToeMyHashMap
 		for (int i = 0; i < table.length; i++)
 		{
 			int chainLength = chainLength(table[i]);
-			numEntries += chainLength;
 			if (chainLength > 1)
 			{
 				numCollisions += chainLength - 1;
@@ -129,14 +183,17 @@ public class TicTacToeMyHashMap
 				wastedSpaces++;
 			if (chainLength > maxChain)
 				maxChain = chainLength;
+
 		}
 
 		log("wasted spaces = " + wastedSpaces);
 		log("size of array = " + table.length);
 		// number of entries stored in the table
-		log("number of entries = " + numEntries);
+		log("number of entries = " + m.map.size());
 		// load factor
 		log("load factor = " + numCollisions * 1.0 / table.length);
+		log("number of collisions = " + numCollisions);
+		log("number of chains = " + numChains);
 		// number of entries in each quadrant
 		int[] quadrants = determineQuadrants(table);
 		String quadStr = "";
@@ -153,18 +210,28 @@ public class TicTacToeMyHashMap
 		log("avg chain length = " + chainSum * 1.0 / numChains + ", " + chainSum + "/" + numChains);
 		// maximum chain length
 		log("longest chain length = " + maxChain);
-
+		log("number of uncounted treeNodes = " + countTreeNodes);
 	}
 
+	/**
+	 * Helper method to determine how many entries exist in every quadrant of
+	 * the HashMap's capacity
+	 * 
+	 * @param table
+	 *            HashMap's stored data array
+	 * @return the number of entries in each quadrant stored as an array
+	 */
 	private static int[] determineQuadrants(Entry[] table)
 	{
-		int[] quadrants = new int[4];
 		int len = table.length;
-		int fourth = len / 4;
-		for (int i = 0; i < 4; i++)
+		double oneFourth = len * 1.0 / 4;
+		double[] quadVals =
+		{ 0.0, oneFourth * 1, oneFourth * 2, oneFourth * 3, oneFourth * 4 };
+		int[] quadrants = new int[4];
+		for (int i = 0; i < quadVals.length - 1; i++)
 		{
 			int numEntries = 0;
-			for (int j = fourth * i; j < fourth * (i + 1) && j < len; j++)
+			for (int j = (int) Math.round(quadVals[i]); j < Math.round(quadVals[i + 1]) && j < len; j++)
 			{
 				numEntries += chainLength(table[j]);
 			}
@@ -173,15 +240,26 @@ public class TicTacToeMyHashMap
 		return quadrants;
 	}
 
+	/**
+	 * Helper method to determine how many collisions occur in every tenth of
+	 * the HashMap's capacity
+	 * 
+	 * @param table
+	 *            HashMap's stored data array
+	 * @return the number of collisions in each tenth stored as an array
+	 */
 	private static int[] determineTenths(Entry[] table)
 	{
-		int[] tenths = new int[10];
 		int len = table.length;
-		int tenth = len / 10;
-		for (int i = 0; i < 10; i++)
+		double oneTenth = len * 1.0 / 10;
+		double[] tenthVals =
+		{ 0.0, oneTenth * 1, oneTenth * 2, oneTenth * 3, oneTenth * 4, oneTenth * 5, oneTenth * 6, oneTenth * 7,
+				oneTenth * 8, oneTenth * 9, oneTenth * 10 };
+		int[] tenths = new int[10];
+		for (int i = 0; i < tenthVals.length - 1; i++)
 		{
 			int numCollisions = 0;
-			for (int j = tenth * i; j < tenth * (i + 1) && j < len; j++)
+			for (int j = (int) Math.round(tenthVals[i]); j < Math.round(tenthVals[i + 1]) && j < len; j++)
 			{
 				int chainLen = chainLength(table[j]);
 				if (chainLen > 1)

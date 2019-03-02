@@ -20,12 +20,23 @@ public class TTT_HC
 
 	private HashNode[] winners;
 
+	/**
+	 * Default constructor to initialize winners array of LinkedLists and set
+	 * the winning values from a File of String boards.
+	 */
 	public TTT_HC()
 	{
 		winners = new HashNode[hashArraySize];
 		setWinners();
 	}
 
+	/**
+	 * Constructor to initialize winners array of LinkedLists with a given
+	 * capacity and set the winning values from a File of String boards.
+	 * 
+	 * @param hashArraySize
+	 *            capacity of winners array
+	 */
 	public TTT_HC(int hashArraySize)
 	{
 		this.hashArraySize = hashArraySize;
@@ -33,6 +44,9 @@ public class TTT_HC
 		setWinners();
 	}
 
+	/**
+	 * Helper method to set the winners array with winning Tic Tac Toe values
+	 */
 	private void setWinners()
 	{
 		try
@@ -60,13 +74,29 @@ public class TTT_HC
 		}
 	}
 
-	private int tttHashCode(String ttt)
+	/**
+	 * HashCode parser that takes in a TTT board String and returns the hash
+	 * code value for an index in the winners array.
+	 * 
+	 * @param s
+	 *            String representation of TTT board
+	 * @return hash code index
+	 */
+	private int tttHashCode(String s)
 	{
 		// condense the hashcode to fit in a smaller array using modulus
 		// remainder will always be < hashArraySize
-		return myHashCode(ttt) % this.hashArraySize;
+		return myHashCode(s) % this.hashArraySize;
 	}
 
+	/**
+	 * HashCode parser that takes in a TTT board String and returns a unique
+	 * hash code for that board.
+	 * 
+	 * @param s
+	 *            String representation of TTT board
+	 * @return unique hash code
+	 */
 	private int myHashCode(String s)
 	{
 		int hash = 0;
@@ -77,6 +107,14 @@ public class TTT_HC
 		return hash;
 	}
 
+	/**
+	 * Helper method to return unique char values for tiles on TicTacToe string
+	 * representations
+	 * 
+	 * @param c
+	 *            char representation of a TicTacToe board tile
+	 * @return unique char/tile value
+	 */
 	private int myCharValue(char c)
 	{
 		switch (c)
@@ -93,6 +131,14 @@ public class TTT_HC
 		}
 	}
 
+	/**
+	 * Method to determine if a given String representation of a TTT board is a
+	 * valid winning board
+	 * 
+	 * @param s
+	 *            String representation of a TTT board
+	 * @return Board is a valid winning board
+	 */
 	public boolean isWin(String board)
 	{
 		int hash = tttHashCode(board);
@@ -101,6 +147,9 @@ public class TTT_HC
 		return false;
 	}
 
+	/**
+	 * Method to analyze the winners array post-process.
+	 */
 	public void analyzeHashArray()
 	{
 		int numSpaces = 0;
@@ -161,15 +210,24 @@ public class TTT_HC
 		log("");
 	}
 
+	/**
+	 * Helper method to determine how many entries exist in every quadrant of
+	 * the array's capacity
+	 * 
+	 * @return the number of entries in each quadrant stored as an array
+	 */
 	private int[] determineQuadrants()
 	{
+		int len = this.winners.length;
+		double oneFourth = len * 1.0 / 4;
+		double[] quadVals =
+		{ 0.0, oneFourth * 1, oneFourth * 2, oneFourth * 3, oneFourth * 4 };
 		int[] quadrants = new int[4];
-		int oneFourth = hashArraySize / 4;// fix integer division
 
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < quadVals.length - 1; i++)
 		{
 			int numEntries = 0;
-			for (int j = oneFourth * i; j < oneFourth * (i + 1) && j < hashArraySize; j++)
+			for (int j = (int) Math.round(quadVals[i]); j < Math.round(quadVals[i + 1]) && j < len; j++)
 			{
 				if (this.winners[j] != null)
 					numEntries += this.winners[j].length();
@@ -180,15 +238,24 @@ public class TTT_HC
 
 	}
 
+	/**
+	 * Helper method to determine how many collisions occur in every tenth of
+	 * the array's capacity
+	 * 
+	 * @return the number of collisions in each tenth stored as an array
+	 */
 	private int[] determineTenths()
 	{
+		int len = this.winners.length;
+		double oneTenth = len * 1.0 / 10;
+		double[] tenthVals =
+		{ 0.0, oneTenth * 1, oneTenth * 2, oneTenth * 3, oneTenth * 4, oneTenth * 5, oneTenth * 6, oneTenth * 7,
+				oneTenth * 8, oneTenth * 9, oneTenth * 10 };
 		int[] tenths = new int[10];
-		int oneTenth = hashArraySize / 10;// i hate integer division.....
-
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < tenthVals.length - 1; i++)
 		{
 			int numCollisions = 0;
-			for (int j = oneTenth * i; j < oneTenth * (i + 1); j++)
+			for (int j = (int) Math.round(tenthVals[i]); j < Math.round(tenthVals[i + 1]) && j < len; j++)
 			{
 				if (this.winners[j] != null)
 				{

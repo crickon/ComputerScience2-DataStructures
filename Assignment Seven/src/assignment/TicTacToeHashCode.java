@@ -53,7 +53,7 @@ public class TicTacToeHashCode extends Board
 		// win lookup table by the board's hashcode as an index.
 		winners = new boolean[powersOf3[maxPow]];
 		setWinners();
-		System.out.println(wastedSpace());
+		System.out.println("Wasted spaces in the array = " + wastedSpace());
 	}
 
 	/**
