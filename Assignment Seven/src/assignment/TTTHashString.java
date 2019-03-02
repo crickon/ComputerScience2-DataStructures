@@ -1,5 +1,12 @@
 package assignment;
 
+/**
+ * String object with custom hashCode for TicTacToe boards to override java's
+ * default hashCode method.
+ * 
+ * @author Matthew "crickon" Grillo
+ *
+ */
 public class TTTHashString
 {
 	private static final int boardStringLength = 9;
@@ -9,11 +16,20 @@ public class TTTHashString
 
 	private String str;
 
+	/**
+	 * Constructor to initialize and set board string
+	 * 
+	 * @param str
+	 *            String representation of a TicTacToe board
+	 */
 	public TTTHashString(String str)
 	{
 		this.str = str;
 	}
 
+	/**
+	 * Unique hashCode method from part 1 of the assignment
+	 */
 	@Override
 	public int hashCode()
 	{
@@ -25,6 +41,13 @@ public class TTTHashString
 		return hash;
 	}
 
+	/**
+	 * Helper method to evaluate TicTacToe tiles from their char value
+	 * 
+	 * @param c
+	 *            TTT tile char value
+	 * @return integer value of char
+	 */
 	private int myCharValue(char c)
 	{
 		switch (c)

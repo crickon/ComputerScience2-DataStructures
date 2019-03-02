@@ -53,14 +53,25 @@ public class TicTacToeHashMap
 		try
 		{
 			Field entryField = entry.getClass().getDeclaredField("next");
+			
 			entryField.setAccessible(true);
 			HashMap.Entry nextNode = (HashMap.Entry) entryField.get(entry);
 			return nextNode;
 		}
 		catch (NoSuchFieldException | IllegalAccessException e)
 		{
-			return null;
+			try {
+				Field rightNode = entry.getClass().getDeclaredField("right");
+				rightNode.setAccessible(true);
+				HashMap.Entry nextNode = (HashMap.Entry) rightNode.get(entry);
+				return nextNode;
+			}
+			catch (NoSuchFieldException | IllegalAccessException e2)
+			{
+			}
+			//System.out.println(entry.getClass().getName());
 		}
+		return null;
 	}
 
 	/**
@@ -93,15 +104,17 @@ public class TicTacToeHashMap
 		log("Initial HashMap Capacity = " + m.CAP);
 
 		Scanner winnersInput = new Scanner(new File("TicTacToeWinners.txt"));
-		int count = 0;
+		int numWinners = 0;
 		while (winnersInput.hasNextLine())
 		{
 			String line = winnersInput.nextLine();
 			m.map.put(line, true);
+			numWinners++;
 		}
 		winnersInput.close();
 
 		log("Capacity with winners = " + m.capacity());
+		log("number of winners added = " + numWinners);
 		analyze(m);
 	}
 
@@ -129,14 +142,17 @@ public class TicTacToeHashMap
 				wastedSpaces++;
 			if (chainLength > maxChain)
 				maxChain = chainLength;
+			
 		}
 
 		log("wasted spaces = " + wastedSpaces);
 		log("size of array = " + table.length);
 		// number of entries stored in the table
-		log("number of entries = " + numEntries);
+		log("number of entries = " + numEntries + ", " + m.map.size());
 		// load factor
 		log("load factor = " + numCollisions * 1.0 / table.length);
+		log("number of collisions = " + numCollisions);
+		log("number of chains = " + numChains);
 		// number of entries in each quadrant
 		int[] quadrants = determineQuadrants(table);
 		String quadStr = "";

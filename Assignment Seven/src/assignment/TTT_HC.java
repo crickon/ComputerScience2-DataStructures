@@ -16,7 +16,7 @@ public class TTT_HC
 	// 3^4 has no wasted space, but long chain lengths
 	// 3^5 has 15 wasted spaces, but shorter chain lengths
 	// 3^5-16 has 0 wasted spaces and shorter chain length than 3^5.. perfect
-	private int hashArraySize = powersOf3[5] - 16;	
+	private int hashArraySize = powersOf3[5] - 16;
 
 	private HashNode[] winners;
 
@@ -109,6 +109,7 @@ public class TTT_HC
 		int chainSum = 0;
 		int cl = 0;
 		int numCollisions = 0;
+		int numEntries = 0;
 		for (int i = 0; i < this.winners.length; i++)
 		{
 			if (winners[i] != null)
@@ -121,6 +122,7 @@ public class TTT_HC
 					largestChain = chainLength;
 				if (chainLength > 1)
 					numCollisions += chainLength - 1;
+				numEntries += chainLength;
 			}
 			else if (winners[i] == null)
 				numSpaces++;
@@ -130,6 +132,7 @@ public class TTT_HC
 		log("wasted spaces = " + numSpaces + ", " + (int) (numSpaces * 1.0 / this.hashArraySize * 100) + "%");
 		// size of the array
 		log("size of array = " + this.hashArraySize);
+		log("num of entries = " + numEntries);
 		// loadfactor (collisions/size)
 		log("load factor = " + numCollisions * 1.0 / this.hashArraySize);
 		// number of collisions
@@ -168,7 +171,8 @@ public class TTT_HC
 			int numEntries = 0;
 			for (int j = oneFourth * i; j < oneFourth * (i + 1) && j < hashArraySize; j++)
 			{
-				numEntries += this.winners[j].length();
+				if (this.winners[j] != null)
+					numEntries += this.winners[j].length();
 			}
 			quadrants[i] = numEntries;
 		}
@@ -186,9 +190,12 @@ public class TTT_HC
 			int numCollisions = 0;
 			for (int j = oneTenth * i; j < oneTenth * (i + 1); j++)
 			{
-				int chainLen = this.winners[j].length();
-				if (chainLen > 1)
-					numCollisions += chainLen - 1;
+				if (this.winners[j] != null)
+				{
+					int chainLen = this.winners[j].length();
+					if (chainLen > 1)
+						numCollisions += chainLen - 1;
+				}
 			}
 			tenths[i] = numCollisions;
 		}
