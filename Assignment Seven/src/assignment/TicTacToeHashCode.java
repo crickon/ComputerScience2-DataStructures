@@ -180,7 +180,7 @@ public class TicTacToeHashCode extends Board
 	{
 		super.show(board);
 		super.setHashCodeLabel(myHashCode(board));
-		super.setWinnerLabel(isWin(board));
+		super.setWinnerLabel(TicTacToe.isWinString(board));
 	}
 
 	/**

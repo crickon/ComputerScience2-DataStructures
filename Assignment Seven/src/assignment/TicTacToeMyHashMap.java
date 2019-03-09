@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class TicTacToeMyHashMap
 {
 	private HashMap<TTTHashString, Boolean> map;
-	private final int CAP = (int) Math.pow(2, 8);
+	private final int CAP = (int) Math.pow(2, 8); // 256
 	private final int numWinners = 1400;
 	private final float resizeFactor = (float) numWinners / CAP;
 
@@ -65,48 +65,13 @@ public class TicTacToeMyHashMap
 		return table;
 	}
 
-	public static int countTreeNodes = 0;
-
-	/**
-	 * Method to get the next node in the LinkedList using reflection.
-	 * 
-	 * @param entry
-	 *            A node from HashMap's table
-	 * @return The next node in the LinkedList or null if there is no child
-	 *         node.
-	 */
-	public static HashMap.Entry getNext(HashMap.Entry entry)
-	{
-		/*
-		 * HashMap entries are structured like LinkedLists with the "next" field
-		 * being the pointer to the next entry in the chain.
-		 * 
-		 * http://resources.mpi-inf.mpg.de/d5/teaching/ss05/is05/javadoc/java/
-		 * util/ HashMap.Entry.html
-		 */
-		try
-		{
-			Field entryField = entry.getClass().getDeclaredField("next");
-
-			entryField.setAccessible(true);
-			HashMap.Entry nextNode = (HashMap.Entry) entryField.get(entry);
-			return nextNode;
-		}
-		catch (NoSuchFieldException | IllegalAccessException e)
-		{
-			countTreeNodes++;
-			// System.out.println(entry.getClass().getName());
-		}
-		return null;
-	}
-
 	/**
 	 * Recursive method for determining the chain length: 0 for empty space, 1
-	 * for single entry, 2+ for chain
+	 * for single entry with no collisions, 2+ for chain
 	 * 
 	 * @param node
 	 *            root Entry node of the chain
-	 * @return
+	 * @return the length of this chain
 	 * @throws NoSuchFieldException
 	 * @throws IllegalAccessException
 	 */
@@ -114,7 +79,47 @@ public class TicTacToeMyHashMap
 	{
 		if (node == null)
 			return 0;
-		return chainLength(getNext(node)) + 1;
+		try
+		{
+			Field entryField = node.getClass().getDeclaredField("next");
+			entryField.setAccessible(true);
+			HashMap.Entry nextNode = (HashMap.Entry) entryField.get(node);
+			return chainLength(nextNode) + 1;
+		}
+		catch (NoSuchFieldException | IllegalAccessException e)
+		{
+			// if the "next" field doesnt exist, then it is a TreeNode
+			return treeLength(node);
+		}
+	}
+
+	/**
+	 * Recursive method for counting the number of TreeNodes in a chain.
+	 * 
+	 * @param node
+	 *            root
+	 * @return number of TreeNodes starting at the root.
+	 */
+	private static int treeLength(HashMap.Entry node)
+	{
+		if (node == null)
+			return 0;
+		try
+		{
+			Field rightField = node.getClass().getDeclaredField("right");
+			rightField.setAccessible(true);
+			HashMap.Entry rightNode = (HashMap.Entry) rightField.get(node);
+			Field leftField = node.getClass().getDeclaredField("left");
+			leftField.setAccessible(true);
+			HashMap.Entry leftNode = (HashMap.Entry) leftField.get(node);
+			return treeLength(rightNode) + treeLength(leftNode) + 1;
+		}
+		catch (NoSuchFieldException | IllegalAccessException e)
+		{
+			// this point "should" never be reached..
+			System.out.println(node.getClass().getName());
+			return 0;
+		}
 	}
 
 	/**
@@ -164,6 +169,7 @@ public class TicTacToeMyHashMap
 	private static void analyze(TicTacToeMyHashMap m) throws IllegalAccessException, NoSuchFieldException
 	{
 		int wastedSpaces = 0;
+		int numEntries = 0;
 		int numCollisions = 0;
 		int numChains = 0;
 		int maxChain = 0;
@@ -173,6 +179,7 @@ public class TicTacToeMyHashMap
 		for (int i = 0; i < table.length; i++)
 		{
 			int chainLength = chainLength(table[i]);
+			numEntries += chainLength;
 			if (chainLength > 1)
 			{
 				numCollisions += chainLength - 1;
@@ -189,7 +196,7 @@ public class TicTacToeMyHashMap
 		log("wasted spaces = " + wastedSpaces);
 		log("size of array = " + table.length);
 		// number of entries stored in the table
-		log("number of entries = " + m.map.size());
+		log("number of entries = " + numEntries);
 		// load factor
 		log("load factor = " + numCollisions * 1.0 / table.length);
 		log("number of collisions = " + numCollisions);
@@ -210,7 +217,6 @@ public class TicTacToeMyHashMap
 		log("avg chain length = " + chainSum * 1.0 / numChains + ", " + chainSum + "/" + numChains);
 		// maximum chain length
 		log("longest chain length = " + maxChain);
-		log("number of uncounted treeNodes = " + countTreeNodes);
 	}
 
 	/**

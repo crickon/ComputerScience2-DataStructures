@@ -1,5 +1,4 @@
 package assignment;
-import java.util.Arrays;
 
 public class TicTacToe
 {
@@ -8,6 +7,15 @@ public class TicTacToe
 	public final static int POSSIBILITIES = (int) Math.pow(3, 9);
 	public final static int CHAR_POSSIBILITIES = 3; // x, o or space
 
+	/**
+	 * Method to count the number of times a char appears within a char array
+	 * 
+	 * @param b
+	 *            char array
+	 * @param ch
+	 *            char to be counted
+	 * @return number of times the char array contains the given character
+	 */
 	private static int numChars(char[][] b, char ch)
 	{
 		int total = 0;
@@ -18,6 +26,15 @@ public class TicTacToe
 		return total;
 	}
 
+	/**
+	 * Method to determine if a TicTacToe board's char array is a valid
+	 * TicTacToe board. A valid TTT board is when the board can be obtained
+	 * through playing the game. The players alternate turns, so the count of
+	 * each players tile cannot be 2 more or less than the other.
+	 * 
+	 * @param board
+	 * @return
+	 */
 	public static boolean valid(char[][] board)
 	{
 
@@ -32,6 +49,14 @@ public class TicTacToe
 		return false;
 	}
 
+	/**
+	 * Convert a TicTacToe board's char array into a String representation of
+	 * the TicTacToe board
+	 * 
+	 * @param b
+	 *            TicTacToe board's char array
+	 * @return String representation of the TicTacToe board
+	 */
 	public static String boardToString(char[][] b)
 	{
 		String result = "";
@@ -44,6 +69,11 @@ public class TicTacToe
 		return result;
 	}
 
+	/**
+	 * Method to convert a TicTacToe String representation into a TicTacToe char array
+	 * @param board 
+	 * @return 
+	 */
 	public static char[][] stringToBoard(String board)
 	{
 		char[][] b = new char[ROWS][COLS];
@@ -121,6 +151,15 @@ public class TicTacToe
 		return values;
 	}
 
+	/**
+	 * Method to determine if the given TTT board char array is a "diagonal win"
+	 * . A diagonal win is when a player has 3 consecutive tiles along one of
+	 * the board's diagonals.
+	 * 
+	 * @param board
+	 *            TTT board char array
+	 * @return boolean for if the given board is a diagonal win
+	 */
 	private static boolean diagonalWin(char[][] board)
 	{
 		int wins = 0;
@@ -135,6 +174,15 @@ public class TicTacToe
 		return wins == 1;
 	}
 
+	/**
+	 * Method to determine if the given TTT board char array is a "row win". A
+	 * row win is when a player has 3 consecutive tiles along one of the board's
+	 * rows.
+	 * 
+	 * @param board
+	 *            TTT board char array
+	 * @return boolean for if the given board is a row win
+	 */
 	private static boolean rowWin(char[][] board)
 	{
 		char ch;
@@ -156,6 +204,15 @@ public class TicTacToe
 		return wins == 1;
 	}
 
+	/**
+	 * Method to determine if the given TTT board char array is a "column win".
+	 * A column win is when a player has 3 consecutive tiles along one of the
+	 * board's columns.
+	 * 
+	 * @param board
+	 *            TTT board char array
+	 * @return boolean for if the given board is a column win
+	 */
 	private static boolean colWin(char[][] board)
 	{
 		char ch;
@@ -177,11 +234,24 @@ public class TicTacToe
 		return wins == 1;
 	}
 
+	/**
+	 * 
+	 * @param b
+	 * @return
+	 */
 	public static boolean isWin(char[][] b)
 	{
 		return valid(b) && (rowWin(b) ^ colWin(b) ^ diagonalWin(b));
 	}
 
+	/**
+	 * Method to determine what String the Board's isWin JPanel will display.
+	 * 
+	 * @param b
+	 *            char array representation of a TicTacToe board
+	 * @return "Row" for a row win, "Col" for a column win, "Dia" for a diagonal
+	 *         win, "loser" for a losing board
+	 */
 	public static String isWinString(char[][] b)
 	{
 		boolean v = valid(b);
@@ -202,18 +272,39 @@ public class TicTacToe
 			return "loser";
 	}
 
+	/**
+	 * Method to determine if a TicTacToe board's String representation is a
+	 * winning TicTacToe board.
+	 * 
+	 * @param s
+	 *            String representation of a TicTacToe board
+	 * @return boolean for if the board is a winning board
+	 */
 	public static boolean isWin(String s)
 	{
 		char[][] b = stringToBoard(s);
 		return isWin(b);
 	}
 
+	/**
+	 * Method to determine what String the Board's isWin JPanel will display.
+	 * 
+	 * @param s
+	 *            String representation of a TicTacToe board
+	 * @return "Row" for a row win, "Col" for a column win, "Dia" for a diagonal
+	 *         win, "loser" for a losing board
+	 */
 	public static String isWinString(String s)
 	{
 		char[][] b = stringToBoard(s);
 		return isWinString(b);
 	}
 
+	/**
+	 * Mrs. Kelly's method tester
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		String s = "ooooxxxox";

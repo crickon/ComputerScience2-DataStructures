@@ -8,15 +8,17 @@ public class TTT_HC
 {
 	private final String KELLY_WINNERS = "TicTacToeWinners.txt";
 	private final String MY_WINNERS = "boardLists/winningBoards.txt";
+	public final static int numWinners = 1400;
 
 	private final int[] powersOf3 =
 	{ 1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683 };
 	private final int boardStringLength = 9;
 
-	// 3^4 has no wasted space, but long chain lengths
-	// 3^5 has 15 wasted spaces, but shorter chain lengths
-	// 3^5-16 has 0 wasted spaces and shorter chain length than 3^5.. perfect
-	private int hashArraySize = powersOf3[5] - 16;
+	/**
+	 * The "Best" hash array size for zero wasted spaces, whilst having the
+	 * lowest possible chain length is 354.
+	 */
+	private int hashArraySize = 354;
 
 	private HashNode[] winners;
 
@@ -156,7 +158,6 @@ public class TTT_HC
 		int numChains = 0;
 		int largestChain = 0;
 		int chainSum = 0;
-		int cl = 0;
 		int numCollisions = 0;
 		int numEntries = 0;
 		for (int i = 0; i < this.winners.length; i++)
@@ -165,12 +166,13 @@ public class TTT_HC
 			{
 				HashNode currentNode = winners[i];
 				int chainLength = currentNode.length();
-				numChains++;
-				chainSum += chainLength;
 				if (chainLength > largestChain)
 					largestChain = chainLength;
-				if (chainLength > 1)
+				if (chainLength > 1){
 					numCollisions += chainLength - 1;
+					chainSum += chainLength;
+					numChains++;
+				}
 				numEntries += chainLength;
 			}
 			else if (winners[i] == null)
@@ -211,8 +213,45 @@ public class TTT_HC
 	}
 
 	/**
+	 * Method to count the number of wasted spaces in the winners array
+	 * 
+	 * @return number of wasted spaces
+	 */
+	public int countSpaces()
+	{
+		int count = 0;
+		for (int i = 0; i < this.winners.length; i++)
+			if (winners[i] == null)
+				count++;
+		return count;
+	}
+
+	/**
+	 * Method to determine the average chain length of the winners array
+	 * 
+	 * @return average chain length as a double
+	 */
+	public double averageChainLength()
+	{
+		int numChains = 0;
+		int chainSum = 0;
+		for (int i = 0; i < this.winners.length; i++)
+		{
+			if (winners[i] != null)
+			{
+				int chainLength = winners[i].length();
+				if (chainLength > 1){
+					chainSum += chainLength;
+					numChains++;
+				}
+			}
+		}
+		return chainSum * 1.0 / numChains;
+	}
+
+	/**
 	 * Helper method to determine how many entries exist in every quadrant of
-	 * the array's capacity
+	 * the array's size
 	 * 
 	 * @return the number of entries in each quadrant stored as an array
 	 */
@@ -240,7 +279,7 @@ public class TTT_HC
 
 	/**
 	 * Helper method to determine how many collisions occur in every tenth of
-	 * the array's capacity
+	 * the array's size
 	 * 
 	 * @return the number of collisions in each tenth stored as an array
 	 */
@@ -271,16 +310,41 @@ public class TTT_HC
 
 	public static void main(String... args)
 	{
-		// finding the sweet spot to not waste any space on the array:
-
-		// new TTT_HC((int) Math.pow(3, 4));
-		// new TTT_HC((int) Math.pow(3, 5));
-		// new TTT_HC((int) Math.pow(3, 5)-15);
-		// new TTT_HC((int) Math.pow(3, 5)-16);
 		new TTT_HC().analyzeHashArray();
+		bestArraySize();
 	}
 
-	private void log(Object o)
+	/**
+	 * Analyze every possible array size to find the best array size having zero
+	 * wasted spaces and lowest average chain length in the array.
+	 */
+	public static void bestArraySize()
+	{
+		int bestSize = Integer.MAX_VALUE;
+		double bestAverage = Double.MAX_VALUE;
+		for (int i = 1; i < TTT_HC.numWinners; i++)
+		{
+			TTT_HC temp = new TTT_HC(i);
+			if (temp.countSpaces() == 0)
+			{
+				double avg = temp.averageChainLength();
+				if (avg < bestAverage)
+				{
+					bestAverage = avg;
+					bestSize = i;
+				}
+			}
+		}
+		log("The best array size is " + bestSize + ", with an avg chain length of " + bestAverage);
+	}
+
+	/**
+	 * Because System.out.println() is too long
+	 * 
+	 * @param o
+	 *            Object to be printed in the console
+	 */
+	public static void log(Object o)
 	{
 		System.out.println(o.toString());
 	}
