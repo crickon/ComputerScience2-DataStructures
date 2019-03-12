@@ -1,0 +1,69 @@
+My hash function for parts 1 and 2 returns a unique hash code for every possibility of a TicTacToe Board string.
+I decided to accomplish this by adding up the values of each Tile on the Board, but they had to be unique.
+To make them unique, I decided to multiply the tile's value by the number of possibilites to the nth degree, 
+where n was the possition in the String, and then add the hash for each tile together, thus creating a unique hash for the String. 
+
+Hash function formula=
+8
+∑	k * 3^n
+n=0
+where k is the value of the char (0 through 2)
+
+The max number of possibilities can be found using
+8
+∑	2 * 3^n
+n=0
+= 19682 == 3^9-1 
+
+for part 2 and 3 I needed to condense my unique hash code so that more than one board could have the same hash, and deal with collisions in a LinkedList.
+To accomplish this I took the boards hash modulo the size of the array I wanted to condense down to.
+the new hash code will always be less than the array size, but greater than or equal to 0.
+
+	- Part 2 Output:
+
+wasted spaces = 0, 0%
+size of array = 354
+num of entries = 1400
+load factor = 2.9548022598870056
+number of collisions = 1046
+number of chains = 323
+largest chain length = 10
+average chain length = 4.238390092879257
+number of entries per quadrant = 328, 354, 368, 350
+number of collisions per tenth = 86, 93, 117, 98, 111, 95, 126, 104, 112, 104
+
+The best array size is 354, with an avg chain length of 4.238390092879257
+
+	- Part 3 Outputs:
+	
+TicTacToeHashMap.java
+
+Initial HashMap Capacity = 256
+Capacity with winners = 256
+number of winners added = 1400
+wasted spaces = 1
+size of array = 256
+number of entries = 1400
+load factor = 4.47265625
+number of collisions = 1145
+number of chains = 247
+number of entries per quadrant = 369, 359, 323, 349
+number of collisions per tenth = 114, 117, 119, 120, 130, 107, 105, 105, 118, 110
+avg chain length = 4.635627530364372, 1145/247
+longest chain length = 12
+
+TicTacToeMyHashMap.java
+
+Initial HashMap Capacity = 256
+Capacity with winners = 256
+number of winners added = 1400
+wasted spaces = 0
+size of array = 256
+number of entries = 1400
+load factor = 4.46875
+number of collisions = 1144
+number of chains = 250
+number of entries per quadrant = 362, 355, 350, 333
+number of collisions per tenth = 108, 127, 122, 109, 123, 117, 115, 118, 88, 117
+avg chain length = 4.576, 1144/250
+longest chain length = 14
