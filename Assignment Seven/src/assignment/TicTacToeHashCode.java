@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * NVCC Assignment Seven: "TicTacToe Hash Function"
+ * NVCC Assignment Seven: "TicTacToe Hash Function" part 1
  * 
  * @author Matthew "crickon" Grillo
  *

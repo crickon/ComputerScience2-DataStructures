@@ -1,5 +1,8 @@
 package assignment;
 
+/**
+ * Collection / Library of TicTacToe methods
+ */
 public class TicTacToe
 {
 	public final static int ROWS = 3;
@@ -339,7 +342,8 @@ public class TicTacToe
 	/**
 	 * Mrs. Kelly's method tester
 	 * 
-	 * @param args Command Line Arguments
+	 * @param args
+	 *            Command Line Arguments
 	 */
 	public static void main(String[] args)
 	{

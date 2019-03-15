@@ -4,6 +4,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * NVCC Assignment Seven: "TicTacToe Hash Function" part 2
+ * 
+ * @author Matthew "crickon" Grillo
+ *
+ */
 public class TTT_HC
 {
 	private final String KELLY_WINNERS = "TicTacToeWinners.txt";

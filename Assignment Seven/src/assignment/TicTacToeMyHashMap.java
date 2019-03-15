@@ -6,6 +6,12 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
+/**
+ * NVCC Assignment Seven: "TicTacToe Hash Function" part 3
+ * 
+ * @author Matthew "crickon" Grillo
+ *
+ */
 public class TicTacToeMyHashMap
 {
 	private HashMap<TTTHashString, Boolean> map;
