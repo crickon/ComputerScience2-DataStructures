@@ -175,6 +175,7 @@ public class TicTacToeHashCode extends Board
 	 * hashcode and whether the board is a valid win.)
 	 * 
 	 * @param board
+	 *            String representation of a board
 	 */
 	public void display(String board)
 	{
@@ -189,7 +190,9 @@ public class TicTacToeHashCode extends Board
 	 * seconds (4000ms) each.
 	 * 
 	 * @param args
+	 *            Command Line Arguments
 	 * @throws InterruptedException
+	 *             if the Thread is interrupted
 	 */
 	public static void main(String... args) throws InterruptedException
 	{

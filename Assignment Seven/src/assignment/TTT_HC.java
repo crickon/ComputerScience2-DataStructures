@@ -137,8 +137,7 @@ public class TTT_HC
 	 * Method to determine if a given String representation of a TTT board is a
 	 * valid winning board
 	 * 
-	 * @param s
-	 *            String representation of a TTT board
+	 * @param board String representation of a TTT board
 	 * @return Board is a valid winning board
 	 */
 	public boolean isWin(String board)

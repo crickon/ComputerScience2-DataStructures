@@ -72,8 +72,6 @@ public class TicTacToeHashMap
 	 * @param node
 	 *            root Entry node of the chain
 	 * @return the length of this chain
-	 * @throws NoSuchFieldException
-	 * @throws IllegalAccessException
 	 */
 	public static int chainLength(HashMap.Entry node)
 	{

@@ -250,6 +250,8 @@ abstract class Board extends JFrame implements ActionListener
 	 * Method to get the TTT tile character value at a given position in a
 	 * String representation of a TTT Board
 	 * 
+	 * @param s
+	 *            String representation of a TTT Board
 	 * @param row
 	 *            2D TTT board row value
 	 * @param col

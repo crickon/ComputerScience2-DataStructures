@@ -33,7 +33,8 @@ public class TicTacToe
 	 * each players tile cannot be 2 more or less than the other.
 	 * 
 	 * @param board
-	 * @return
+	 *            TicTacToe char array
+	 * @return if the board is a valid TicTacToe board
 	 */
 	public static boolean valid(char[][] board)
 	{
@@ -70,9 +71,12 @@ public class TicTacToe
 	}
 
 	/**
-	 * Method to convert a TicTacToe String representation into a TicTacToe char array
-	 * @param board 
-	 * @return 
+	 * Method to convert a TicTacToe String representation into a TicTacToe char
+	 * array
+	 * 
+	 * @param board
+	 *            TicTacToe String representation
+	 * @return TicTacToe char array
 	 */
 	public static char[][] stringToBoard(String board)
 	{
@@ -86,6 +90,13 @@ public class TicTacToe
 		return b;
 	}
 
+	/**
+	 * Method to translate a TicTacToe tile into a number char
+	 * 
+	 * @param ch
+	 *            TicTacToe tile
+	 * @return number char
+	 */
 	public static char whichLetter(char ch)
 	{
 		switch (ch)
@@ -101,6 +112,14 @@ public class TicTacToe
 		}
 	}
 
+	/**
+	 * Method to get a TicTacToe char array from a String representation of a
+	 * TicTacToe board
+	 * 
+	 * @param s
+	 *            String representation of a TicTacToe board
+	 * @return TicTacToe char array
+	 */
 	public static char[][] makeBoard(String s)
 	{
 		char[][] b = new char[ROWS][COLS];
@@ -114,6 +133,13 @@ public class TicTacToe
 		return b;
 	}
 
+	/**
+	 * Increment the String numerical representation of a TicTacToe board by one
+	 * 
+	 * @param s
+	 *            String numerical representation of a TicTacToe board
+	 * @return incremented String numerical representation
+	 */
 	private static String addOne(String s)
 	{
 		// s is a 9 character string, composed of 0s, 1s, and 2s. Add 1 to the
@@ -137,6 +163,13 @@ public class TicTacToe
 		return new String(ch);
 	}
 
+	/**
+	 * Create and return every possible String numerical representation of a
+	 * TicTacToe board in an array
+	 * 
+	 * @return every possible String numerical representation of a TicTacToe
+	 *         board
+	 */
 	public static String[] fillValues()
 	{
 		String strBoard = "000000000";
@@ -235,9 +268,12 @@ public class TicTacToe
 	}
 
 	/**
+	 * Method to determine if the TicTacToe char array is a winning TicTacToe
+	 * board
 	 * 
 	 * @param b
-	 * @return
+	 *            TicTacToe char array
+	 * @return if the board is winning board
 	 */
 	public static boolean isWin(char[][] b)
 	{
@@ -303,7 +339,7 @@ public class TicTacToe
 	/**
 	 * Mrs. Kelly's method tester
 	 * 
-	 * @param args
+	 * @param args Command Line Arguments
 	 */
 	public static void main(String[] args)
 	{
