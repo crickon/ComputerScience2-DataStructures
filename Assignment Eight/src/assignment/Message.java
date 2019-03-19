@@ -40,7 +40,7 @@ public class Message implements Comparable<Message>
 	@Override
 	public int compareTo(Message o)
 	{
-		return o.priority - this.priority;
+		return this.priority - o.priority;
 		/*
 		 * if (this.priority < o.priority) return 1; if (this.priority >
 		 * o.priority) return -1; return 0;
@@ -53,5 +53,4 @@ public class Message implements Comparable<Message>
 			return true;
 		return false;
 	}
-
 }

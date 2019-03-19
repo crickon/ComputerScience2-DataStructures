@@ -4,20 +4,25 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+@SuppressWarnings(
+{ "unchecked", "rawtypes" })
 public class MessagePriorityQueue
 {
 	/**
 	 * nanoseconds to represent a "minute"
 	 */
-	static final long minute = 10000l;
-	static final int numQueues = 5;
+	public static final long minute = 100000l;
+	public static final int numQueues = 5;
+	public static int threshold = 1000000;
+
 	private ArrayList<Queue> queues;
 
-	public MessagePriorityQueue()
+	public MessagePriorityQueue(int threshold)
 	{
 		queues = new ArrayList<Queue>(numQueues);
 		for (int i = 0; i < numQueues; i++)
 			queues.add(new LinkedList<Message>());
+		this.threshold = threshold;
 	}
 
 	public void add(Message msg)
@@ -93,10 +98,10 @@ public class MessagePriorityQueue
 
 	public boolean isEmpty()
 	{
-		boolean empty = true;
 		for (Queue q : queues)
-			empty = q.isEmpty() && empty;
-		return empty;
+			if (!q.isEmpty())
+				return false;
+		return true;
 	}
 
 	public double getTime()
@@ -116,67 +121,62 @@ public class MessagePriorityQueue
 
 	public static void main(String... args) throws InterruptedException
 	{
-		MessagePriorityQueue pq = new MessagePriorityQueue();
-		long[] waitTimes = new long[pq.numQueues];
-		addMessages(pq, 10);
-		int threshold = 100000;
+		analyze(1000);
+		analyze(10000);
+		analyze(100000);
+		analyze(1000000);
+		//analyze(10000000);
+		//analyze(1000000000);
+	}
+
+	private static void analyze(int threshold) throws InterruptedException
+	{
+		long start = System.nanoTime();
+		MessagePriorityQueue pq = new MessagePriorityQueue(threshold);
+		long[] waitTimes = new long[MessagePriorityQueue.numQueues];
+		int[] prioCounts = new int[MessagePriorityQueue.numQueues];
+		addMessage(pq);
 		boolean reached = false;
 		while (!pq.isEmpty())
 		{
-			// System.out.println(pq.getTime() + ", " + pq.checkTime());
 			if (pq.checkTime())
 			{
 				Message msg = pq.poll();
 				long current = System.nanoTime();
 				int prio = msg.getPriority();
+				prioCounts[prio]++;
 				if (waitTimes[prio] > 1)
-				{
 					waitTimes[prio] = (waitTimes[prio] + msg.diff(current)) / 2;
-				}
 				else
-				{
 					waitTimes[prio] = msg.diff(current);
-				}
 			}
-			if (pq.size() > threshold)
+			if (pq.size() > MessagePriorityQueue.threshold)
 				reached = true;
 			if (!reached)
-				addMessages(pq, 1);
-			System.out.println(pq.size());
+				addMessage(pq);
+			//System.out.println(pq.size());
 			Thread.sleep(pq.minute / 1000000);
 		}
-		printTimes(waitTimes);
-		System.out.println(arrayStr(waitTimes));
+		long end = System.nanoTime();
+		printAnalysis(end - start, waitTimes, prioCounts);
 	}
 
-	private static void printTimes(long[] waitTimes)
+	private static void printAnalysis(long time, long[] waitTimes, int[] prioCounts)
 	{
-		String str = "[";
-		for (long o : waitTimes)
-			str += (double) o / MessagePriorityQueue.minute + ", ";
-		if (str.length() > 1)
-			str = str.substring(0, str.lastIndexOf(','));
-		str += "]";
-		System.out.println(str);
+		double totalCount = 0;
+		for (int i : prioCounts)
+			totalCount += i;
+		System.out.println(String.format("Queue threshold of %d messages analyzed in %f \"real seconds\"", MessagePriorityQueue.threshold, (double)time/1000000000l));
+		for (int i = 0; i < MessagePriorityQueue.numQueues; i++)
+			System.out.println(
+					String.format("Priority %d: %d message events (%.1f%%), avg of %f minutes", i, prioCounts[i],
+							prioCounts[i] / totalCount * 100, (double) waitTimes[i] / MessagePriorityQueue.minute));
+		System.out.println();
 	}
 
-	private static void addMessages(MessagePriorityQueue pq, int i)
+	private static void addMessage(MessagePriorityQueue pq)
 	{
-		for (int j = 0; j < i; j++)
-		{
-			int rand = (int) (Math.random() * 5);
-			pq.add(new Message("", rand));
-		}
-	}
-
-	private static String arrayStr(long[] array)
-	{
-		String str = "[";
-		for (long o : array)
-			str += o + ", ";
-		if (str.length() > 1)
-			str = str.substring(0, str.lastIndexOf(','));
-		str += "]";
-		return str;
+		int rand = (int) (Math.random() * 5);
+		pq.add(new Message("", rand));
 	}
 }

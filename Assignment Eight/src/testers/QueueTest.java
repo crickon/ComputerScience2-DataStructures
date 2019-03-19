@@ -7,8 +7,9 @@ public class QueueTest
 {
 	public static void main(String... args)
 	{
-		MessagePriorityQueue pq = new MessagePriorityQueue();
+		MessagePriorityQueue pq = new MessagePriorityQueue(10000);
 		Message msg = new Message("test", (int) (Math.random() * 5));
+		System.out.println(String.format("Empty peek returns null = %b", pq.peek() == null));
 		pq.add(msg);
 		System.out.println(String.format("Contains = %b, Prio = %d, Q = %d", pq.contains(msg), msg.getPriority(),
 				pq.queueContaining(msg)));
