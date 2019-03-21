@@ -12,11 +12,34 @@ public class MessagePriorityQueue
 	 * nanoseconds to represent a "minute"
 	 */
 	public static final long minute = 100000l;
+	/**
+	 * 
+	 */
 	public static final int numQueues = 5;
-	public static int threshold = 1000000;
+	/**
+	 * 
+	 */
+	public static int threshold;
 
+	/**
+	 * List of Queues for each priority (0-4)
+	 */
 	private ArrayList<Queue> queues;
 
+	/**
+	 * PriorityQueue constructor with a default Message threshold of 10000
+	 */
+	public MessagePriorityQueue()
+	{
+		this(10000);
+	}
+
+	/**
+	 * PriorityQueue constructor with a specific Message threshold
+	 * 
+	 * @param threshold
+	 *            Message threshold
+	 */
 	public MessagePriorityQueue(int threshold)
 	{
 		queues = new ArrayList<Queue>(numQueues);
@@ -25,28 +48,22 @@ public class MessagePriorityQueue
 		this.threshold = threshold;
 	}
 
+	/**
+	 * Add a Message into the priority queue
+	 * 
+	 * @param msg
+	 *            Message to be added
+	 */
 	public void add(Message msg)
 	{
 		msg.setArrivalTime(System.nanoTime());
 		queues.get(msg.getPriority()).add(msg);
 	}
 
-	public boolean remove(Message msg)
-	{
-		boolean removed = false;
-		for (Queue q : queues)
-			removed = q.remove(msg) || removed;
-		return removed;
-	}
-
-	public boolean contains(Message msg)
-	{
-		boolean contains = false;
-		for (Queue q : queues)
-			contains = contains || q.contains(msg);
-		return contains;
-	}
-
+	/**
+	 * 
+	 * @return
+	 */
 	public Message peek()
 	{
 		for (Queue q : queues)
@@ -58,6 +75,10 @@ public class MessagePriorityQueue
 		return null;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public int size()
 	{
 		int size = 0;
@@ -66,6 +87,10 @@ public class MessagePriorityQueue
 		return size;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public int[] sizes()
 	{
 		int[] sizes = new int[queues.size()];
@@ -74,6 +99,14 @@ public class MessagePriorityQueue
 		return sizes;
 	}
 
+	/**
+	 * Determine the index of the queue that contains a given Message. Returns
+	 * -1 if the Message is not found.
+	 * 
+	 * @param msg
+	 *            Message
+	 * @return index of the queue in the list containing the Message
+	 */
 	public int queueContaining(Message msg)
 	{
 		for (int i = 0; i < queues.size(); i++)
@@ -85,6 +118,10 @@ public class MessagePriorityQueue
 		return -1;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Message poll()
 	{
 		for (Queue q : queues)
@@ -96,6 +133,10 @@ public class MessagePriorityQueue
 		return null;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean isEmpty()
 	{
 		for (Queue q : queues)
@@ -104,6 +145,10 @@ public class MessagePriorityQueue
 		return true;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public double getTime()
 	{
 		long current = System.nanoTime();
@@ -112,6 +157,10 @@ public class MessagePriorityQueue
 		return (double) (current - arrival) / this.minute;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean checkTime()
 	{
 		if (this.getTime() >= 4)
@@ -125,10 +174,15 @@ public class MessagePriorityQueue
 		analyze(10000);
 		analyze(100000);
 		analyze(1000000);
-		//analyze(10000000);
-		//analyze(1000000000);
+		// analyze(10000000);
+		// analyze(1000000000);
 	}
 
+	/**
+	 * 
+	 * @param threshold
+	 * @throws InterruptedException
+	 */
 	private static void analyze(int threshold) throws InterruptedException
 	{
 		long start = System.nanoTime();
@@ -154,19 +208,26 @@ public class MessagePriorityQueue
 				reached = true;
 			if (!reached)
 				addMessage(pq);
-			//System.out.println(pq.size());
+			// System.out.println(pq.size());
 			Thread.sleep(pq.minute / 1000000);
 		}
 		long end = System.nanoTime();
 		printAnalysis(end - start, waitTimes, prioCounts);
 	}
 
+	/**
+	 * 
+	 * @param time
+	 * @param waitTimes
+	 * @param prioCounts
+	 */
 	private static void printAnalysis(long time, long[] waitTimes, int[] prioCounts)
 	{
 		double totalCount = 0;
 		for (int i : prioCounts)
 			totalCount += i;
-		System.out.println(String.format("Queue threshold of %d messages analyzed in %f \"real seconds\"", MessagePriorityQueue.threshold, (double)time/1000000000l));
+		System.out.println(String.format("Queue threshold of %d messages analyzed in %f \"real seconds\"",
+				MessagePriorityQueue.threshold, (double) time / 1000000000l));
 		for (int i = 0; i < MessagePriorityQueue.numQueues; i++)
 			System.out.println(
 					String.format("Priority %d: %d message events (%.1f%%), avg of %f minutes", i, prioCounts[i],
@@ -174,6 +235,10 @@ public class MessagePriorityQueue
 		System.out.println();
 	}
 
+	/**
+	 * 
+	 * @param pq
+	 */
 	private static void addMessage(MessagePriorityQueue pq)
 	{
 		int rand = (int) (Math.random() * 5);
