@@ -1,3 +1,7 @@
+/**
+ * NVCC Assignment Eight: "Priority Message Queue"
+ * @author Matthew "crickon" Grillo
+ */
 package assignment;
 
 import java.util.ArrayList;
@@ -13,11 +17,13 @@ public class MessagePriorityQueue
 	 */
 	public static final long minute = 100000l;
 	/**
-	 * 
+	 * Literal for the number of queues in this priority queue
 	 */
 	public static final int numQueues = 5;
 	/**
-	 * 
+	 * Because the test method exponentially increases the size of the Queue,
+	 * have a threshold that once reached the method will know to stop adding
+	 * messages.
 	 */
 	public static int threshold;
 
@@ -61,8 +67,25 @@ public class MessagePriorityQueue
 	}
 
 	/**
+	 * Method to check if the Priority Queue contains a Message
 	 * 
-	 * @return
+	 * @param msg
+	 *            Message to be checked
+	 * @return if the Priority Queue contains the Message
+	 */
+	public boolean contains(Message msg)
+	{
+		for (Queue q : queues)
+			if (q.contains(msg))
+				return true;
+		return false;
+	}
+
+	/**
+	 * Method to look at the Message at the front of the queue, but not remove
+	 * it. Returns null if the queue is empty
+	 * 
+	 * @return Message at the front of the queue
 	 */
 	public Message peek()
 	{
@@ -76,8 +99,9 @@ public class MessagePriorityQueue
 	}
 
 	/**
+	 * Method to get the size of the Priority Queue
 	 * 
-	 * @return
+	 * @return size of the Priority Queue
 	 */
 	public int size()
 	{
@@ -88,8 +112,9 @@ public class MessagePriorityQueue
 	}
 
 	/**
+	 * Method to get the size for each Priority
 	 * 
-	 * @return
+	 * @return Array of sizes
 	 */
 	public int[] sizes()
 	{
@@ -119,8 +144,10 @@ public class MessagePriorityQueue
 	}
 
 	/**
+	 * Method to get and remove the Message in the front of the queue. Returns
+	 * null if the queue is empty
 	 * 
-	 * @return
+	 * @return Message in the front of the queue
 	 */
 	public Message poll()
 	{
@@ -134,8 +161,9 @@ public class MessagePriorityQueue
 	}
 
 	/**
+	 * Determine if the Priority Queue is empty (contains no Messages)
 	 * 
-	 * @return
+	 * @return if the Priority Queue is empty
 	 */
 	public boolean isEmpty()
 	{
@@ -146,8 +174,11 @@ public class MessagePriorityQueue
 	}
 
 	/**
+	 * Return the time in "minutes" of how long the Message at the front of the
+	 * Queue has been in the Queue
 	 * 
-	 * @return
+	 * @return how long the Message at the front of the queue has been in the
+	 *         Queue
 	 */
 	public double getTime()
 	{
@@ -158,8 +189,10 @@ public class MessagePriorityQueue
 	}
 
 	/**
+	 * Determine if the Message has been process for 4 "minutes" or not
 	 * 
-	 * @return
+	 * @return if the Time of the Message in the front of the queue is or has
+	 *         exceeded 4 minutes
 	 */
 	public boolean checkTime()
 	{
@@ -179,8 +212,10 @@ public class MessagePriorityQueue
 	}
 
 	/**
+	 * Helper method to analyze a PriorityQueue with the given threshold
 	 * 
 	 * @param threshold
+	 *            Threshold of the PriorityQueue
 	 * @throws InterruptedException
 	 */
 	private static void analyze(int threshold) throws InterruptedException
@@ -216,10 +251,16 @@ public class MessagePriorityQueue
 	}
 
 	/**
+	 * Helper method to print the analysis of the PriorityQueue
 	 * 
 	 * @param time
+	 *            Time in nanoseconds that it took to process the PriorityQueue
 	 * @param waitTimes
+	 *            the average Message processing time for each priority in the
+	 *            Queue
 	 * @param prioCounts
+	 *            the count for the number of Messages of each priority that
+	 *            went into the Queue
 	 */
 	private static void printAnalysis(long time, long[] waitTimes, int[] prioCounts)
 	{
@@ -236,8 +277,10 @@ public class MessagePriorityQueue
 	}
 
 	/**
+	 * Helper method to add a Message of random priority to a PriorityQueue
 	 * 
 	 * @param pq
+	 *            PriorityQueue object
 	 */
 	private static void addMessage(MessagePriorityQueue pq)
 	{
