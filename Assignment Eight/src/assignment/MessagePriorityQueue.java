@@ -217,6 +217,7 @@ public class MessagePriorityQueue
 	 * @param threshold
 	 *            Threshold of the PriorityQueue
 	 * @throws InterruptedException
+	 *             if the Thread is interrupted during sleep
 	 */
 	private static void analyze(int threshold) throws InterruptedException
 	{
