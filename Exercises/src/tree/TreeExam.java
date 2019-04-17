@@ -1,3 +1,7 @@
+/**
+ * Final Exam Prep: Tree Methods
+ * @author Matthew "crickon" Grillo
+ */
 package tree;
 
 public class TreeExam
